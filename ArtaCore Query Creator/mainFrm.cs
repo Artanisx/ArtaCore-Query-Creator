@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,7 +57,42 @@ namespace ArtaCore_Query_Creator
 
                     MessageBox.Show("Error: " + ex.Message);
                 }
+
+                // Fetch the item names
+                
+                    if (listItemIDsNPCVendor.Items != null)
+                    {
+                        foreach (string item in listItemIDsNPCVendor.Items)
+                        {
+                            try
+                            {
+                                string selectedItem = item.ToString();
+
+                                WebClient x = new WebClient();
+                                string source = x.DownloadString("https://wotlkdb.com/?item=" + selectedItem);
+                                string itemName = Regex.Match(source, @"\<title\b[^>]*\>\s*(?<Title>[\s\S]*?)\</title\>", RegexOptions.IgnoreCase).Groups["Title"].Value;
+
+                                string[] itemNames = itemName.Split('-');
+
+                                itemName = itemNames[0];
+
+                                lbItemNames.Items.Add(itemName.Trim());
+                            }
+                            catch (WebException ex)
+                            {
+                                MessageBox.Show("Error! One of the Item IDs cannot be found.", "Error in one of the IDs", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                lbItemNames.Items.Add("Item not found!");    
+                            }
+                        }                        
+                    }
             }
+
+            
+        }
+
+        private void listItemIDsNPCVendor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbItemNames.SelectedIndex = listItemIDsNPCVendor.SelectedIndex;
         }
     }
 }

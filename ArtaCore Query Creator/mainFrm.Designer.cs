@@ -33,7 +33,10 @@ namespace ArtaCore_Query_Creator
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpNPCVendor = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
+            this.itemExtendedCostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new ArtaCore_Query_Creator.databaseDataSet();
             this.label4 = new System.Windows.Forms.Label();
+            this.nPCVendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chkUseAcoreWorld = new System.Windows.Forms.CheckBox();
             this.btnGenerateNPCVendorQuery = new System.Windows.Forms.Button();
             this.btnPreviewNPCVendorQuery = new System.Windows.Forms.Button();
@@ -47,17 +50,17 @@ namespace ArtaCore_Query_Creator
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.databaseDataSet = new ArtaCore_Query_Creator.databaseDataSet();
-            this.nPCVendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nPCVendorsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.NPCVendorsTableAdapter();
-            this.itemExtendedCostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
+            this.mouseOverItem = new System.Windows.Forms.ToolTip(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbItemNames = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPCVendorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -68,11 +71,13 @@ namespace ArtaCore_Query_Creator
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1448, 790);
+            this.tabControl1.Size = new System.Drawing.Size(1161, 790);
             this.tabControl1.TabIndex = 0;
             // 
             // tpNPCVendor
             // 
+            this.tpNPCVendor.Controls.Add(this.label6);
+            this.tpNPCVendor.Controls.Add(this.lbItemNames);
             this.tpNPCVendor.Controls.Add(this.label5);
             this.tpNPCVendor.Controls.Add(this.label4);
             this.tpNPCVendor.Controls.Add(this.chkUseAcoreWorld);
@@ -87,7 +92,7 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor.Location = new System.Drawing.Point(4, 29);
             this.tpNPCVendor.Name = "tpNPCVendor";
             this.tpNPCVendor.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNPCVendor.Size = new System.Drawing.Size(1440, 757);
+            this.tpNPCVendor.Size = new System.Drawing.Size(1153, 757);
             this.tpNPCVendor.TabIndex = 0;
             this.tpNPCVendor.Text = "NPC_Vendor";
             this.tpNPCVendor.UseVisualStyleBackColor = true;
@@ -102,6 +107,16 @@ namespace ArtaCore_Query_Creator
             this.label5.TabIndex = 11;
             this.label5.Text = "label5";
             // 
+            // itemExtendedCostsBindingSource
+            // 
+            this.itemExtendedCostsBindingSource.DataMember = "ItemExtendedCosts";
+            this.itemExtendedCostsBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -111,6 +126,11 @@ namespace ArtaCore_Query_Creator
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 10;
             this.label4.Text = "label4";
+            // 
+            // nPCVendorsBindingSource
+            // 
+            this.nPCVendorsBindingSource.DataMember = "NPCVendors";
+            this.nPCVendorsBindingSource.DataSource = this.databaseDataSet;
             // 
             // chkUseAcoreWorld
             // 
@@ -126,7 +146,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.btnGenerateNPCVendorQuery.Location = new System.Drawing.Point(404, 420);
             this.btnGenerateNPCVendorQuery.Name = "btnGenerateNPCVendorQuery";
-            this.btnGenerateNPCVendorQuery.Size = new System.Drawing.Size(291, 36);
+            this.btnGenerateNPCVendorQuery.Size = new System.Drawing.Size(348, 36);
             this.btnGenerateNPCVendorQuery.TabIndex = 8;
             this.btnGenerateNPCVendorQuery.Text = "Generate SQL Query";
             this.btnGenerateNPCVendorQuery.UseVisualStyleBackColor = true;
@@ -135,7 +155,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.btnPreviewNPCVendorQuery.Location = new System.Drawing.Point(404, 361);
             this.btnPreviewNPCVendorQuery.Name = "btnPreviewNPCVendorQuery";
-            this.btnPreviewNPCVendorQuery.Size = new System.Drawing.Size(291, 36);
+            this.btnPreviewNPCVendorQuery.Size = new System.Drawing.Size(348, 36);
             this.btnPreviewNPCVendorQuery.TabIndex = 7;
             this.btnPreviewNPCVendorQuery.Text = "Preview SQL Query";
             this.btnPreviewNPCVendorQuery.UseVisualStyleBackColor = true;
@@ -200,6 +220,7 @@ namespace ArtaCore_Query_Creator
             this.listItemIDsNPCVendor.Name = "listItemIDsNPCVendor";
             this.listItemIDsNPCVendor.Size = new System.Drawing.Size(333, 384);
             this.listItemIDsNPCVendor.TabIndex = 0;
+            this.listItemIDsNPCVendor.SelectedIndexChanged += new System.EventHandler(this.listItemIDsNPCVendor_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -213,12 +234,13 @@ namespace ArtaCore_Query_Creator
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.operationsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1448, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1161, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -238,34 +260,43 @@ namespace ArtaCore_Query_Creator
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "databaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // nPCVendorsBindingSource
-            // 
-            this.nPCVendorsBindingSource.DataMember = "NPCVendors";
-            this.nPCVendorsBindingSource.DataSource = this.databaseDataSet;
-            // 
             // nPCVendorsTableAdapter
             // 
             this.nPCVendorsTableAdapter.ClearBeforeFill = true;
-            // 
-            // itemExtendedCostsBindingSource
-            // 
-            this.itemExtendedCostsBindingSource.DataMember = "ItemExtendedCosts";
-            this.itemExtendedCostsBindingSource.DataSource = this.databaseDataSet;
             // 
             // itemExtendedCostsTableAdapter
             // 
             this.itemExtendedCostsTableAdapter.ClearBeforeFill = true;
             // 
+            // mouseOverItem
+            // 
+            this.mouseOverItem.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.mouseOverItem.ToolTipTitle = "Item";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(775, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Item Names";
+            // 
+            // lbItemNames
+            // 
+            this.lbItemNames.AllowDrop = true;
+            this.lbItemNames.FormattingEnabled = true;
+            this.lbItemNames.ItemHeight = 20;
+            this.lbItemNames.Location = new System.Drawing.Point(779, 72);
+            this.lbItemNames.Name = "lbItemNames";
+            this.lbItemNames.Size = new System.Drawing.Size(333, 384);
+            this.lbItemNames.TabIndex = 12;
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1448, 823);
+            this.ClientSize = new System.Drawing.Size(1161, 823);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -277,11 +308,11 @@ namespace ArtaCore_Query_Creator
             this.tabControl1.ResumeLayout(false);
             this.tpNPCVendor.ResumeLayout(false);
             this.tpNPCVendor.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPCVendorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,6 +342,9 @@ namespace ArtaCore_Query_Creator
         private databaseDataSetTableAdapters.NPCVendorsTableAdapter nPCVendorsTableAdapter;
         private System.Windows.Forms.BindingSource itemExtendedCostsBindingSource;
         private databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter itemExtendedCostsTableAdapter;
+        private System.Windows.Forms.ToolTip mouseOverItem;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox lbItemNames;
     }
 }
 
