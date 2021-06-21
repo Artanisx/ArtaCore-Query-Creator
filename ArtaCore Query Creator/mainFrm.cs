@@ -86,13 +86,22 @@ namespace ArtaCore_Query_Creator
                         }                        
                     }
             }
-
             
         }
 
         private void listItemIDsNPCVendor_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbItemNames.SelectedIndex = listItemIDsNPCVendor.SelectedIndex;
+        }
+
+        private void lbItemNames_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            e.DrawBackground();
+
+            if (lbItemNames.Items[e.Index].ToString() == "Item not found!")
+                e.Graphics.DrawString(lbItemNames.Items[e.Index].ToString(), lbItemNames.Font, Brushes.Red, e.Bounds);
+            else
+                e.Graphics.DrawString(lbItemNames.Items[e.Index].ToString(), lbItemNames.Font, Brushes.Black, e.Bounds);
         }
     }
 }

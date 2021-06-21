@@ -285,12 +285,14 @@ namespace ArtaCore_Query_Creator
             // lbItemNames
             // 
             this.lbItemNames.AllowDrop = true;
+            this.lbItemNames.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.lbItemNames.FormattingEnabled = true;
             this.lbItemNames.ItemHeight = 20;
             this.lbItemNames.Location = new System.Drawing.Point(779, 72);
             this.lbItemNames.Name = "lbItemNames";
             this.lbItemNames.Size = new System.Drawing.Size(333, 384);
             this.lbItemNames.TabIndex = 12;
+            this.lbItemNames.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lbItemNames_DrawItem);
             // 
             // mainFrm
             // 
