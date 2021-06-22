@@ -116,5 +116,10 @@ namespace ArtaCore_Query_Creator
             if (lbItemNames.Items.Count == listItemIDsNPCVendor.Items.Count)
                 listItemIDsNPCVendor.SelectedIndex = lbItemNames.SelectedIndex;
         }
+
+        private void btnPreviewNPCVendorQuery_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.PreviewSQLQuery(tbNPCVendorPreview, listItemIDsNPCVendor, labVendorID.Text, labItemCostID.Text);
+        }
     }
 }

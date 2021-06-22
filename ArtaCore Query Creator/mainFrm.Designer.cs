@@ -34,10 +34,10 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.lbItemNames = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labItemCostID = new System.Windows.Forms.Label();
             this.itemExtendedCostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new ArtaCore_Query_Creator.databaseDataSet();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labVendorID = new System.Windows.Forms.Label();
             this.nPCVendorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chkUseAcoreWorld = new System.Windows.Forms.CheckBox();
             this.btnGenerateNPCVendorQuery = new System.Windows.Forms.Button();
@@ -58,6 +58,7 @@ namespace ArtaCore_Query_Creator
             this.cbEnableItemNameFetching = new System.Windows.Forms.CheckBox();
             this.tbNPCVendorPreview = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -84,8 +85,8 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor.Controls.Add(this.cbEnableItemNameFetching);
             this.tpNPCVendor.Controls.Add(this.label6);
             this.tpNPCVendor.Controls.Add(this.lbItemNames);
-            this.tpNPCVendor.Controls.Add(this.label5);
-            this.tpNPCVendor.Controls.Add(this.label4);
+            this.tpNPCVendor.Controls.Add(this.labItemCostID);
+            this.tpNPCVendor.Controls.Add(this.labVendorID);
             this.tpNPCVendor.Controls.Add(this.chkUseAcoreWorld);
             this.tpNPCVendor.Controls.Add(this.btnGenerateNPCVendorQuery);
             this.tpNPCVendor.Controls.Add(this.btnPreviewNPCVendorQuery);
@@ -125,15 +126,15 @@ namespace ArtaCore_Query_Creator
             this.lbItemNames.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lbItemNames_DrawItem);
             this.lbItemNames.SelectedIndexChanged += new System.EventHandler(this.lbItemNames_SelectedIndexChanged);
             // 
-            // label5
+            // labItemCostID
             // 
-            this.label5.AutoSize = true;
-            this.label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itemExtendedCostsBindingSource, "ID Extended Cost", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.label5.Location = new System.Drawing.Point(694, 141);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "label5";
+            this.labItemCostID.AutoSize = true;
+            this.labItemCostID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itemExtendedCostsBindingSource, "ID Extended Cost", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.labItemCostID.Location = new System.Drawing.Point(694, 141);
+            this.labItemCostID.Name = "labItemCostID";
+            this.labItemCostID.Size = new System.Drawing.Size(54, 20);
+            this.labItemCostID.TabIndex = 11;
+            this.labItemCostID.Text = "00000";
             // 
             // itemExtendedCostsBindingSource
             // 
@@ -145,15 +146,15 @@ namespace ArtaCore_Query_Creator
             this.databaseDataSet.DataSetName = "databaseDataSet";
             this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label4
+            // labVendorID
             // 
-            this.label4.AutoSize = true;
-            this.label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.label4.Location = new System.Drawing.Point(694, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 20);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "label4";
+            this.labVendorID.AutoSize = true;
+            this.labVendorID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.labVendorID.Location = new System.Drawing.Point(694, 75);
+            this.labVendorID.Name = "labVendorID";
+            this.labVendorID.Size = new System.Drawing.Size(63, 20);
+            this.labVendorID.TabIndex = 10;
+            this.labVendorID.Text = "000000";
             // 
             // nPCVendorsBindingSource
             // 
@@ -187,6 +188,7 @@ namespace ArtaCore_Query_Creator
             this.btnPreviewNPCVendorQuery.TabIndex = 7;
             this.btnPreviewNPCVendorQuery.Text = "Preview SQL Query";
             this.btnPreviewNPCVendorQuery.UseVisualStyleBackColor = true;
+            this.btnPreviewNPCVendorQuery.Click += new System.EventHandler(this.btnPreviewNPCVendorQuery_Click);
             // 
             // cbItemCost
             // 
@@ -323,6 +325,8 @@ namespace ArtaCore_Query_Creator
             this.tbNPCVendorPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbNPCVendorPreview.Size = new System.Drawing.Size(1248, 448);
             this.tbNPCVendorPreview.TabIndex = 15;
+            this.tbNPCVendorPreview.Text = "test\\n\\rtest\\n\\ntest";
+            this.tbNPCVendorPreview.WordWrap = false;
             // 
             // label7
             // 
@@ -373,8 +377,8 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listItemIDsNPCVendor;        
-        private System.Windows.Forms.Label label4;        
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labVendorID;        
+        private System.Windows.Forms.Label labItemCostID;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
@@ -389,6 +393,7 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.CheckBox cbEnableItemNameFetching;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbNPCVendorPreview;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
