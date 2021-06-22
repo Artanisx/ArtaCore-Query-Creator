@@ -32,6 +32,8 @@ namespace ArtaCore_Query_Creator
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpNPCVendor = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbItemNames = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.itemExtendedCostsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new ArtaCore_Query_Creator.databaseDataSet();
@@ -53,8 +55,9 @@ namespace ArtaCore_Query_Creator
             this.nPCVendorsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.NPCVendorsTableAdapter();
             this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
             this.mouseOverItem = new System.Windows.Forms.ToolTip(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.lbItemNames = new System.Windows.Forms.ListBox();
+            this.cbEnableItemNameFetching = new System.Windows.Forms.CheckBox();
+            this.tbNPCVendorPreview = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -71,11 +74,14 @@ namespace ArtaCore_Query_Creator
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1161, 790);
+            this.tabControl1.Size = new System.Drawing.Size(1331, 1010);
             this.tabControl1.TabIndex = 0;
             // 
             // tpNPCVendor
             // 
+            this.tpNPCVendor.Controls.Add(this.label7);
+            this.tpNPCVendor.Controls.Add(this.tbNPCVendorPreview);
+            this.tpNPCVendor.Controls.Add(this.cbEnableItemNameFetching);
             this.tpNPCVendor.Controls.Add(this.label6);
             this.tpNPCVendor.Controls.Add(this.lbItemNames);
             this.tpNPCVendor.Controls.Add(this.label5);
@@ -92,16 +98,38 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor.Location = new System.Drawing.Point(4, 29);
             this.tpNPCVendor.Name = "tpNPCVendor";
             this.tpNPCVendor.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNPCVendor.Size = new System.Drawing.Size(1153, 757);
+            this.tpNPCVendor.Size = new System.Drawing.Size(1323, 977);
             this.tpNPCVendor.TabIndex = 0;
             this.tpNPCVendor.Text = "NPC_Vendor";
             this.tpNPCVendor.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(768, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Item Names";
+            // 
+            // lbItemNames
+            // 
+            this.lbItemNames.AllowDrop = true;
+            this.lbItemNames.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.lbItemNames.FormattingEnabled = true;
+            this.lbItemNames.ItemHeight = 20;
+            this.lbItemNames.Location = new System.Drawing.Point(772, 72);
+            this.lbItemNames.Name = "lbItemNames";
+            this.lbItemNames.Size = new System.Drawing.Size(519, 384);
+            this.lbItemNames.TabIndex = 12;
+            this.lbItemNames.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lbItemNames_DrawItem);
+            this.lbItemNames.SelectedIndexChanged += new System.EventHandler(this.lbItemNames_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.itemExtendedCostsBindingSource, "ID Extended Cost", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.label5.Location = new System.Drawing.Point(701, 141);
+            this.label5.Location = new System.Drawing.Point(694, 141);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 11;
@@ -121,7 +149,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.label4.AutoSize = true;
             this.label4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.label4.Location = new System.Drawing.Point(701, 75);
+            this.label4.Location = new System.Drawing.Point(694, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 10;
@@ -135,7 +163,7 @@ namespace ArtaCore_Query_Creator
             // chkUseAcoreWorld
             // 
             this.chkUseAcoreWorld.AutoSize = true;
-            this.chkUseAcoreWorld.Location = new System.Drawing.Point(404, 193);
+            this.chkUseAcoreWorld.Location = new System.Drawing.Point(397, 193);
             this.chkUseAcoreWorld.Name = "chkUseAcoreWorld";
             this.chkUseAcoreWorld.Size = new System.Drawing.Size(247, 24);
             this.chkUseAcoreWorld.TabIndex = 9;
@@ -144,7 +172,7 @@ namespace ArtaCore_Query_Creator
             // 
             // btnGenerateNPCVendorQuery
             // 
-            this.btnGenerateNPCVendorQuery.Location = new System.Drawing.Point(404, 420);
+            this.btnGenerateNPCVendorQuery.Location = new System.Drawing.Point(397, 420);
             this.btnGenerateNPCVendorQuery.Name = "btnGenerateNPCVendorQuery";
             this.btnGenerateNPCVendorQuery.Size = new System.Drawing.Size(348, 36);
             this.btnGenerateNPCVendorQuery.TabIndex = 8;
@@ -153,7 +181,7 @@ namespace ArtaCore_Query_Creator
             // 
             // btnPreviewNPCVendorQuery
             // 
-            this.btnPreviewNPCVendorQuery.Location = new System.Drawing.Point(404, 361);
+            this.btnPreviewNPCVendorQuery.Location = new System.Drawing.Point(397, 361);
             this.btnPreviewNPCVendorQuery.Name = "btnPreviewNPCVendorQuery";
             this.btnPreviewNPCVendorQuery.Size = new System.Drawing.Size(348, 36);
             this.btnPreviewNPCVendorQuery.TabIndex = 7;
@@ -166,7 +194,7 @@ namespace ArtaCore_Query_Creator
             this.cbItemCost.DataSource = this.itemExtendedCostsBindingSource;
             this.cbItemCost.DisplayMember = "Human Readable";
             this.cbItemCost.FormattingEnabled = true;
-            this.cbItemCost.Location = new System.Drawing.Point(404, 138);
+            this.cbItemCost.Location = new System.Drawing.Point(397, 138);
             this.cbItemCost.Name = "cbItemCost";
             this.cbItemCost.Size = new System.Drawing.Size(291, 28);
             this.cbItemCost.TabIndex = 6;
@@ -175,7 +203,7 @@ namespace ArtaCore_Query_Creator
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(400, 115);
+            this.label3.Location = new System.Drawing.Point(393, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 5;
@@ -187,7 +215,7 @@ namespace ArtaCore_Query_Creator
             this.cbNPCVendor.DataSource = this.nPCVendorsBindingSource;
             this.cbNPCVendor.DisplayMember = "NPC Name";
             this.cbNPCVendor.FormattingEnabled = true;
-            this.cbNPCVendor.Location = new System.Drawing.Point(404, 72);
+            this.cbNPCVendor.Location = new System.Drawing.Point(397, 72);
             this.cbNPCVendor.Name = "cbNPCVendor";
             this.cbNPCVendor.Size = new System.Drawing.Size(291, 28);
             this.cbNPCVendor.TabIndex = 4;
@@ -196,7 +224,7 @@ namespace ArtaCore_Query_Creator
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(400, 49);
+            this.label2.Location = new System.Drawing.Point(393, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 20);
             this.label2.TabIndex = 3;
@@ -214,11 +242,12 @@ namespace ArtaCore_Query_Creator
             // listItemIDsNPCVendor
             // 
             this.listItemIDsNPCVendor.AllowDrop = true;
+            this.listItemIDsNPCVendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listItemIDsNPCVendor.FormattingEnabled = true;
-            this.listItemIDsNPCVendor.ItemHeight = 20;
+            this.listItemIDsNPCVendor.ItemHeight = 29;
             this.listItemIDsNPCVendor.Location = new System.Drawing.Point(43, 72);
             this.listItemIDsNPCVendor.Name = "listItemIDsNPCVendor";
-            this.listItemIDsNPCVendor.Size = new System.Drawing.Size(333, 384);
+            this.listItemIDsNPCVendor.Size = new System.Drawing.Size(333, 381);
             this.listItemIDsNPCVendor.TabIndex = 0;
             this.listItemIDsNPCVendor.SelectedIndexChanged += new System.EventHandler(this.listItemIDsNPCVendor_SelectedIndexChanged);
             // 
@@ -227,7 +256,7 @@ namespace ArtaCore_Query_Creator
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1440, 757);
+            this.tabPage2.Size = new System.Drawing.Size(1153, 757);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -240,7 +269,7 @@ namespace ArtaCore_Query_Creator
             this.operationsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1161, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1331, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -273,32 +302,42 @@ namespace ArtaCore_Query_Creator
             this.mouseOverItem.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.mouseOverItem.ToolTipTitle = "Item";
             // 
-            // label6
+            // cbEnableItemNameFetching
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(775, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Item Names";
+            this.cbEnableItemNameFetching.AutoSize = true;
+            this.cbEnableItemNameFetching.Checked = true;
+            this.cbEnableItemNameFetching.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEnableItemNameFetching.Location = new System.Drawing.Point(1044, 42);
+            this.cbEnableItemNameFetching.Name = "cbEnableItemNameFetching";
+            this.cbEnableItemNameFetching.Size = new System.Drawing.Size(224, 24);
+            this.cbEnableItemNameFetching.TabIndex = 14;
+            this.cbEnableItemNameFetching.Text = "Enable item name fetching";
+            this.cbEnableItemNameFetching.UseVisualStyleBackColor = true;
             // 
-            // lbItemNames
+            // tbNPCVendorPreview
             // 
-            this.lbItemNames.AllowDrop = true;
-            this.lbItemNames.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.lbItemNames.FormattingEnabled = true;
-            this.lbItemNames.ItemHeight = 20;
-            this.lbItemNames.Location = new System.Drawing.Point(779, 72);
-            this.lbItemNames.Name = "lbItemNames";
-            this.lbItemNames.Size = new System.Drawing.Size(333, 384);
-            this.lbItemNames.TabIndex = 12;
-            this.lbItemNames.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lbItemNames_DrawItem);
+            this.tbNPCVendorPreview.Location = new System.Drawing.Point(43, 502);
+            this.tbNPCVendorPreview.Multiline = true;
+            this.tbNPCVendorPreview.Name = "tbNPCVendorPreview";
+            this.tbNPCVendorPreview.ReadOnly = true;
+            this.tbNPCVendorPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbNPCVendorPreview.Size = new System.Drawing.Size(1248, 448);
+            this.tbNPCVendorPreview.TabIndex = 15;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(39, 479);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "SQL Preview";
             // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1161, 823);
+            this.ClientSize = new System.Drawing.Size(1331, 1043);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -347,6 +386,9 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.ToolTip mouseOverItem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lbItemNames;
+        private System.Windows.Forms.CheckBox cbEnableItemNameFetching;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox tbNPCVendorPreview;
     }
 }
 

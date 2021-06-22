@@ -58,10 +58,14 @@ namespace ArtaCore_Query_Creator
                     MessageBox.Show("Error: " + ex.Message);
                 }
 
-                // Fetch the item names
-                
+                // Fetch the item names if enabled
+                if (cbEnableItemNameFetching.Checked == true)
+                {
                     if (listItemIDsNPCVendor.Items != null)
                     {
+                        // Clear the listbox
+                        lbItemNames.Items.Clear();
+
                         foreach (string item in listItemIDsNPCVendor.Items)
                         {
                             try
@@ -81,17 +85,20 @@ namespace ArtaCore_Query_Creator
                             catch (WebException ex)
                             {
                                 MessageBox.Show("Error! One of the Item IDs cannot be found.", "Error in one of the IDs", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                lbItemNames.Items.Add("Item not found!");    
+                                lbItemNames.Items.Add("Item not found!");
                             }
-                        }                        
+                        }
                     }
-            }
-            
+                }
+                else                    
+                    lbItemNames.Items.Clear();
+            }            
         }
 
         private void listItemIDsNPCVendor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbItemNames.SelectedIndex = listItemIDsNPCVendor.SelectedIndex;
+            if (lbItemNames.Items.Count == listItemIDsNPCVendor.Items.Count)
+                lbItemNames.SelectedIndex = listItemIDsNPCVendor.SelectedIndex;
         }
 
         private void lbItemNames_DrawItem(object sender, DrawItemEventArgs e)
@@ -102,6 +109,12 @@ namespace ArtaCore_Query_Creator
                 e.Graphics.DrawString(lbItemNames.Items[e.Index].ToString(), lbItemNames.Font, Brushes.Red, e.Bounds);
             else
                 e.Graphics.DrawString(lbItemNames.Items[e.Index].ToString(), lbItemNames.Font, Brushes.Black, e.Bounds);
+        }
+
+        private void lbItemNames_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbItemNames.Items.Count == listItemIDsNPCVendor.Items.Count)
+                listItemIDsNPCVendor.SelectedIndex = lbItemNames.SelectedIndex;
         }
     }
 }
