@@ -30,6 +30,7 @@ namespace ArtaCore_Query_Creator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpNPCVendor = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,7 +55,7 @@ namespace ArtaCore_Query_Creator
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nPCVendorsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.NPCVendorsTableAdapter();
             this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
-            this.mouseOverItem = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.cbEnableItemNameFetching = new System.Windows.Forms.CheckBox();
             this.tbNPCVendorPreview = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -108,6 +109,8 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor.Size = new System.Drawing.Size(1323, 977);
             this.tpNPCVendor.TabIndex = 0;
             this.tpNPCVendor.Text = "NPC_VENDOR";
+            this.toolTip.SetToolTip(this.tpNPCVendor, "Open the SQL Query Creator for NPC_VENDOR table (Item inventories for NPC vendors" +
+        ").");
             this.tpNPCVendor.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -129,6 +132,8 @@ namespace ArtaCore_Query_Creator
             this.lbItemNames.Name = "lbItemNames";
             this.lbItemNames.Size = new System.Drawing.Size(519, 384);
             this.lbItemNames.TabIndex = 12;
+            this.toolTip.SetToolTip(this.lbItemNames, "The list of item names from the item ids pasted. This will be shown only if Enalb" +
+        "e item name fetching is checked.");
             this.lbItemNames.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lbItemNames_DrawItem);
             this.lbItemNames.SelectedIndexChanged += new System.EventHandler(this.lbItemNames_SelectedIndexChanged);
             // 
@@ -175,6 +180,8 @@ namespace ArtaCore_Query_Creator
             this.chkUseAcoreWorld.Size = new System.Drawing.Size(247, 24);
             this.chkUseAcoreWorld.TabIndex = 9;
             this.chkUseAcoreWorld.Text = "Select \'acore_world\' database";
+            this.toolTip.SetToolTip(this.chkUseAcoreWorld, "Check this if you want to create a SQL query that will select the database (meani" +
+        "ng you won\'t need to be in the proper DB to import it). Experimental.");
             this.chkUseAcoreWorld.UseVisualStyleBackColor = true;
             // 
             // btnGenerateNPCVendorQuery
@@ -184,6 +191,7 @@ namespace ArtaCore_Query_Creator
             this.btnGenerateNPCVendorQuery.Size = new System.Drawing.Size(348, 36);
             this.btnGenerateNPCVendorQuery.TabIndex = 8;
             this.btnGenerateNPCVendorQuery.Text = "Generate SQL Query";
+            this.toolTip.SetToolTip(this.btnGenerateNPCVendorQuery, "Generate the SQL query file.");
             this.btnGenerateNPCVendorQuery.UseVisualStyleBackColor = true;
             this.btnGenerateNPCVendorQuery.Click += new System.EventHandler(this.btnGenerateNPCVendorQuery_Click);
             // 
@@ -194,6 +202,7 @@ namespace ArtaCore_Query_Creator
             this.btnPreviewNPCVendorQuery.Size = new System.Drawing.Size(348, 36);
             this.btnPreviewNPCVendorQuery.TabIndex = 7;
             this.btnPreviewNPCVendorQuery.Text = "Preview SQL Query";
+            this.toolTip.SetToolTip(this.btnPreviewNPCVendorQuery, "Preview the SQL creation.");
             this.btnPreviewNPCVendorQuery.UseVisualStyleBackColor = true;
             this.btnPreviewNPCVendorQuery.Click += new System.EventHandler(this.btnPreviewNPCVendorQuery_Click);
             // 
@@ -207,6 +216,7 @@ namespace ArtaCore_Query_Creator
             this.cbItemCost.Name = "cbItemCost";
             this.cbItemCost.Size = new System.Drawing.Size(291, 28);
             this.cbItemCost.TabIndex = 6;
+            this.toolTip.SetToolTip(this.cbItemCost, "Select the cost of the items in the list.");
             this.cbItemCost.ValueMember = "ID Extended Cost";
             // 
             // label3
@@ -228,6 +238,7 @@ namespace ArtaCore_Query_Creator
             this.cbNPCVendor.Name = "cbNPCVendor";
             this.cbNPCVendor.Size = new System.Drawing.Size(291, 28);
             this.cbNPCVendor.TabIndex = 4;
+            this.toolTip.SetToolTip(this.cbNPCVendor, "Select the NPC creature id who will be the vendor for this inventory.");
             this.cbNPCVendor.ValueMember = "NPC ID";
             // 
             // label2
@@ -258,6 +269,8 @@ namespace ArtaCore_Query_Creator
             this.listItemIDsNPCVendor.Name = "listItemIDsNPCVendor";
             this.listItemIDsNPCVendor.Size = new System.Drawing.Size(333, 381);
             this.listItemIDsNPCVendor.TabIndex = 0;
+            this.toolTip.SetToolTip(this.listItemIDsNPCVendor, "Paste inside the list of Item IDs you want to create a NPC_Vendor query for (the " +
+        "inventory of the Vendor).");
             this.listItemIDsNPCVendor.SelectedIndexChanged += new System.EventHandler(this.listItemIDsNPCVendor_SelectedIndexChanged);
             // 
             // tbCreatureTemplate
@@ -294,7 +307,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
             // 
@@ -306,10 +319,10 @@ namespace ArtaCore_Query_Creator
             // 
             this.itemExtendedCostsTableAdapter.ClearBeforeFill = true;
             // 
-            // mouseOverItem
+            // toolTip
             // 
-            this.mouseOverItem.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.mouseOverItem.ToolTipTitle = "Item";
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip.ToolTipTitle = "UI Help";
             // 
             // cbEnableItemNameFetching
             // 
@@ -321,6 +334,7 @@ namespace ArtaCore_Query_Creator
             this.cbEnableItemNameFetching.Size = new System.Drawing.Size(224, 24);
             this.cbEnableItemNameFetching.TabIndex = 14;
             this.cbEnableItemNameFetching.Text = "Enable item name fetching";
+            this.toolTip.SetToolTip(this.cbEnableItemNameFetching, resources.GetString("cbEnableItemNameFetching.ToolTip"));
             this.cbEnableItemNameFetching.UseVisualStyleBackColor = true;
             // 
             // tbNPCVendorPreview
@@ -427,7 +441,7 @@ namespace ArtaCore_Query_Creator
         private databaseDataSetTableAdapters.NPCVendorsTableAdapter nPCVendorsTableAdapter;
         private System.Windows.Forms.BindingSource itemExtendedCostsBindingSource;
         private databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter itemExtendedCostsTableAdapter;
-        private System.Windows.Forms.ToolTip mouseOverItem;
+        private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ListBox lbItemNames;
         private System.Windows.Forms.CheckBox cbEnableItemNameFetching;
