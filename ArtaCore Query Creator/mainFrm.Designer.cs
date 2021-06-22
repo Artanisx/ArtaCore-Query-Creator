@@ -48,7 +48,7 @@ namespace ArtaCore_Query_Creator
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.listItemIDsNPCVendor = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tbCreatureTemplate = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +59,9 @@ namespace ArtaCore_Query_Creator
             this.tbNPCVendorPreview = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.sqlSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.tbQuestTemplate = new System.Windows.Forms.TabPage();
+            this.tbCreatureQuestStarter = new System.Windows.Forms.TabPage();
+            this.tbCreatureQuestEnder = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -70,7 +73,10 @@ namespace ArtaCore_Query_Creator
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpNPCVendor);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tbCreatureTemplate);
+            this.tabControl1.Controls.Add(this.tbQuestTemplate);
+            this.tabControl1.Controls.Add(this.tbCreatureQuestStarter);
+            this.tabControl1.Controls.Add(this.tbCreatureQuestEnder);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
             this.tabControl1.Name = "tabControl1";
@@ -101,7 +107,7 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor.Padding = new System.Windows.Forms.Padding(3);
             this.tpNPCVendor.Size = new System.Drawing.Size(1323, 977);
             this.tpNPCVendor.TabIndex = 0;
-            this.tpNPCVendor.Text = "NPC_Vendor";
+            this.tpNPCVendor.Text = "NPC_VENDOR";
             this.tpNPCVendor.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -254,15 +260,15 @@ namespace ArtaCore_Query_Creator
             this.listItemIDsNPCVendor.TabIndex = 0;
             this.listItemIDsNPCVendor.SelectedIndexChanged += new System.EventHandler(this.listItemIDsNPCVendor_SelectedIndexChanged);
             // 
-            // tabPage2
+            // tbCreatureTemplate
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1153, 757);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tbCreatureTemplate.Location = new System.Drawing.Point(4, 29);
+            this.tbCreatureTemplate.Name = "tbCreatureTemplate";
+            this.tbCreatureTemplate.Padding = new System.Windows.Forms.Padding(3);
+            this.tbCreatureTemplate.Size = new System.Drawing.Size(1323, 977);
+            this.tbCreatureTemplate.TabIndex = 1;
+            this.tbCreatureTemplate.Text = "CREATURE_TEMPLATE";
+            this.tbCreatureTemplate.UseVisualStyleBackColor = true;
             // 
             // menuStrip1
             // 
@@ -344,6 +350,33 @@ namespace ArtaCore_Query_Creator
             this.sqlSaveDialog.Filter = "SQL Query|*.sql";
             this.sqlSaveDialog.Title = "Save the SQL Query";
             // 
+            // tbQuestTemplate
+            // 
+            this.tbQuestTemplate.Location = new System.Drawing.Point(4, 29);
+            this.tbQuestTemplate.Name = "tbQuestTemplate";
+            this.tbQuestTemplate.Size = new System.Drawing.Size(1323, 977);
+            this.tbQuestTemplate.TabIndex = 2;
+            this.tbQuestTemplate.Text = "QUEST_TEMPLATE";
+            this.tbQuestTemplate.UseVisualStyleBackColor = true;
+            // 
+            // tbCreatureQuestStarter
+            // 
+            this.tbCreatureQuestStarter.Location = new System.Drawing.Point(4, 29);
+            this.tbCreatureQuestStarter.Name = "tbCreatureQuestStarter";
+            this.tbCreatureQuestStarter.Size = new System.Drawing.Size(1323, 977);
+            this.tbCreatureQuestStarter.TabIndex = 3;
+            this.tbCreatureQuestStarter.Text = "CREATURE_QUESTSTARTER";
+            this.tbCreatureQuestStarter.UseVisualStyleBackColor = true;
+            // 
+            // tbCreatureQuestEnder
+            // 
+            this.tbCreatureQuestEnder.Location = new System.Drawing.Point(4, 29);
+            this.tbCreatureQuestEnder.Name = "tbCreatureQuestEnder";
+            this.tbCreatureQuestEnder.Size = new System.Drawing.Size(1323, 977);
+            this.tbCreatureQuestEnder.TabIndex = 4;
+            this.tbCreatureQuestEnder.Text = "CREATURE_QUEST_ENDER";
+            this.tbCreatureQuestEnder.UseVisualStyleBackColor = true;
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -374,7 +407,7 @@ namespace ArtaCore_Query_Creator
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpNPCVendor;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tbCreatureTemplate;
         private System.Windows.Forms.CheckBox chkUseAcoreWorld;
         private System.Windows.Forms.Button btnGenerateNPCVendorQuery;
         private System.Windows.Forms.Button btnPreviewNPCVendorQuery;
@@ -401,6 +434,9 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbNPCVendorPreview;
         private System.Windows.Forms.SaveFileDialog sqlSaveDialog;
+        private System.Windows.Forms.TabPage tbQuestTemplate;
+        private System.Windows.Forms.TabPage tbCreatureQuestStarter;
+        private System.Windows.Forms.TabPage tbCreatureQuestEnder;
     }
 }
 
