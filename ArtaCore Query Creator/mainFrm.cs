@@ -121,5 +121,10 @@ namespace ArtaCore_Query_Creator
         {
             SQLGenerator.PreviewSQLQuery(tbNPCVendorPreview, listItemIDsNPCVendor, labVendorID.Text, labItemCostID.Text);
         }
+
+        private void btnGenerateNPCVendorQuery_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.SaveSQLQuery(sqlSaveDialog, listItemIDsNPCVendor, labVendorID.Text, labItemCostID.Text);
+        }
     }
 }

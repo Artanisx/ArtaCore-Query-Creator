@@ -58,7 +58,7 @@ namespace ArtaCore_Query_Creator
             this.cbEnableItemNameFetching = new System.Windows.Forms.CheckBox();
             this.tbNPCVendorPreview = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.sqlSaveDialog = new System.Windows.Forms.SaveFileDialog();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -179,6 +179,7 @@ namespace ArtaCore_Query_Creator
             this.btnGenerateNPCVendorQuery.TabIndex = 8;
             this.btnGenerateNPCVendorQuery.Text = "Generate SQL Query";
             this.btnGenerateNPCVendorQuery.UseVisualStyleBackColor = true;
+            this.btnGenerateNPCVendorQuery.Click += new System.EventHandler(this.btnGenerateNPCVendorQuery_Click);
             // 
             // btnPreviewNPCVendorQuery
             // 
@@ -325,7 +326,6 @@ namespace ArtaCore_Query_Creator
             this.tbNPCVendorPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbNPCVendorPreview.Size = new System.Drawing.Size(1248, 448);
             this.tbNPCVendorPreview.TabIndex = 15;
-            this.tbNPCVendorPreview.Text = "test\\n\\rtest\\n\\ntest";
             this.tbNPCVendorPreview.WordWrap = false;
             // 
             // label7
@@ -336,6 +336,13 @@ namespace ArtaCore_Query_Creator
             this.label7.Size = new System.Drawing.Size(99, 20);
             this.label7.TabIndex = 16;
             this.label7.Text = "SQL Preview";
+            // 
+            // sqlSaveDialog
+            // 
+            this.sqlSaveDialog.DefaultExt = "sql";
+            this.sqlSaveDialog.FileName = "NPCVendor_Items";
+            this.sqlSaveDialog.Filter = "SQL Query|*.sql";
+            this.sqlSaveDialog.Title = "Save the SQL Query";
             // 
             // mainFrm
             // 
@@ -393,7 +400,7 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.CheckBox cbEnableItemNameFetching;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbNPCVendorPreview;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog sqlSaveDialog;
     }
 }
 
