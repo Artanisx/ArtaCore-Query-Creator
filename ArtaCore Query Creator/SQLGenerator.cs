@@ -10,11 +10,11 @@ namespace ArtaCore_Query_Creator
 {
     public static class SQLGenerator
     {
-
+        const string NPCVENDOR_OPENINGSTATEMENT = "USE `acore_world`;";
         const string NPCVENDOR_OPENING_ITEMLINE = "INSERT INTO `npc_vendor` (`entry`, `slot`, `item`, `maxcount`, `incrtime`, `ExtendedCost`, `VerifiedBuild`) VALUES (";
         const string NPCVENDOR_CLOSING_ITEMLINE = ");";
 
-        public static void PreviewSQLQuery(TextBox previewTextBox, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID)
+        public static void PreviewSQLQuery(TextBox previewTextBox, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID, bool selectedDatabase)
         {
             string result;
 
@@ -44,7 +44,10 @@ namespace ArtaCore_Query_Creator
             }
 
             result = "";
-            
+
+            if (selectedDatabase == true)
+                result += NPCVENDOR_OPENINGSTATEMENT + Environment.NewLine;
+
             foreach (string item in itemIDsListBox.Items)
             {
                 result += NPCVENDOR_OPENING_ITEMLINE;
@@ -63,7 +66,7 @@ namespace ArtaCore_Query_Creator
             MessageBox.Show("SQL preview completed");
         }
 
-        public static void SaveSQLQuery(SaveFileDialog sqlSaveFileDialog, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID)
+        public static void SaveSQLQuery(SaveFileDialog sqlSaveFileDialog, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID, bool selectedDatabase)
         {
             string result;
 
@@ -93,6 +96,9 @@ namespace ArtaCore_Query_Creator
             }
 
             result = "";
+
+            if (selectedDatabase == true)
+                result += NPCVENDOR_OPENINGSTATEMENT + Environment.NewLine;
 
             foreach (string item in itemIDsListBox.Items)
             {
