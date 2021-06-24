@@ -126,5 +126,19 @@ namespace ArtaCore_Query_Creator
         {
             SQLGenerator.SaveSQLQuery(sqlSaveDialog, listItemIDsNPCVendor, labVendorID.Text, labItemCostID.Text, chkUseAcoreWorld.Checked);
         }
+
+        private void btnUpdateNPCDatabase_Click(object sender, EventArgs e)
+        {
+            // Update the database with changes.           
+
+            int success = this.nPCVendorsTableAdapter.Update(databaseDataSet.NPCVendors);
+
+            if (success == 0)
+                MessageBox.Show("Error while saving internal NPC Vendors database.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("Internal NPC Vendors database saved succesfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            dgCreatureTemplate.Refresh();            
+        }
     }
 }

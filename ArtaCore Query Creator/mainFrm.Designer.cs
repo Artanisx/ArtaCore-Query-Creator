@@ -33,6 +33,9 @@ namespace ArtaCore_Query_Creator
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainFrm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpNPCVendor = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbNPCVendorPreview = new System.Windows.Forms.TextBox();
+            this.cbEnableItemNameFetching = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lbItemNames = new System.Windows.Forms.ListBox();
             this.labItemCostID = new System.Windows.Forms.Label();
@@ -50,25 +53,29 @@ namespace ArtaCore_Query_Creator
             this.label1 = new System.Windows.Forms.Label();
             this.listItemIDsNPCVendor = new System.Windows.Forms.ListBox();
             this.tbCreatureTemplate = new System.Windows.Forms.TabPage();
+            this.tbQuestTemplate = new System.Windows.Forms.TabPage();
+            this.tbCreatureQuestStarter = new System.Windows.Forms.TabPage();
+            this.tbCreatureQuestEnder = new System.Windows.Forms.TabPage();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nPCVendorsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.NPCVendorsTableAdapter();
             this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.cbEnableItemNameFetching = new System.Windows.Forms.CheckBox();
-            this.tbNPCVendorPreview = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.sqlSaveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.tbQuestTemplate = new System.Windows.Forms.TabPage();
-            this.tbCreatureQuestStarter = new System.Windows.Forms.TabPage();
-            this.tbCreatureQuestEnder = new System.Windows.Forms.TabPage();
+            this.dgCreatureTemplate = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nPCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nPCNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUpdateNPCDatabase = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPCVendorsBindingSource)).BeginInit();
+            this.tbCreatureTemplate.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCreatureTemplate)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -112,6 +119,39 @@ namespace ArtaCore_Query_Creator
             this.toolTip.SetToolTip(this.tpNPCVendor, "Open the SQL Query Creator for NPC_VENDOR table (Item inventories for NPC vendors" +
         ").");
             this.tpNPCVendor.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(39, 479);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "SQL Preview";
+            // 
+            // tbNPCVendorPreview
+            // 
+            this.tbNPCVendorPreview.Location = new System.Drawing.Point(43, 502);
+            this.tbNPCVendorPreview.Multiline = true;
+            this.tbNPCVendorPreview.Name = "tbNPCVendorPreview";
+            this.tbNPCVendorPreview.ReadOnly = true;
+            this.tbNPCVendorPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbNPCVendorPreview.Size = new System.Drawing.Size(1248, 448);
+            this.tbNPCVendorPreview.TabIndex = 15;
+            this.tbNPCVendorPreview.WordWrap = false;
+            // 
+            // cbEnableItemNameFetching
+            // 
+            this.cbEnableItemNameFetching.AutoSize = true;
+            this.cbEnableItemNameFetching.Checked = true;
+            this.cbEnableItemNameFetching.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEnableItemNameFetching.Location = new System.Drawing.Point(1044, 42);
+            this.cbEnableItemNameFetching.Name = "cbEnableItemNameFetching";
+            this.cbEnableItemNameFetching.Size = new System.Drawing.Size(224, 24);
+            this.cbEnableItemNameFetching.TabIndex = 14;
+            this.cbEnableItemNameFetching.Text = "Enable item name fetching";
+            this.toolTip.SetToolTip(this.cbEnableItemNameFetching, resources.GetString("cbEnableItemNameFetching.ToolTip"));
+            this.cbEnableItemNameFetching.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -275,6 +315,8 @@ namespace ArtaCore_Query_Creator
             // 
             // tbCreatureTemplate
             // 
+            this.tbCreatureTemplate.Controls.Add(this.btnUpdateNPCDatabase);
+            this.tbCreatureTemplate.Controls.Add(this.dgCreatureTemplate);
             this.tbCreatureTemplate.Location = new System.Drawing.Point(4, 29);
             this.tbCreatureTemplate.Name = "tbCreatureTemplate";
             this.tbCreatureTemplate.Padding = new System.Windows.Forms.Padding(3);
@@ -282,87 +324,6 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureTemplate.TabIndex = 1;
             this.tbCreatureTemplate.Text = "CREATURE_TEMPLATE";
             this.tbCreatureTemplate.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operationsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1331, 33);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // operationsToolStripMenuItem
-            // 
-            this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pasteToolStripMenuItem});
-            this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
-            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
-            this.operationsToolStripMenuItem.Text = "&Operations";
-            // 
-            // pasteToolStripMenuItem
-            // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
-            // 
-            // nPCVendorsTableAdapter
-            // 
-            this.nPCVendorsTableAdapter.ClearBeforeFill = true;
-            // 
-            // itemExtendedCostsTableAdapter
-            // 
-            this.itemExtendedCostsTableAdapter.ClearBeforeFill = true;
-            // 
-            // toolTip
-            // 
-            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip.ToolTipTitle = "UI Help";
-            // 
-            // cbEnableItemNameFetching
-            // 
-            this.cbEnableItemNameFetching.AutoSize = true;
-            this.cbEnableItemNameFetching.Checked = true;
-            this.cbEnableItemNameFetching.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEnableItemNameFetching.Location = new System.Drawing.Point(1044, 42);
-            this.cbEnableItemNameFetching.Name = "cbEnableItemNameFetching";
-            this.cbEnableItemNameFetching.Size = new System.Drawing.Size(224, 24);
-            this.cbEnableItemNameFetching.TabIndex = 14;
-            this.cbEnableItemNameFetching.Text = "Enable item name fetching";
-            this.toolTip.SetToolTip(this.cbEnableItemNameFetching, resources.GetString("cbEnableItemNameFetching.ToolTip"));
-            this.cbEnableItemNameFetching.UseVisualStyleBackColor = true;
-            // 
-            // tbNPCVendorPreview
-            // 
-            this.tbNPCVendorPreview.Location = new System.Drawing.Point(43, 502);
-            this.tbNPCVendorPreview.Multiline = true;
-            this.tbNPCVendorPreview.Name = "tbNPCVendorPreview";
-            this.tbNPCVendorPreview.ReadOnly = true;
-            this.tbNPCVendorPreview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbNPCVendorPreview.Size = new System.Drawing.Size(1248, 448);
-            this.tbNPCVendorPreview.TabIndex = 15;
-            this.tbNPCVendorPreview.WordWrap = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 479);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 20);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "SQL Preview";
-            // 
-            // sqlSaveDialog
-            // 
-            this.sqlSaveDialog.DefaultExt = "sql";
-            this.sqlSaveDialog.FileName = "NPCVendor_Items";
-            this.sqlSaveDialog.Filter = "SQL Query|*.sql";
-            this.sqlSaveDialog.Title = "Save the SQL Query";
             // 
             // tbQuestTemplate
             // 
@@ -391,6 +352,104 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureQuestEnder.Text = "CREATURE_QUEST_ENDER";
             this.tbCreatureQuestEnder.UseVisualStyleBackColor = true;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operationsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1331, 33);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // operationsToolStripMenuItem
+            // 
+            this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pasteToolStripMenuItem});
+            this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
+            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.operationsToolStripMenuItem.Text = "&Operations";
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // nPCVendorsTableAdapter
+            // 
+            this.nPCVendorsTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemExtendedCostsTableAdapter
+            // 
+            this.itemExtendedCostsTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolTip
+            // 
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip.ToolTipTitle = "UI Help";
+            // 
+            // sqlSaveDialog
+            // 
+            this.sqlSaveDialog.DefaultExt = "sql";
+            this.sqlSaveDialog.FileName = "NPCVendor_Items";
+            this.sqlSaveDialog.Filter = "SQL Query|*.sql";
+            this.sqlSaveDialog.Title = "Save the SQL Query";
+            // 
+            // dgCreatureTemplate
+            // 
+            this.dgCreatureTemplate.AutoGenerateColumns = false;
+            this.dgCreatureTemplate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCreatureTemplate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.nPCIDDataGridViewTextBoxColumn,
+            this.nPCNameDataGridViewTextBoxColumn});
+            this.dgCreatureTemplate.DataSource = this.nPCVendorsBindingSource;
+            this.dgCreatureTemplate.Location = new System.Drawing.Point(25, 35);
+            this.dgCreatureTemplate.Name = "dgCreatureTemplate";
+            this.dgCreatureTemplate.RowHeadersWidth = 62;
+            this.dgCreatureTemplate.RowTemplate.Height = 28;
+            this.dgCreatureTemplate.Size = new System.Drawing.Size(1266, 181);
+            this.dgCreatureTemplate.TabIndex = 0;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nPCIDDataGridViewTextBoxColumn
+            // 
+            this.nPCIDDataGridViewTextBoxColumn.DataPropertyName = "NPC ID";
+            this.nPCIDDataGridViewTextBoxColumn.HeaderText = "NPC ID";
+            this.nPCIDDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nPCIDDataGridViewTextBoxColumn.Name = "nPCIDDataGridViewTextBoxColumn";
+            this.nPCIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nPCNameDataGridViewTextBoxColumn
+            // 
+            this.nPCNameDataGridViewTextBoxColumn.DataPropertyName = "NPC Name";
+            this.nPCNameDataGridViewTextBoxColumn.HeaderText = "NPC Name";
+            this.nPCNameDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nPCNameDataGridViewTextBoxColumn.Name = "nPCNameDataGridViewTextBoxColumn";
+            this.nPCNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // btnUpdateNPCDatabase
+            // 
+            this.btnUpdateNPCDatabase.Location = new System.Drawing.Point(25, 222);
+            this.btnUpdateNPCDatabase.Name = "btnUpdateNPCDatabase";
+            this.btnUpdateNPCDatabase.Size = new System.Drawing.Size(1266, 40);
+            this.btnUpdateNPCDatabase.TabIndex = 1;
+            this.btnUpdateNPCDatabase.Text = "Update internal Database";
+            this.btnUpdateNPCDatabase.UseVisualStyleBackColor = true;
+            this.btnUpdateNPCDatabase.Click += new System.EventHandler(this.btnUpdateNPCDatabase_Click);
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -410,8 +469,10 @@ namespace ArtaCore_Query_Creator
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPCVendorsBindingSource)).EndInit();
+            this.tbCreatureTemplate.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCreatureTemplate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,6 +512,11 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.TabPage tbQuestTemplate;
         private System.Windows.Forms.TabPage tbCreatureQuestStarter;
         private System.Windows.Forms.TabPage tbCreatureQuestEnder;
+        private System.Windows.Forms.DataGridView dgCreatureTemplate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nPCIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nPCNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnUpdateNPCDatabase;
     }
 }
 
