@@ -637,6 +637,7 @@ namespace ArtaCore_Query_Creator
             this.btnGenerateCreatureTemplateQuery.Text = "Generate SQL Query";
             this.toolTip.SetToolTip(this.btnGenerateCreatureTemplateQuery, "Generate the SQL query file.");
             this.btnGenerateCreatureTemplateQuery.UseVisualStyleBackColor = true;
+            this.btnGenerateCreatureTemplateQuery.Click += new System.EventHandler(this.btnGenerateCreatureTemplateQuery_Click);
             // 
             // pictureBox1
             // 

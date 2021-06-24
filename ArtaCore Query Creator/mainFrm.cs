@@ -222,7 +222,12 @@ namespace ArtaCore_Query_Creator
                 dgCreatureTemplate.Refresh();
             }
 
-            MessageBox.Show("Query imported into the internal Database. Don't forget to update it clicking on the UPDATE INTERNAL DATABASE button above.");
+            MessageBox.Show("Query imported into the internal Database.");
+        }
+
+        private void btnGenerateCreatureTemplateQuery_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.SaveSQLQueryCreatureTemplate(sqlSaveDialog, txtSQLPreviewCreatureTemplate, cbSelectAcoreCreatureTemplate.Checked);
         }
     }
 }
