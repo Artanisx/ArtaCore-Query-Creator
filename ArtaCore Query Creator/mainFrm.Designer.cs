@@ -68,6 +68,24 @@ namespace ArtaCore_Query_Creator
             this.nPCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nPCNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdateNPCDatabase = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNPCIDCreatureTemplate = new System.Windows.Forms.TextBox();
+            this.txtNPCNAMECreatureTemplate = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtNPCSUBNAMECreatureTemplate = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbNPCType = new System.Windows.Forms.ComboBox();
+            this.labelNPCType = new System.Windows.Forms.Label();
+            this.bntAddNPC = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtSQLPreviewCreatureTemplate = new System.Windows.Forms.TextBox();
+            this.cbSelectAcoreCreatureTemplate = new System.Windows.Forms.CheckBox();
+            this.btnGenerateCreatureTemplateQuery = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClearQueryCreatureTemplate = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -76,6 +94,7 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureTemplate.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCreatureTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -315,6 +334,24 @@ namespace ArtaCore_Query_Creator
             // 
             // tbCreatureTemplate
             // 
+            this.tbCreatureTemplate.Controls.Add(this.button1);
+            this.tbCreatureTemplate.Controls.Add(this.btnClearQueryCreatureTemplate);
+            this.tbCreatureTemplate.Controls.Add(this.pictureBox1);
+            this.tbCreatureTemplate.Controls.Add(this.btnGenerateCreatureTemplateQuery);
+            this.tbCreatureTemplate.Controls.Add(this.cbSelectAcoreCreatureTemplate);
+            this.tbCreatureTemplate.Controls.Add(this.label11);
+            this.tbCreatureTemplate.Controls.Add(this.txtSQLPreviewCreatureTemplate);
+            this.tbCreatureTemplate.Controls.Add(this.bntAddNPC);
+            this.tbCreatureTemplate.Controls.Add(this.labelNPCType);
+            this.tbCreatureTemplate.Controls.Add(this.cbNPCType);
+            this.tbCreatureTemplate.Controls.Add(this.label10);
+            this.tbCreatureTemplate.Controls.Add(this.txtNPCSUBNAMECreatureTemplate);
+            this.tbCreatureTemplate.Controls.Add(this.label9);
+            this.tbCreatureTemplate.Controls.Add(this.txtNPCNAMECreatureTemplate);
+            this.tbCreatureTemplate.Controls.Add(this.label8);
+            this.tbCreatureTemplate.Controls.Add(this.txtNPCIDCreatureTemplate);
+            this.tbCreatureTemplate.Controls.Add(this.label5);
+            this.tbCreatureTemplate.Controls.Add(this.label4);
             this.tbCreatureTemplate.Controls.Add(this.btnUpdateNPCDatabase);
             this.tbCreatureTemplate.Controls.Add(this.dgCreatureTemplate);
             this.tbCreatureTemplate.Location = new System.Drawing.Point(4, 29);
@@ -390,6 +427,9 @@ namespace ArtaCore_Query_Creator
             // 
             // toolTip
             // 
+            this.toolTip.AutoPopDelay = 15000;
+            this.toolTip.InitialDelay = 500;
+            this.toolTip.ReshowDelay = 100;
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "UI Help";
             // 
@@ -415,6 +455,8 @@ namespace ArtaCore_Query_Creator
             this.dgCreatureTemplate.RowTemplate.Height = 28;
             this.dgCreatureTemplate.Size = new System.Drawing.Size(1266, 181);
             this.dgCreatureTemplate.TabIndex = 0;
+            this.toolTip.SetToolTip(this.dgCreatureTemplate, "Using this page you can add / remove / update or simply view the NPC name and rel" +
+        "ated number that is used in other tabs.");
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -447,8 +489,184 @@ namespace ArtaCore_Query_Creator
             this.btnUpdateNPCDatabase.Size = new System.Drawing.Size(1266, 40);
             this.btnUpdateNPCDatabase.TabIndex = 1;
             this.btnUpdateNPCDatabase.Text = "Update internal Database";
+            this.toolTip.SetToolTip(this.btnUpdateNPCDatabase, "Update the internal database if you edited something.");
             this.btnUpdateNPCDatabase.UseVisualStyleBackColor = true;
             this.btnUpdateNPCDatabase.Click += new System.EventHandler(this.btnUpdateNPCDatabase_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(183, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Internal Database Editor";
+            this.toolTip.SetToolTip(this.label4, resources.GetString("label4.ToolTip"));
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 325);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "NPC ID";
+            // 
+            // txtNPCIDCreatureTemplate
+            // 
+            this.txtNPCIDCreatureTemplate.Location = new System.Drawing.Point(25, 348);
+            this.txtNPCIDCreatureTemplate.Name = "txtNPCIDCreatureTemplate";
+            this.txtNPCIDCreatureTemplate.Size = new System.Drawing.Size(205, 26);
+            this.txtNPCIDCreatureTemplate.TabIndex = 4;
+            this.toolTip.SetToolTip(this.txtNPCIDCreatureTemplate, "Input the ID the new creature will have. Advised to go from 700000 up.");
+            // 
+            // txtNPCNAMECreatureTemplate
+            // 
+            this.txtNPCNAMECreatureTemplate.Location = new System.Drawing.Point(256, 348);
+            this.txtNPCNAMECreatureTemplate.Name = "txtNPCNAMECreatureTemplate";
+            this.txtNPCNAMECreatureTemplate.Size = new System.Drawing.Size(205, 26);
+            this.txtNPCNAMECreatureTemplate.TabIndex = 6;
+            this.toolTip.SetToolTip(this.txtNPCNAMECreatureTemplate, "Insert the name for the new Creature.");
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(252, 325);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 20);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "NPC NAME";
+            // 
+            // txtNPCSUBNAMECreatureTemplate
+            // 
+            this.txtNPCSUBNAMECreatureTemplate.Location = new System.Drawing.Point(483, 348);
+            this.txtNPCSUBNAMECreatureTemplate.Name = "txtNPCSUBNAMECreatureTemplate";
+            this.txtNPCSUBNAMECreatureTemplate.Size = new System.Drawing.Size(205, 26);
+            this.txtNPCSUBNAMECreatureTemplate.TabIndex = 8;
+            this.toolTip.SetToolTip(this.txtNPCSUBNAMECreatureTemplate, "Insert the text that should go between <> under the new Creature.");
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(479, 325);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(143, 20);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "NPC <SUBNAME>";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(712, 325);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 20);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "NPC TYPE";
+            // 
+            // cbNPCType
+            // 
+            this.cbNPCType.FormattingEnabled = true;
+            this.cbNPCType.Items.AddRange(new object[] {
+            "Vendor",
+            "Quest Giver"});
+            this.cbNPCType.Location = new System.Drawing.Point(716, 348);
+            this.cbNPCType.Name = "cbNPCType";
+            this.cbNPCType.Size = new System.Drawing.Size(152, 28);
+            this.cbNPCType.TabIndex = 10;
+            this.cbNPCType.Text = "Vendor";
+            this.toolTip.SetToolTip(this.cbNPCType, "Select the type of NPC, wheter it is a Vendor or Quest Giver.");
+            this.cbNPCType.SelectedIndexChanged += new System.EventHandler(this.cbNPCType_SelectedIndexChanged);
+            // 
+            // labelNPCType
+            // 
+            this.labelNPCType.AutoSize = true;
+            this.labelNPCType.Location = new System.Drawing.Point(886, 351);
+            this.labelNPCType.Name = "labelNPCType";
+            this.labelNPCType.Size = new System.Drawing.Size(36, 20);
+            this.labelNPCType.TabIndex = 11;
+            this.labelNPCType.Text = "128";
+            // 
+            // bntAddNPC
+            // 
+            this.bntAddNPC.Location = new System.Drawing.Point(964, 345);
+            this.bntAddNPC.Name = "bntAddNPC";
+            this.bntAddNPC.Size = new System.Drawing.Size(327, 26);
+            this.bntAddNPC.TabIndex = 12;
+            this.bntAddNPC.Text = "Add NPC to the Query";
+            this.bntAddNPC.UseVisualStyleBackColor = true;
+            this.bntAddNPC.Click += new System.EventHandler(this.bntAddNPC_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(21, 393);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 20);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "SQL Preview";
+            // 
+            // txtSQLPreviewCreatureTemplate
+            // 
+            this.txtSQLPreviewCreatureTemplate.Location = new System.Drawing.Point(25, 416);
+            this.txtSQLPreviewCreatureTemplate.Multiline = true;
+            this.txtSQLPreviewCreatureTemplate.Name = "txtSQLPreviewCreatureTemplate";
+            this.txtSQLPreviewCreatureTemplate.ReadOnly = true;
+            this.txtSQLPreviewCreatureTemplate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtSQLPreviewCreatureTemplate.Size = new System.Drawing.Size(1266, 448);
+            this.txtSQLPreviewCreatureTemplate.TabIndex = 17;
+            this.txtSQLPreviewCreatureTemplate.WordWrap = false;
+            // 
+            // cbSelectAcoreCreatureTemplate
+            // 
+            this.cbSelectAcoreCreatureTemplate.AutoSize = true;
+            this.cbSelectAcoreCreatureTemplate.Location = new System.Drawing.Point(531, 884);
+            this.cbSelectAcoreCreatureTemplate.Name = "cbSelectAcoreCreatureTemplate";
+            this.cbSelectAcoreCreatureTemplate.Size = new System.Drawing.Size(247, 24);
+            this.cbSelectAcoreCreatureTemplate.TabIndex = 19;
+            this.cbSelectAcoreCreatureTemplate.Text = "Select \'acore_world\' database";
+            this.toolTip.SetToolTip(this.cbSelectAcoreCreatureTemplate, "Check this if you want to create a SQL query that will select the database (meani" +
+        "ng you won\'t need to be in the proper DB to import it). Experimental.");
+            this.cbSelectAcoreCreatureTemplate.UseVisualStyleBackColor = true;
+            // 
+            // btnGenerateCreatureTemplateQuery
+            // 
+            this.btnGenerateCreatureTemplateQuery.Location = new System.Drawing.Point(943, 884);
+            this.btnGenerateCreatureTemplateQuery.Name = "btnGenerateCreatureTemplateQuery";
+            this.btnGenerateCreatureTemplateQuery.Size = new System.Drawing.Size(348, 85);
+            this.btnGenerateCreatureTemplateQuery.TabIndex = 20;
+            this.btnGenerateCreatureTemplateQuery.Text = "Generate SQL Query";
+            this.toolTip.SetToolTip(this.btnGenerateCreatureTemplateQuery, "Generate the SQL query file.");
+            this.btnGenerateCreatureTemplateQuery.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(25, 295);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1265, 10);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnClearQueryCreatureTemplate
+            // 
+            this.btnClearQueryCreatureTemplate.Location = new System.Drawing.Point(25, 884);
+            this.btnClearQueryCreatureTemplate.Name = "btnClearQueryCreatureTemplate";
+            this.btnClearQueryCreatureTemplate.Size = new System.Drawing.Size(348, 85);
+            this.btnClearQueryCreatureTemplate.TabIndex = 22;
+            this.btnClearQueryCreatureTemplate.Text = "Clear the Query";
+            this.toolTip.SetToolTip(this.btnClearQueryCreatureTemplate, "Clear the Query");
+            this.btnClearQueryCreatureTemplate.UseVisualStyleBackColor = true;
+            this.btnClearQueryCreatureTemplate.Click += new System.EventHandler(this.btnClearQueryCreatureTemplate_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(483, 914);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(348, 55);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Add the query creatures to the Internal Database";
+            this.toolTip.SetToolTip(this.button1, "Use the SQL query to add the NPC (id & name) to the internal database as well.");
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // mainFrm
             // 
@@ -470,9 +688,11 @@ namespace ArtaCore_Query_Creator
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nPCVendorsBindingSource)).EndInit();
             this.tbCreatureTemplate.ResumeLayout(false);
+            this.tbCreatureTemplate.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCreatureTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,6 +737,24 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.DataGridViewTextBoxColumn nPCIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nPCNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnUpdateNPCDatabase;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelNPCType;
+        private System.Windows.Forms.ComboBox cbNPCType;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtNPCSUBNAMECreatureTemplate;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtNPCNAMECreatureTemplate;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtNPCIDCreatureTemplate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtSQLPreviewCreatureTemplate;
+        private System.Windows.Forms.Button bntAddNPC;
+        private System.Windows.Forms.Button btnGenerateCreatureTemplateQuery;
+        private System.Windows.Forms.CheckBox cbSelectAcoreCreatureTemplate;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnClearQueryCreatureTemplate;
+        private System.Windows.Forms.Button button1;
     }
 }
 

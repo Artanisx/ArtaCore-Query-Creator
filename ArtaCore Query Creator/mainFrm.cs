@@ -140,5 +140,25 @@ namespace ArtaCore_Query_Creator
 
             dgCreatureTemplate.Refresh();            
         }
+
+        private void cbNPCType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbNPCType.SelectedItem.ToString() == "Vendor")
+                labelNPCType.Text = "128";
+            else if (cbNPCType.SelectedItem.ToString() == "Quest Giver")
+                labelNPCType.Text = "130";
+            else
+                labelNPCType.Text = "Not recognized";
+        }
+
+        private void btnClearQueryCreatureTemplate_Click(object sender, EventArgs e)
+        {
+            txtSQLPreviewCreatureTemplate.Text = String.Empty;
+        }
+
+        private void bntAddNPC_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.AddtoSQLQueryCreatureTemplate(txtSQLPreviewCreatureTemplate, txtNPCIDCreatureTemplate.Text, txtNPCNAMECreatureTemplate.Text, txtNPCSUBNAMECreatureTemplate.Text, labelNPCType.Text);
+        }
     }
 }
