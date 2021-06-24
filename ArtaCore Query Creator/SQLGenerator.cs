@@ -108,7 +108,7 @@ namespace ArtaCore_Query_Creator
 
             queryBox.AppendText(result);
 
-            MessageBox.Show("NPC added to the Query!");
+            //MessageBox.Show("NPC added to the Query!");
         }
 
         public static void SaveSQLQuery(SaveFileDialog sqlSaveFileDialog, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID, bool selectedDatabase)

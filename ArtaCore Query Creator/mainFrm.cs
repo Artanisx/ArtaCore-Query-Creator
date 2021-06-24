@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Net;
@@ -159,6 +161,68 @@ namespace ArtaCore_Query_Creator
         private void bntAddNPC_Click(object sender, EventArgs e)
         {
             SQLGenerator.AddtoSQLQueryCreatureTemplate(txtSQLPreviewCreatureTemplate, txtNPCIDCreatureTemplate.Text, txtNPCNAMECreatureTemplate.Text, txtNPCSUBNAMECreatureTemplate.Text, labelNPCType.Text);
+        }
+
+        private void btnAddQueryCreaturesToInternalDB_Click(object sender, EventArgs e)
+        {
+            string query = txtSQLPreviewCreatureTemplate.Text;
+
+            string[] npcs = query.Split(';');
+
+            foreach (string NPC in npcs)
+            {
+                if (NPC.Length <= 10)
+                    continue;
+
+
+                // NPC ID
+                int first = NPC.IndexOf("VALUES (") + "VALUES (".Length;
+                int last = NPC.LastIndexOf(", 0, 0, 0, 0, 0, 4416, 0, 0, 0, ");
+
+                string NPCID = NPC.Substring(first, last - first);
+
+                if (int.TryParse(NPCID, out int NPCIDINT) == false)
+                {
+                    MessageBox.Show("NPC ID is invalid.");
+                    continue;
+                }                
+
+                // NPC NAME
+                first = NPC.IndexOf(", 0, 0, 0, 0, 0, 4416, 0, 0, 0, ") + ", 0, 0, 0, 0, 0, 4416, 0, 0, 0, ".Length;                
+
+                string NPCNAME = NPC.Substring(first, 50);
+
+                NPCNAME = NPCNAME.Split(',')[0];
+
+                NPCNAME = NPCNAME.Remove(0, 1);
+                NPCNAME = NPCNAME.Remove(NPCNAME.Length -1, 1);
+
+                string connection = Properties.Settings.Default.databaseConnectionString;
+
+                OleDbConnection oleConnection1 = new OleDbConnection(connection);
+
+                OleDbCommand cmd = new OleDbCommand();
+                
+                cmd.CommandType = CommandType.Text;
+                //cmd.CommandText = "INSERT INTO NPCVENDORS (NPC_ID, NPC_NAME) VALUES (" + NPCIDINT + ", " + NPCNAME + ")";
+                //cmd.CommandText = "INSERT INTO NPCVendors ('NPC ID', 'NPC NAME') VALUES(" + NPCIDINT + ", " + NPCNAME + ")";
+
+                cmd.CommandText = "insert into NPCVendors ([NPC ID],[NPC NAME]) values (?,?)";
+                cmd.Parameters.AddWithValue("@npcid", NPCIDINT);
+                cmd.Parameters.AddWithValue("@npcname", NPCNAME);
+
+                cmd.Connection = oleConnection1;
+
+                oleConnection1.Open();
+                cmd.ExecuteNonQuery();
+                oleConnection1.Close();
+                                
+                nPCVendorsTableAdapter.Update(databaseDataSet.NPCVendors);
+                this.nPCVendorsTableAdapter.Fill(this.databaseDataSet.NPCVendors);
+                dgCreatureTemplate.Refresh();
+            }
+
+            MessageBox.Show("Query imported into the internal Database. Don't forget to update it clicking on the UPDATE INTERNAL DATABASE button above.");
         }
     }
 }

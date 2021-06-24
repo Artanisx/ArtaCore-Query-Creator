@@ -85,7 +85,7 @@ namespace ArtaCore_Query_Creator
             this.btnGenerateCreatureTemplateQuery = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnClearQueryCreatureTemplate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddQueryCreaturesToInternalDB = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -108,7 +108,7 @@ namespace ArtaCore_Query_Creator
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1331, 1010);
+            this.tabControl1.Size = new System.Drawing.Size(1331, 1027);
             this.tabControl1.TabIndex = 0;
             // 
             // tpNPCVendor
@@ -334,7 +334,7 @@ namespace ArtaCore_Query_Creator
             // 
             // tbCreatureTemplate
             // 
-            this.tbCreatureTemplate.Controls.Add(this.button1);
+            this.tbCreatureTemplate.Controls.Add(this.btnAddQueryCreaturesToInternalDB);
             this.tbCreatureTemplate.Controls.Add(this.btnClearQueryCreatureTemplate);
             this.tbCreatureTemplate.Controls.Add(this.pictureBox1);
             this.tbCreatureTemplate.Controls.Add(this.btnGenerateCreatureTemplateQuery);
@@ -357,7 +357,7 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureTemplate.Location = new System.Drawing.Point(4, 29);
             this.tbCreatureTemplate.Name = "tbCreatureTemplate";
             this.tbCreatureTemplate.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCreatureTemplate.Size = new System.Drawing.Size(1323, 977);
+            this.tbCreatureTemplate.Size = new System.Drawing.Size(1323, 994);
             this.tbCreatureTemplate.TabIndex = 1;
             this.tbCreatureTemplate.Text = "CREATURE_TEMPLATE";
             this.tbCreatureTemplate.UseVisualStyleBackColor = true;
@@ -590,7 +590,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.bntAddNPC.Location = new System.Drawing.Point(964, 345);
             this.bntAddNPC.Name = "bntAddNPC";
-            this.bntAddNPC.Size = new System.Drawing.Size(327, 26);
+            this.bntAddNPC.Size = new System.Drawing.Size(327, 45);
             this.bntAddNPC.TabIndex = 12;
             this.bntAddNPC.Text = "Add NPC to the Query";
             this.bntAddNPC.UseVisualStyleBackColor = true;
@@ -658,27 +658,29 @@ namespace ArtaCore_Query_Creator
             this.btnClearQueryCreatureTemplate.UseVisualStyleBackColor = true;
             this.btnClearQueryCreatureTemplate.Click += new System.EventHandler(this.btnClearQueryCreatureTemplate_Click);
             // 
-            // button1
+            // btnAddQueryCreaturesToInternalDB
             // 
-            this.button1.Location = new System.Drawing.Point(483, 914);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(348, 55);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Add the query creatures to the Internal Database";
-            this.toolTip.SetToolTip(this.button1, "Use the SQL query to add the NPC (id & name) to the internal database as well.");
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddQueryCreaturesToInternalDB.Location = new System.Drawing.Point(483, 914);
+            this.btnAddQueryCreaturesToInternalDB.Name = "btnAddQueryCreaturesToInternalDB";
+            this.btnAddQueryCreaturesToInternalDB.Size = new System.Drawing.Size(348, 55);
+            this.btnAddQueryCreaturesToInternalDB.TabIndex = 23;
+            this.btnAddQueryCreaturesToInternalDB.Text = "Add the query creatures to the Internal Database";
+            this.toolTip.SetToolTip(this.btnAddQueryCreaturesToInternalDB, "Use the SQL query to add the NPC (id & name) to the internal database as well.");
+            this.btnAddQueryCreaturesToInternalDB.UseVisualStyleBackColor = true;
+            this.btnAddQueryCreaturesToInternalDB.Click += new System.EventHandler(this.btnAddQueryCreaturesToInternalDB_Click);
             // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1331, 1043);
+            this.ClientSize = new System.Drawing.Size(1331, 1060);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "mainFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ArtaCore Query Creator";
             this.Load += new System.EventHandler(this.mainFrm_Load);
             this.tabControl1.ResumeLayout(false);
@@ -754,7 +756,7 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.CheckBox cbSelectAcoreCreatureTemplate;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClearQueryCreatureTemplate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddQueryCreaturesToInternalDB;
     }
 }
 
