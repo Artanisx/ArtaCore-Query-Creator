@@ -229,6 +229,48 @@ namespace ArtaCore_Query_Creator
             //MessageBox.Show("NPC added to the Query!");
         }
 
+        public static void SaveSQLQueryQuestTemplate(SaveFileDialog sqlSaveFileDialog, TextBox query, bool selectedDatabase)
+        {
+            string result;
+
+            if (string.IsNullOrEmpty(query.Text) || query.Text.Length <= 10)
+            {
+                MessageBox.Show("The query is empty or invalid!");
+                return;
+            }
+
+
+            if (sqlSaveFileDialog == null)
+            {
+                MessageBox.Show("The passed Save Dialog is not valid.");
+                return;
+            }
+
+            result = "";
+
+            if (selectedDatabase == true)
+                result += NPCVENDOR_OPENINGSTATEMENT + Environment.NewLine;
+
+            result += query.Text;
+
+            sqlSaveFileDialog.FileName = "Quest_Template";
+
+            // Invoke the save dialog
+            sqlSaveFileDialog.ShowDialog();
+
+            // Write the sql file
+            try
+            {
+                File.WriteAllText(sqlSaveFileDialog.FileName, result);
+
+                MessageBox.Show("SQL creation completed. Written in file: " + sqlSaveFileDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL creation failed. Error: " + ex.Message);
+            }
+        }
+
         public static void SaveSQLQueryCreatureTemplate(SaveFileDialog sqlSaveFileDialog, TextBox query, bool selectedDatabase)
         {
             string result;

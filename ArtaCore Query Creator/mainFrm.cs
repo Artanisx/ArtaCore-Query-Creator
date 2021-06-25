@@ -249,5 +249,15 @@ namespace ArtaCore_Query_Creator
                                                     tbRequiredNPCID2.Text, tbRequiredAmountNPC2.Text, tbRequiredNPCID3.Text, tbRequiredAmountNPC3.Text, tbRequiredNPCID4.Text,
                                                     tbRequiredAmountNPC4.Text);
         }
+
+        private void btnGenerateQuestTemplateQuery_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.SaveSQLQueryQuestTemplate(sqlSaveDialog, tbQueryQuestTemplate, cbSelectAcoreQuestTemplate.Checked);
+        }
+
+        private void btnClearQuestTemplateQuery_Click(object sender, EventArgs e)
+        {
+            tbQueryQuestTemplate.Text = "";
+        }
     }
 }

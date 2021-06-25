@@ -794,6 +794,7 @@ namespace ArtaCore_Query_Creator
             this.btnClearQuestTemplateQuery.Text = "Clear the Query";
             this.toolTip.SetToolTip(this.btnClearQuestTemplateQuery, "Clear the Query");
             this.btnClearQuestTemplateQuery.UseVisualStyleBackColor = true;
+            this.btnClearQuestTemplateQuery.Click += new System.EventHandler(this.btnClearQuestTemplateQuery_Click);
             // 
             // btnGenerateQuestTemplateQuery
             // 
@@ -804,6 +805,7 @@ namespace ArtaCore_Query_Creator
             this.btnGenerateQuestTemplateQuery.Text = "Generate SQL Query";
             this.toolTip.SetToolTip(this.btnGenerateQuestTemplateQuery, "Generate the SQL query file.");
             this.btnGenerateQuestTemplateQuery.UseVisualStyleBackColor = true;
+            this.btnGenerateQuestTemplateQuery.Click += new System.EventHandler(this.btnGenerateQuestTemplateQuery_Click);
             // 
             // cbSelectAcoreQuestTemplate
             // 
