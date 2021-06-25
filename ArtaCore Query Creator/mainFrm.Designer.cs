@@ -86,62 +86,62 @@ namespace ArtaCore_Query_Creator
             this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.sqlSaveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnClearQuestTemplateQuery = new System.Windows.Forms.Button();
+            this.btnGenerateQuestTemplateQuery = new System.Windows.Forms.Button();
+            this.cbSelectAcoreQuestTemplate = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tbQueryQuestTemplate = new System.Windows.Forms.TextBox();
+            this.btnAddQuestToQuery = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbQuestMinLevel = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbQuestLevel = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbQuestID = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbQuestRewardMoney = new System.Windows.Forms.TextBox();
+            this.labelQuestType = new System.Windows.Forms.Label();
+            this.cbQuestType = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardID1 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardAmount1 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardAmount2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardID2 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardAmount3 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardID3 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardAmount4 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tbQuestRewardID4 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.tbQuestLogTitle = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.tbQuestTarget = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.tbQuestDescription = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.tbQuestCompletionLog = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.tbRequiredAmountNPC1 = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.tbRequiredNPC1 = new System.Windows.Forms.TextBox();
+            this.tbRequiredNPCID1 = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.tbRequiredAmountNPC2 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.tbRequiredNPCID2 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.tbRequiredAmountNPC3 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.tbRequiredNPCID3 = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.tbRequiredAmountNPC4 = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.tbRequiredNPCID4 = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
@@ -415,7 +415,7 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureTemplate.Location = new System.Drawing.Point(4, 29);
             this.tbCreatureTemplate.Name = "tbCreatureTemplate";
             this.tbCreatureTemplate.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCreatureTemplate.Size = new System.Drawing.Size(1323, 994);
+            this.tbCreatureTemplate.Size = new System.Drawing.Size(1336, 994);
             this.tbCreatureTemplate.TabIndex = 1;
             this.tbCreatureTemplate.Text = "CREATURE_TEMPLATE";
             this.tbCreatureTemplate.UseVisualStyleBackColor = true;
@@ -652,62 +652,62 @@ namespace ArtaCore_Query_Creator
             // 
             // tbQuestTemplate
             // 
-            this.tbQuestTemplate.Controls.Add(this.textBox24);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredAmountNPC4);
             this.tbQuestTemplate.Controls.Add(this.label37);
-            this.tbQuestTemplate.Controls.Add(this.textBox25);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredNPCID4);
             this.tbQuestTemplate.Controls.Add(this.label38);
-            this.tbQuestTemplate.Controls.Add(this.textBox22);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredAmountNPC3);
             this.tbQuestTemplate.Controls.Add(this.label33);
-            this.tbQuestTemplate.Controls.Add(this.textBox23);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredNPCID3);
             this.tbQuestTemplate.Controls.Add(this.label36);
-            this.tbQuestTemplate.Controls.Add(this.textBox18);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredAmountNPC2);
             this.tbQuestTemplate.Controls.Add(this.label31);
-            this.tbQuestTemplate.Controls.Add(this.textBox19);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredNPCID2);
             this.tbQuestTemplate.Controls.Add(this.label32);
-            this.tbQuestTemplate.Controls.Add(this.textBox20);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredAmountNPC1);
             this.tbQuestTemplate.Controls.Add(this.label34);
-            this.tbQuestTemplate.Controls.Add(this.tbRequiredNPC1);
+            this.tbQuestTemplate.Controls.Add(this.tbRequiredNPCID1);
             this.tbQuestTemplate.Controls.Add(this.label35);
-            this.tbQuestTemplate.Controls.Add(this.textBox17);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestCompletionLog);
             this.tbQuestTemplate.Controls.Add(this.label30);
-            this.tbQuestTemplate.Controls.Add(this.textBox16);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestDescription);
             this.tbQuestTemplate.Controls.Add(this.label29);
-            this.tbQuestTemplate.Controls.Add(this.textBox15);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestTarget);
             this.tbQuestTemplate.Controls.Add(this.label28);
-            this.tbQuestTemplate.Controls.Add(this.textBox14);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestLogTitle);
             this.tbQuestTemplate.Controls.Add(this.label27);
-            this.tbQuestTemplate.Controls.Add(this.textBox12);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardAmount4);
             this.tbQuestTemplate.Controls.Add(this.label25);
-            this.tbQuestTemplate.Controls.Add(this.textBox13);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardID4);
             this.tbQuestTemplate.Controls.Add(this.label26);
-            this.tbQuestTemplate.Controls.Add(this.textBox10);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardAmount3);
             this.tbQuestTemplate.Controls.Add(this.label23);
-            this.tbQuestTemplate.Controls.Add(this.textBox11);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardID3);
             this.tbQuestTemplate.Controls.Add(this.label24);
-            this.tbQuestTemplate.Controls.Add(this.textBox6);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardAmount2);
             this.tbQuestTemplate.Controls.Add(this.label13);
-            this.tbQuestTemplate.Controls.Add(this.textBox9);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardID2);
             this.tbQuestTemplate.Controls.Add(this.label22);
-            this.tbQuestTemplate.Controls.Add(this.textBox8);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardAmount1);
             this.tbQuestTemplate.Controls.Add(this.label21);
-            this.tbQuestTemplate.Controls.Add(this.textBox7);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardID1);
             this.tbQuestTemplate.Controls.Add(this.label20);
-            this.tbQuestTemplate.Controls.Add(this.label18);
-            this.tbQuestTemplate.Controls.Add(this.comboBox1);
+            this.tbQuestTemplate.Controls.Add(this.labelQuestType);
+            this.tbQuestTemplate.Controls.Add(this.cbQuestType);
             this.tbQuestTemplate.Controls.Add(this.label19);
-            this.tbQuestTemplate.Controls.Add(this.textBox5);
-            this.tbQuestTemplate.Controls.Add(this.button2);
-            this.tbQuestTemplate.Controls.Add(this.button3);
-            this.tbQuestTemplate.Controls.Add(this.checkBox1);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestRewardMoney);
+            this.tbQuestTemplate.Controls.Add(this.btnClearQuestTemplateQuery);
+            this.tbQuestTemplate.Controls.Add(this.btnGenerateQuestTemplateQuery);
+            this.tbQuestTemplate.Controls.Add(this.cbSelectAcoreQuestTemplate);
             this.tbQuestTemplate.Controls.Add(this.label12);
-            this.tbQuestTemplate.Controls.Add(this.textBox1);
-            this.tbQuestTemplate.Controls.Add(this.button4);
+            this.tbQuestTemplate.Controls.Add(this.tbQueryQuestTemplate);
+            this.tbQuestTemplate.Controls.Add(this.btnAddQuestToQuery);
             this.tbQuestTemplate.Controls.Add(this.label14);
-            this.tbQuestTemplate.Controls.Add(this.textBox2);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestMinLevel);
             this.tbQuestTemplate.Controls.Add(this.label15);
-            this.tbQuestTemplate.Controls.Add(this.textBox3);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestLevel);
             this.tbQuestTemplate.Controls.Add(this.label16);
-            this.tbQuestTemplate.Controls.Add(this.textBox4);
+            this.tbQuestTemplate.Controls.Add(this.tbQuestID);
             this.tbQuestTemplate.Controls.Add(this.label17);
             this.tbQuestTemplate.Location = new System.Drawing.Point(4, 29);
             this.tbQuestTemplate.Name = "tbQuestTemplate";
@@ -785,37 +785,37 @@ namespace ArtaCore_Query_Creator
             this.sqlSaveDialog.Filter = "SQL Query|*.sql";
             this.sqlSaveDialog.Title = "Save the SQL Query";
             // 
-            // button2
+            // btnClearQuestTemplateQuery
             // 
-            this.button2.Location = new System.Drawing.Point(21, 894);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(348, 85);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Clear the Query";
-            this.toolTip.SetToolTip(this.button2, "Clear the Query");
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClearQuestTemplateQuery.Location = new System.Drawing.Point(21, 894);
+            this.btnClearQuestTemplateQuery.Name = "btnClearQuestTemplateQuery";
+            this.btnClearQuestTemplateQuery.Size = new System.Drawing.Size(348, 85);
+            this.btnClearQuestTemplateQuery.TabIndex = 38;
+            this.btnClearQuestTemplateQuery.Text = "Clear the Query";
+            this.toolTip.SetToolTip(this.btnClearQuestTemplateQuery, "Clear the Query");
+            this.btnClearQuestTemplateQuery.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnGenerateQuestTemplateQuery
             // 
-            this.button3.Location = new System.Drawing.Point(957, 894);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(348, 85);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Generate SQL Query";
-            this.toolTip.SetToolTip(this.button3, "Generate the SQL query file.");
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnGenerateQuestTemplateQuery.Location = new System.Drawing.Point(957, 894);
+            this.btnGenerateQuestTemplateQuery.Name = "btnGenerateQuestTemplateQuery";
+            this.btnGenerateQuestTemplateQuery.Size = new System.Drawing.Size(348, 85);
+            this.btnGenerateQuestTemplateQuery.TabIndex = 37;
+            this.btnGenerateQuestTemplateQuery.Text = "Generate SQL Query";
+            this.toolTip.SetToolTip(this.btnGenerateQuestTemplateQuery, "Generate the SQL query file.");
+            this.btnGenerateQuestTemplateQuery.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cbSelectAcoreQuestTemplate
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(522, 925);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(247, 24);
-            this.checkBox1.TabIndex = 36;
-            this.checkBox1.Text = "Select \'acore_world\' database";
-            this.toolTip.SetToolTip(this.checkBox1, "Check this if you want to create a SQL query that will select the database (meani" +
+            this.cbSelectAcoreQuestTemplate.AutoSize = true;
+            this.cbSelectAcoreQuestTemplate.Location = new System.Drawing.Point(522, 925);
+            this.cbSelectAcoreQuestTemplate.Name = "cbSelectAcoreQuestTemplate";
+            this.cbSelectAcoreQuestTemplate.Size = new System.Drawing.Size(247, 24);
+            this.cbSelectAcoreQuestTemplate.TabIndex = 36;
+            this.cbSelectAcoreQuestTemplate.Text = "Select \'acore_world\' database";
+            this.toolTip.SetToolTip(this.cbSelectAcoreQuestTemplate, "Check this if you want to create a SQL query that will select the database (meani" +
         "ng you won\'t need to be in the proper DB to import it). Experimental.");
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbSelectAcoreQuestTemplate.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -826,26 +826,27 @@ namespace ArtaCore_Query_Creator
             this.label12.TabIndex = 35;
             this.label12.Text = "SQL Preview";
             // 
-            // textBox1
+            // tbQueryQuestTemplate
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 562);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(1284, 312);
-            this.textBox1.TabIndex = 34;
-            this.textBox1.WordWrap = false;
+            this.tbQueryQuestTemplate.Location = new System.Drawing.Point(21, 562);
+            this.tbQueryQuestTemplate.Multiline = true;
+            this.tbQueryQuestTemplate.Name = "tbQueryQuestTemplate";
+            this.tbQueryQuestTemplate.ReadOnly = true;
+            this.tbQueryQuestTemplate.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbQueryQuestTemplate.Size = new System.Drawing.Size(1284, 312);
+            this.tbQueryQuestTemplate.TabIndex = 34;
+            this.tbQueryQuestTemplate.WordWrap = false;
             // 
-            // button4
+            // btnAddQuestToQuery
             // 
-            this.button4.Location = new System.Drawing.Point(26, 453);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(1279, 45);
-            this.button4.TabIndex = 33;
-            this.button4.Text = "Add QUEST to the Query";
-            this.toolTip.SetToolTip(this.button4, "Add the quest to the Query");
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAddQuestToQuery.Location = new System.Drawing.Point(26, 453);
+            this.btnAddQuestToQuery.Name = "btnAddQuestToQuery";
+            this.btnAddQuestToQuery.Size = new System.Drawing.Size(1279, 45);
+            this.btnAddQuestToQuery.TabIndex = 33;
+            this.btnAddQuestToQuery.Text = "Add QUEST to the Query";
+            this.toolTip.SetToolTip(this.btnAddQuestToQuery, "Add the quest to the Query");
+            this.btnAddQuestToQuery.UseVisualStyleBackColor = true;
+            this.btnAddQuestToQuery.Click += new System.EventHandler(this.btnAddQuestToQuery_Click);
             // 
             // label14
             // 
@@ -856,13 +857,13 @@ namespace ArtaCore_Query_Creator
             this.label14.TabIndex = 30;
             this.label14.Text = "Reward Money (Copper)";
             // 
-            // textBox2
+            // tbQuestMinLevel
             // 
-            this.textBox2.Location = new System.Drawing.Point(326, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(130, 26);
-            this.textBox2.TabIndex = 29;
-            this.toolTip.SetToolTip(this.textBox2, "Min level the player must be to get this quest.");
+            this.tbQuestMinLevel.Location = new System.Drawing.Point(326, 45);
+            this.tbQuestMinLevel.Name = "tbQuestMinLevel";
+            this.tbQuestMinLevel.Size = new System.Drawing.Size(130, 26);
+            this.tbQuestMinLevel.TabIndex = 29;
+            this.toolTip.SetToolTip(this.tbQuestMinLevel, "Min level the player must be to get this quest.");
             // 
             // label15
             // 
@@ -874,13 +875,13 @@ namespace ArtaCore_Query_Creator
             this.label15.Text = "Quest Min Level";
             this.toolTip.SetToolTip(this.label15, "Min level the player must be to get this quest.");
             // 
-            // textBox3
+            // tbQuestLevel
             // 
-            this.textBox3.Location = new System.Drawing.Point(173, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(133, 26);
-            this.textBox3.TabIndex = 27;
-            this.toolTip.SetToolTip(this.textBox3, "The Quest level (xp and gold are determined by this and player level)");
+            this.tbQuestLevel.Location = new System.Drawing.Point(173, 45);
+            this.tbQuestLevel.Name = "tbQuestLevel";
+            this.tbQuestLevel.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestLevel.TabIndex = 27;
+            this.toolTip.SetToolTip(this.tbQuestLevel, "The Quest level (xp and gold are determined by this and player level)");
             // 
             // label16
             // 
@@ -892,13 +893,13 @@ namespace ArtaCore_Query_Creator
             this.label16.Text = "Quest Level";
             this.toolTip.SetToolTip(this.label16, "The Quest level (xp and gold are determined by this and player level)");
             // 
-            // textBox4
+            // tbQuestID
             // 
-            this.textBox4.Location = new System.Drawing.Point(26, 45);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(133, 26);
-            this.textBox4.TabIndex = 25;
-            this.toolTip.SetToolTip(this.textBox4, "The quest ID. Advised to start from 30000.");
+            this.tbQuestID.Location = new System.Drawing.Point(26, 45);
+            this.tbQuestID.Name = "tbQuestID";
+            this.tbQuestID.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestID.TabIndex = 25;
+            this.toolTip.SetToolTip(this.tbQuestID, "The quest ID. Advised to start from 30000.");
             // 
             // label17
             // 
@@ -910,36 +911,37 @@ namespace ArtaCore_Query_Creator
             this.label17.Text = "Quest ID";
             this.toolTip.SetToolTip(this.label17, "The quest ID. Advised to start from 30000.");
             // 
-            // textBox5
+            // tbQuestRewardMoney
             // 
-            this.textBox5.Location = new System.Drawing.Point(473, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(273, 26);
-            this.textBox5.TabIndex = 40;
-            this.textBox5.Text = "0";
-            this.toolTip.SetToolTip(this.textBox5, "The money reward (expressed in copper).");
+            this.tbQuestRewardMoney.Location = new System.Drawing.Point(473, 45);
+            this.tbQuestRewardMoney.Name = "tbQuestRewardMoney";
+            this.tbQuestRewardMoney.Size = new System.Drawing.Size(273, 26);
+            this.tbQuestRewardMoney.TabIndex = 40;
+            this.tbQuestRewardMoney.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardMoney, "The money reward (expressed in copper).");
             // 
-            // label18
+            // labelQuestType
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(902, 48);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(36, 20);
-            this.label18.TabIndex = 45;
-            this.label18.Text = "128";
+            this.labelQuestType.AutoSize = true;
+            this.labelQuestType.Location = new System.Drawing.Point(902, 48);
+            this.labelQuestType.Name = "labelQuestType";
+            this.labelQuestType.Size = new System.Drawing.Size(45, 20);
+            this.labelQuestType.TabIndex = 45;
+            this.labelQuestType.Text = "4096";
             // 
-            // comboBox1
+            // cbQuestType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbQuestType.FormattingEnabled = true;
+            this.cbQuestType.Items.AddRange(new object[] {
             "Daily",
             "Normal"});
-            this.comboBox1.Location = new System.Drawing.Point(763, 43);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(133, 28);
-            this.comboBox1.TabIndex = 44;
-            this.comboBox1.Text = "Daily";
-            this.toolTip.SetToolTip(this.comboBox1, "Select the type of Quest (Daily or Normal)");
+            this.cbQuestType.Location = new System.Drawing.Point(763, 43);
+            this.cbQuestType.Name = "cbQuestType";
+            this.cbQuestType.Size = new System.Drawing.Size(133, 28);
+            this.cbQuestType.TabIndex = 44;
+            this.cbQuestType.Text = "Daily";
+            this.toolTip.SetToolTip(this.cbQuestType, "Select the type of Quest (Daily or Normal)");
+            this.cbQuestType.SelectedIndexChanged += new System.EventHandler(this.cbQuestType_SelectedIndexChanged);
             // 
             // label19
             // 
@@ -950,14 +952,14 @@ namespace ArtaCore_Query_Creator
             this.label19.TabIndex = 43;
             this.label19.Text = "Quest Type";
             // 
-            // textBox7
+            // tbQuestRewardID1
             // 
-            this.textBox7.Location = new System.Drawing.Point(26, 118);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(133, 26);
-            this.textBox7.TabIndex = 47;
-            this.textBox7.Text = "0";
-            this.toolTip.SetToolTip(this.textBox7, "Input the Item ID as reward for this quest.");
+            this.tbQuestRewardID1.Location = new System.Drawing.Point(26, 118);
+            this.tbQuestRewardID1.Name = "tbQuestRewardID1";
+            this.tbQuestRewardID1.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID1.TabIndex = 47;
+            this.tbQuestRewardID1.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID1, "Input the Item ID as reward for this quest.");
             // 
             // label20
             // 
@@ -969,14 +971,14 @@ namespace ArtaCore_Query_Creator
             this.label20.Text = "Reward Item ID 1";
             this.toolTip.SetToolTip(this.label20, "The quest ID. Advised to start from 30000.");
             // 
-            // textBox8
+            // tbQuestRewardAmount1
             // 
-            this.textBox8.Location = new System.Drawing.Point(173, 118);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(133, 26);
-            this.textBox8.TabIndex = 49;
-            this.textBox8.Text = "0";
-            this.toolTip.SetToolTip(this.textBox8, "Input the number of items to be rewarded.");
+            this.tbQuestRewardAmount1.Location = new System.Drawing.Point(173, 118);
+            this.tbQuestRewardAmount1.Name = "tbQuestRewardAmount1";
+            this.tbQuestRewardAmount1.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount1.TabIndex = 49;
+            this.tbQuestRewardAmount1.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount1, "Input the number of items to be rewarded.");
             // 
             // label21
             // 
@@ -988,14 +990,14 @@ namespace ArtaCore_Query_Creator
             this.label21.Text = "Reward Amount 1";
             this.toolTip.SetToolTip(this.label21, "The Quet level (xp and gold are determined by this and player level)");
             // 
-            // textBox6
+            // tbQuestRewardAmount2
             // 
-            this.textBox6.Location = new System.Drawing.Point(473, 118);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(133, 26);
-            this.textBox6.TabIndex = 53;
-            this.textBox6.Text = "0";
-            this.toolTip.SetToolTip(this.textBox6, "Input the number of items to be rewarded.");
+            this.tbQuestRewardAmount2.Location = new System.Drawing.Point(473, 118);
+            this.tbQuestRewardAmount2.Name = "tbQuestRewardAmount2";
+            this.tbQuestRewardAmount2.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount2.TabIndex = 53;
+            this.tbQuestRewardAmount2.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount2, "Input the number of items to be rewarded.");
             // 
             // label13
             // 
@@ -1007,14 +1009,14 @@ namespace ArtaCore_Query_Creator
             this.label13.Text = "Reward Amount 2";
             this.toolTip.SetToolTip(this.label13, "The Quet level (xp and gold are determined by this and player level)");
             // 
-            // textBox9
+            // tbQuestRewardID2
             // 
-            this.textBox9.Location = new System.Drawing.Point(326, 118);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(133, 26);
-            this.textBox9.TabIndex = 51;
-            this.textBox9.Text = "0";
-            this.toolTip.SetToolTip(this.textBox9, "Input the Item ID as reward for this quest.");
+            this.tbQuestRewardID2.Location = new System.Drawing.Point(326, 118);
+            this.tbQuestRewardID2.Name = "tbQuestRewardID2";
+            this.tbQuestRewardID2.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID2.TabIndex = 51;
+            this.tbQuestRewardID2.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID2, "Input the Item ID as reward for this quest.");
             // 
             // label22
             // 
@@ -1026,14 +1028,14 @@ namespace ArtaCore_Query_Creator
             this.label22.Text = "Reward Item ID 2";
             this.toolTip.SetToolTip(this.label22, "The quest ID. Advised to start from 30000.");
             // 
-            // textBox10
+            // tbQuestRewardAmount3
             // 
-            this.textBox10.Location = new System.Drawing.Point(763, 118);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(133, 26);
-            this.textBox10.TabIndex = 57;
-            this.textBox10.Text = "0";
-            this.toolTip.SetToolTip(this.textBox10, "Input the number of items to be rewarded.");
+            this.tbQuestRewardAmount3.Location = new System.Drawing.Point(763, 118);
+            this.tbQuestRewardAmount3.Name = "tbQuestRewardAmount3";
+            this.tbQuestRewardAmount3.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount3.TabIndex = 57;
+            this.tbQuestRewardAmount3.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount3, "Input the number of items to be rewarded.");
             // 
             // label23
             // 
@@ -1045,14 +1047,14 @@ namespace ArtaCore_Query_Creator
             this.label23.Text = "Reward Amount 3";
             this.toolTip.SetToolTip(this.label23, "The Quet level (xp and gold are determined by this and player level)");
             // 
-            // textBox11
+            // tbQuestRewardID3
             // 
-            this.textBox11.Location = new System.Drawing.Point(616, 118);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(133, 26);
-            this.textBox11.TabIndex = 55;
-            this.textBox11.Text = "0";
-            this.toolTip.SetToolTip(this.textBox11, "Input the Item ID as reward for this quest.");
+            this.tbQuestRewardID3.Location = new System.Drawing.Point(616, 118);
+            this.tbQuestRewardID3.Name = "tbQuestRewardID3";
+            this.tbQuestRewardID3.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID3.TabIndex = 55;
+            this.tbQuestRewardID3.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID3, "Input the Item ID as reward for this quest.");
             // 
             // label24
             // 
@@ -1064,14 +1066,14 @@ namespace ArtaCore_Query_Creator
             this.label24.Text = "Reward Item ID 3";
             this.toolTip.SetToolTip(this.label24, "The quest ID. Advised to start from 30000.");
             // 
-            // textBox12
+            // tbQuestRewardAmount4
             // 
-            this.textBox12.Location = new System.Drawing.Point(1053, 118);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(133, 26);
-            this.textBox12.TabIndex = 61;
-            this.textBox12.Text = "0";
-            this.toolTip.SetToolTip(this.textBox12, "Input the number of items to be rewarded.");
+            this.tbQuestRewardAmount4.Location = new System.Drawing.Point(1053, 118);
+            this.tbQuestRewardAmount4.Name = "tbQuestRewardAmount4";
+            this.tbQuestRewardAmount4.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount4.TabIndex = 61;
+            this.tbQuestRewardAmount4.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount4, "Input the number of items to be rewarded.");
             // 
             // label25
             // 
@@ -1083,14 +1085,14 @@ namespace ArtaCore_Query_Creator
             this.label25.Text = "Reward Amount 4";
             this.toolTip.SetToolTip(this.label25, "The Quet level (xp and gold are determined by this and player level)");
             // 
-            // textBox13
+            // tbQuestRewardID4
             // 
-            this.textBox13.Location = new System.Drawing.Point(906, 118);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(133, 26);
-            this.textBox13.TabIndex = 59;
-            this.textBox13.Text = "0";
-            this.toolTip.SetToolTip(this.textBox13, "Input the Item ID as reward for this quest.");
+            this.tbQuestRewardID4.Location = new System.Drawing.Point(906, 118);
+            this.tbQuestRewardID4.Name = "tbQuestRewardID4";
+            this.tbQuestRewardID4.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID4.TabIndex = 59;
+            this.tbQuestRewardID4.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID4, "Input the Item ID as reward for this quest.");
             // 
             // label26
             // 
@@ -1102,13 +1104,13 @@ namespace ArtaCore_Query_Creator
             this.label26.Text = "Reward Item ID 4";
             this.toolTip.SetToolTip(this.label26, "The quest ID. Advised to start from 30000.");
             // 
-            // textBox14
+            // tbQuestLogTitle
             // 
-            this.textBox14.Location = new System.Drawing.Point(26, 192);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(629, 26);
-            this.textBox14.TabIndex = 63;
-            this.toolTip.SetToolTip(this.textBox14, "Input the quest title. For example \"Conquer Molten Core\"");
+            this.tbQuestLogTitle.Location = new System.Drawing.Point(26, 192);
+            this.tbQuestLogTitle.Name = "tbQuestLogTitle";
+            this.tbQuestLogTitle.Size = new System.Drawing.Size(629, 26);
+            this.tbQuestLogTitle.TabIndex = 63;
+            this.toolTip.SetToolTip(this.tbQuestLogTitle, "Input the quest title. For example \"Conquer Molten Core\"");
             // 
             // label27
             // 
@@ -1120,13 +1122,13 @@ namespace ArtaCore_Query_Creator
             this.label27.Text = "Log title";
             this.toolTip.SetToolTip(this.label27, "Input the quest title. For example \"Conquer Molten Core\"");
             // 
-            // textBox15
+            // tbQuestTarget
             // 
-            this.textBox15.Location = new System.Drawing.Point(676, 192);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(629, 26);
-            this.textBox15.TabIndex = 65;
-            this.toolTip.SetToolTip(this.textBox15, "The target of the quest. For example \"Kill the final boss of Molten Core\"");
+            this.tbQuestTarget.Location = new System.Drawing.Point(676, 192);
+            this.tbQuestTarget.Name = "tbQuestTarget";
+            this.tbQuestTarget.Size = new System.Drawing.Size(629, 26);
+            this.tbQuestTarget.TabIndex = 65;
+            this.toolTip.SetToolTip(this.tbQuestTarget, "The target of the quest. For example \"Kill the final boss of Molten Core\"");
             // 
             // label28
             // 
@@ -1138,15 +1140,15 @@ namespace ArtaCore_Query_Creator
             this.label28.Text = "Quest Target";
             this.toolTip.SetToolTip(this.label28, "The target of the quest. For example \"Kill the final boss of Molten Core\"");
             // 
-            // textBox16
+            // tbQuestDescription
             // 
-            this.textBox16.Location = new System.Drawing.Point(26, 252);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox16.Size = new System.Drawing.Size(629, 93);
-            this.textBox16.TabIndex = 67;
-            this.toolTip.SetToolTip(this.textBox16, "Input the quest full description.");
+            this.tbQuestDescription.Location = new System.Drawing.Point(26, 252);
+            this.tbQuestDescription.Multiline = true;
+            this.tbQuestDescription.Name = "tbQuestDescription";
+            this.tbQuestDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbQuestDescription.Size = new System.Drawing.Size(629, 93);
+            this.tbQuestDescription.TabIndex = 67;
+            this.toolTip.SetToolTip(this.tbQuestDescription, "Input the quest full description.");
             // 
             // label29
             // 
@@ -1158,13 +1160,13 @@ namespace ArtaCore_Query_Creator
             this.label29.Text = "Quest Description";
             this.toolTip.SetToolTip(this.label29, "The full quest text.");
             // 
-            // textBox17
+            // tbQuestCompletionLog
             // 
-            this.textBox17.Location = new System.Drawing.Point(676, 252);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(629, 26);
-            this.textBox17.TabIndex = 69;
-            this.toolTip.SetToolTip(this.textBox17, "The message in the quest log that should appear once the quest is complete. For e" +
+            this.tbQuestCompletionLog.Location = new System.Drawing.Point(676, 252);
+            this.tbQuestCompletionLog.Name = "tbQuestCompletionLog";
+            this.tbQuestCompletionLog.Size = new System.Drawing.Size(629, 26);
+            this.tbQuestCompletionLog.TabIndex = 69;
+            this.toolTip.SetToolTip(this.tbQuestCompletionLog, "The message in the quest log that should appear once the quest is complete. For e" +
         "xample \"Return to Darth Sidious in Stormwind\".");
             // 
             // label30
@@ -1178,14 +1180,14 @@ namespace ArtaCore_Query_Creator
             this.toolTip.SetToolTip(this.label30, "The message in the quest log that should appear once the quest is complete. For e" +
         "xample \"Return to Darth Sidious in Stormwind\".");
             // 
-            // textBox20
+            // tbRequiredAmountNPC1
             // 
-            this.textBox20.Location = new System.Drawing.Point(186, 389);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(133, 26);
-            this.textBox20.TabIndex = 73;
-            this.textBox20.Text = "0";
-            this.toolTip.SetToolTip(this.textBox20, "Input the number of items to be rewarded.");
+            this.tbRequiredAmountNPC1.Location = new System.Drawing.Point(186, 389);
+            this.tbRequiredAmountNPC1.Name = "tbRequiredAmountNPC1";
+            this.tbRequiredAmountNPC1.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC1.TabIndex = 73;
+            this.tbRequiredAmountNPC1.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC1, "Input the number of items to be rewarded.");
             // 
             // label34
             // 
@@ -1197,14 +1199,14 @@ namespace ArtaCore_Query_Creator
             this.label34.Text = "Number of NPC 1 Kills";
             this.toolTip.SetToolTip(this.label34, "The number of NPC to be killed");
             // 
-            // tbRequiredNPC1
+            // tbRequiredNPCID1
             // 
-            this.tbRequiredNPC1.Location = new System.Drawing.Point(26, 389);
-            this.tbRequiredNPC1.Name = "tbRequiredNPC1";
-            this.tbRequiredNPC1.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredNPC1.TabIndex = 71;
-            this.tbRequiredNPC1.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredNPC1, "Input the NPC ID that needs to be killed.");
+            this.tbRequiredNPCID1.Location = new System.Drawing.Point(26, 389);
+            this.tbRequiredNPCID1.Name = "tbRequiredNPCID1";
+            this.tbRequiredNPCID1.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID1.TabIndex = 71;
+            this.tbRequiredNPCID1.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID1, "Input the NPC ID that needs to be killed.");
             // 
             // label35
             // 
@@ -1215,14 +1217,14 @@ namespace ArtaCore_Query_Creator
             this.label35.TabIndex = 70;
             this.label35.Text = "Required NPC to Kill 1";
             // 
-            // textBox18
+            // tbRequiredAmountNPC2
             // 
-            this.textBox18.Location = new System.Drawing.Point(522, 389);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(133, 26);
-            this.textBox18.TabIndex = 77;
-            this.textBox18.Text = "0";
-            this.toolTip.SetToolTip(this.textBox18, "Input the number of items to be rewarded.");
+            this.tbRequiredAmountNPC2.Location = new System.Drawing.Point(522, 389);
+            this.tbRequiredAmountNPC2.Name = "tbRequiredAmountNPC2";
+            this.tbRequiredAmountNPC2.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC2.TabIndex = 77;
+            this.tbRequiredAmountNPC2.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC2, "Input the number of items to be rewarded.");
             // 
             // label31
             // 
@@ -1234,14 +1236,14 @@ namespace ArtaCore_Query_Creator
             this.label31.Text = "Number of NPC 2 Kills";
             this.toolTip.SetToolTip(this.label31, "The number of NPC to be killed");
             // 
-            // textBox19
+            // tbRequiredNPCID2
             // 
-            this.textBox19.Location = new System.Drawing.Point(362, 389);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(133, 26);
-            this.textBox19.TabIndex = 75;
-            this.textBox19.Text = "0";
-            this.toolTip.SetToolTip(this.textBox19, "Input the NPC ID that needs to be killed.");
+            this.tbRequiredNPCID2.Location = new System.Drawing.Point(362, 389);
+            this.tbRequiredNPCID2.Name = "tbRequiredNPCID2";
+            this.tbRequiredNPCID2.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID2.TabIndex = 75;
+            this.tbRequiredNPCID2.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID2, "Input the NPC ID that needs to be killed.");
             // 
             // label32
             // 
@@ -1252,14 +1254,14 @@ namespace ArtaCore_Query_Creator
             this.label32.TabIndex = 74;
             this.label32.Text = "Required NPC to Kill 2";
             // 
-            // textBox22
+            // tbRequiredAmountNPC3
             // 
-            this.textBox22.Location = new System.Drawing.Point(848, 389);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(133, 26);
-            this.textBox22.TabIndex = 81;
-            this.textBox22.Text = "0";
-            this.toolTip.SetToolTip(this.textBox22, "Input the number of items to be rewarded.");
+            this.tbRequiredAmountNPC3.Location = new System.Drawing.Point(848, 389);
+            this.tbRequiredAmountNPC3.Name = "tbRequiredAmountNPC3";
+            this.tbRequiredAmountNPC3.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC3.TabIndex = 81;
+            this.tbRequiredAmountNPC3.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC3, "Input the number of items to be rewarded.");
             // 
             // label33
             // 
@@ -1271,14 +1273,14 @@ namespace ArtaCore_Query_Creator
             this.label33.Text = "Number of NPC 3 Kills";
             this.toolTip.SetToolTip(this.label33, "The number of NPC to be killed");
             // 
-            // textBox23
+            // tbRequiredNPCID3
             // 
-            this.textBox23.Location = new System.Drawing.Point(688, 389);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(133, 26);
-            this.textBox23.TabIndex = 79;
-            this.textBox23.Text = "0";
-            this.toolTip.SetToolTip(this.textBox23, "Input the NPC ID that needs to be killed.");
+            this.tbRequiredNPCID3.Location = new System.Drawing.Point(688, 389);
+            this.tbRequiredNPCID3.Name = "tbRequiredNPCID3";
+            this.tbRequiredNPCID3.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID3.TabIndex = 79;
+            this.tbRequiredNPCID3.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID3, "Input the NPC ID that needs to be killed.");
             // 
             // label36
             // 
@@ -1289,14 +1291,14 @@ namespace ArtaCore_Query_Creator
             this.label36.TabIndex = 78;
             this.label36.Text = "Required NPC to Kill 3";
             // 
-            // textBox24
+            // tbRequiredAmountNPC4
             // 
-            this.textBox24.Location = new System.Drawing.Point(1172, 389);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(133, 26);
-            this.textBox24.TabIndex = 85;
-            this.textBox24.Text = "0";
-            this.toolTip.SetToolTip(this.textBox24, "Input the number of items to be rewarded.");
+            this.tbRequiredAmountNPC4.Location = new System.Drawing.Point(1172, 389);
+            this.tbRequiredAmountNPC4.Name = "tbRequiredAmountNPC4";
+            this.tbRequiredAmountNPC4.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC4.TabIndex = 85;
+            this.tbRequiredAmountNPC4.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC4, "Input the number of items to be rewarded.");
             // 
             // label37
             // 
@@ -1308,14 +1310,14 @@ namespace ArtaCore_Query_Creator
             this.label37.Text = "Number of NPC 4 Kills";
             this.toolTip.SetToolTip(this.label37, "The number of NPC to be killed");
             // 
-            // textBox25
+            // tbRequiredNPCID4
             // 
-            this.textBox25.Location = new System.Drawing.Point(1012, 389);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(133, 26);
-            this.textBox25.TabIndex = 83;
-            this.textBox25.Text = "0";
-            this.toolTip.SetToolTip(this.textBox25, "Input the NPC ID that needs to be killed.");
+            this.tbRequiredNPCID4.Location = new System.Drawing.Point(1012, 389);
+            this.tbRequiredNPCID4.Name = "tbRequiredNPCID4";
+            this.tbRequiredNPCID4.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID4.TabIndex = 83;
+            this.tbRequiredNPCID4.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID4, "Input the NPC ID that needs to be killed.");
             // 
             // label38
             // 
@@ -1416,62 +1418,62 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnClearQueryCreatureTemplate;
         private System.Windows.Forms.Button btnAddQueryCreaturesToInternalDB;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox tbRequiredAmountNPC4;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.TextBox tbRequiredNPCID4;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox tbRequiredAmountNPC3;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.TextBox tbRequiredNPCID3;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox tbRequiredAmountNPC2;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.TextBox tbRequiredNPCID2;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox tbRequiredAmountNPC1;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox tbRequiredNPC1;
+        private System.Windows.Forms.TextBox tbRequiredNPCID1;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox tbQuestCompletionLog;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox tbQuestDescription;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox tbQuestTarget;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox tbQuestLogTitle;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tbQuestRewardAmount4;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox tbQuestRewardID4;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbQuestRewardAmount3;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tbQuestRewardID3;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbQuestRewardAmount2;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbQuestRewardID2;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tbQuestRewardAmount1;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbQuestRewardID1;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label labelQuestType;
+        private System.Windows.Forms.ComboBox cbQuestType;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox tbQuestRewardMoney;
+        private System.Windows.Forms.Button btnClearQuestTemplateQuery;
+        private System.Windows.Forms.Button btnGenerateQuestTemplateQuery;
+        private System.Windows.Forms.CheckBox cbSelectAcoreQuestTemplate;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox tbQueryQuestTemplate;
+        private System.Windows.Forms.Button btnAddQuestToQuery;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbQuestMinLevel;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbQuestLevel;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbQuestID;
         private System.Windows.Forms.Label label17;
     }
 }

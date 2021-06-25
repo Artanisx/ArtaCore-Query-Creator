@@ -229,5 +229,25 @@ namespace ArtaCore_Query_Creator
         {
             SQLGenerator.SaveSQLQueryCreatureTemplate(sqlSaveDialog, txtSQLPreviewCreatureTemplate, cbSelectAcoreCreatureTemplate.Checked);
         }
+
+        private void cbQuestType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbQuestType.SelectedItem.ToString() == "Daily")
+                labelQuestType.Text = "4096";
+            else if (cbQuestType.SelectedItem.ToString() == "Normal")
+                labelQuestType.Text = "8";
+            else
+                labelQuestType.Text = "Not recognized";
+        }
+
+        private void btnAddQuestToQuery_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.AddtoSQLQueryQuestTemplate(tbQueryQuestTemplate, tbQuestID.Text, tbQuestLevel.Text, tbQuestMinLevel.Text, tbQuestRewardMoney.Text,
+                                                    labelQuestType.Text, tbQuestRewardID1.Text, tbQuestRewardAmount1.Text, tbQuestRewardID2.Text, tbQuestRewardAmount2.Text,
+                                                    tbQuestRewardID3.Text, tbQuestRewardAmount3.Text, tbQuestRewardID4.Text, tbQuestRewardAmount4.Text, tbQuestLogTitle.Text,
+                                                    tbQuestTarget.Text, tbQuestDescription.Text, tbQuestCompletionLog.Text, tbRequiredNPCID1.Text, tbRequiredAmountNPC1.Text,
+                                                    tbRequiredNPCID2.Text, tbRequiredAmountNPC2.Text, tbRequiredNPCID3.Text, tbRequiredAmountNPC3.Text, tbRequiredNPCID4.Text,
+                                                    tbRequiredAmountNPC4.Text);
+        }
     }
 }
