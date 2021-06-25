@@ -269,5 +269,20 @@ namespace ArtaCore_Query_Creator
         {
             SQLGenerator.SaveSQLQueryQuestStarter(sqlSaveDialog, tbQueryQuestStarter, cbSelectAcoreQueryStarter.Checked);
         }
+
+        private void btnClearQueryQuestStarter_Click(object sender, EventArgs e)
+        {
+            tbQueryQuestStarter.Text = "";
+        }
+
+        private void btnGenerateQueryQuestEnder_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.SaveSQLQueryQuestEnder(sqlSaveDialog, tbQueryBoxQuestEnder, cbSelectAcoreQUestEnder.Checked);
+        }
+
+        private void btnAddQuestEnder_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.AddtoSQLQueryQuestEnder(tbQueryBoxQuestEnder, labelNPCIDEnder.Text, tbQuestIDEnder.Text);
+        }
     }
 }

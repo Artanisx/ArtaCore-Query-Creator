@@ -23,6 +23,9 @@ namespace ArtaCore_Query_Creator
         const string QUESTSTARTER_OPENINGLINE = "INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (";
         const string QUESTSTARTER_CLOSINGLINE = ");";
 
+        const string QUESTENDER_OPENINGLINE = "INSERT INTO `creature_questender` (`id`, `quest`) VALUES (";
+        const string QUESTENDER_CLOSINGLINE = ");";
+
         public static void PreviewSQLQuery(TextBox previewTextBox, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID, bool selectedDatabase)
         {
             string result;
@@ -270,6 +273,44 @@ namespace ArtaCore_Query_Creator
             //MessageBox.Show("NPC added to the Query!");
         }
 
+        public static void AddtoSQLQueryQuestEnder(TextBox queryBox, string npcID, string questID)
+        {
+            string result;
+
+            // Check if we have all correct data
+            if (int.TryParse(npcID, out int npcIDnum) == false)
+            {
+                MessageBox.Show("Entered NPC ID is not valid: " + npcID);
+                return;
+            }
+
+            if (int.TryParse(questID, out int questIDNum) == false)
+            {
+                MessageBox.Show("Entered Quest ID is not valid: " + questID);
+                return;
+            }
+
+            if (queryBox == null)
+            {
+                MessageBox.Show("The passed Text Box for the SQL is not valid.");
+                return;
+            }
+
+            result = "";
+
+            result = QUESTENDER_OPENINGLINE;
+
+            result += npcID + ", ";
+
+            result += questID;
+
+            result += QUESTENDER_CLOSINGLINE + Environment.NewLine;
+
+            queryBox.AppendText(result);
+
+            //MessageBox.Show("NPC added to the Query!");
+        }
+
         public static void SaveSQLQueryQuestStarter(SaveFileDialog sqlSaveFileDialog, TextBox query, bool selectedDatabase)
         {
             string result;
@@ -295,6 +336,48 @@ namespace ArtaCore_Query_Creator
             result += query.Text;
 
             sqlSaveFileDialog.FileName = "Quest_Starter";
+
+            // Invoke the save dialog
+            sqlSaveFileDialog.ShowDialog();
+
+            // Write the sql file
+            try
+            {
+                File.WriteAllText(sqlSaveFileDialog.FileName, result);
+
+                MessageBox.Show("SQL creation completed. Written in file: " + sqlSaveFileDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL creation failed. Error: " + ex.Message);
+            }
+        }
+
+        public static void SaveSQLQueryQuestEnder(SaveFileDialog sqlSaveFileDialog, TextBox query, bool selectedDatabase)
+        {
+            string result;
+
+            if (string.IsNullOrEmpty(query.Text) || query.Text.Length <= 10)
+            {
+                MessageBox.Show("The query is empty or invalid!");
+                return;
+            }
+
+
+            if (sqlSaveFileDialog == null)
+            {
+                MessageBox.Show("The passed Save Dialog is not valid.");
+                return;
+            }
+
+            result = "";
+
+            if (selectedDatabase == true)
+                result += NPCVENDOR_OPENINGSTATEMENT + Environment.NewLine;
+
+            result += query.Text;
+
+            sqlSaveFileDialog.FileName = "Quest_Ender";
 
             // Invoke the save dialog
             sqlSaveFileDialog.ShowDialog();
