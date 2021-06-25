@@ -143,6 +143,16 @@ namespace ArtaCore_Query_Creator
             this.label37 = new System.Windows.Forms.Label();
             this.tbRequiredNPCID4 = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
+            this.labelNPCIDQuestStarter = new System.Windows.Forms.Label();
+            this.cbNPCIDQuestStarter = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.tbQuestIDQuestStarter = new System.Windows.Forms.TextBox();
+            this.btnClearQueryQuestStarter = new System.Windows.Forms.Button();
+            this.btnGenerateQueryQuestStarter = new System.Windows.Forms.Button();
+            this.cbSelectAcoreQueryStarter = new System.Windows.Forms.CheckBox();
+            this.tbQueryQuestStarter = new System.Windows.Forms.TextBox();
+            this.btnAddNPCtoQueryStarter = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -152,6 +162,7 @@ namespace ArtaCore_Query_Creator
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCreatureTemplate)).BeginInit();
             this.tbQuestTemplate.SuspendLayout();
+            this.tbCreatureQuestStarter.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,7 +201,7 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor.Location = new System.Drawing.Point(4, 29);
             this.tpNPCVendor.Name = "tpNPCVendor";
             this.tpNPCVendor.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNPCVendor.Size = new System.Drawing.Size(1323, 994);
+            this.tpNPCVendor.Size = new System.Drawing.Size(1336, 994);
             this.tpNPCVendor.TabIndex = 0;
             this.tpNPCVendor.Text = "NPC_VENDOR";
             this.toolTip.SetToolTip(this.tpNPCVendor, "Open the SQL Query Creator for NPC_VENDOR table (Item inventories for NPC vendors" +
@@ -718,9 +729,19 @@ namespace ArtaCore_Query_Creator
             // 
             // tbCreatureQuestStarter
             // 
+            this.tbCreatureQuestStarter.Controls.Add(this.btnClearQueryQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.btnGenerateQueryQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.cbSelectAcoreQueryStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.tbQueryQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.btnAddNPCtoQueryStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.tbQuestIDQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.label40);
+            this.tbCreatureQuestStarter.Controls.Add(this.labelNPCIDQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.cbNPCIDQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.label39);
             this.tbCreatureQuestStarter.Location = new System.Drawing.Point(4, 29);
             this.tbCreatureQuestStarter.Name = "tbCreatureQuestStarter";
-            this.tbCreatureQuestStarter.Size = new System.Drawing.Size(1323, 994);
+            this.tbCreatureQuestStarter.Size = new System.Drawing.Size(1336, 994);
             this.tbCreatureQuestStarter.TabIndex = 3;
             this.tbCreatureQuestStarter.Text = "CREATURE_QUESTSTARTER";
             this.tbCreatureQuestStarter.UseVisualStyleBackColor = true;
@@ -1330,6 +1351,109 @@ namespace ArtaCore_Query_Creator
             this.label38.TabIndex = 82;
             this.label38.Text = "Required NPC to Kill 4";
             // 
+            // labelNPCIDQuestStarter
+            // 
+            this.labelNPCIDQuestStarter.AutoSize = true;
+            this.labelNPCIDQuestStarter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.labelNPCIDQuestStarter.Location = new System.Drawing.Point(322, 47);
+            this.labelNPCIDQuestStarter.Name = "labelNPCIDQuestStarter";
+            this.labelNPCIDQuestStarter.Size = new System.Drawing.Size(63, 20);
+            this.labelNPCIDQuestStarter.TabIndex = 13;
+            this.labelNPCIDQuestStarter.Text = "000000";
+            // 
+            // cbNPCIDQuestStarter
+            // 
+            this.cbNPCIDQuestStarter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC Name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.cbNPCIDQuestStarter.DataSource = this.nPCVendorsBindingSource;
+            this.cbNPCIDQuestStarter.DisplayMember = "NPC Name";
+            this.cbNPCIDQuestStarter.FormattingEnabled = true;
+            this.cbNPCIDQuestStarter.Location = new System.Drawing.Point(25, 44);
+            this.cbNPCIDQuestStarter.Name = "cbNPCIDQuestStarter";
+            this.cbNPCIDQuestStarter.Size = new System.Drawing.Size(291, 28);
+            this.cbNPCIDQuestStarter.TabIndex = 12;
+            this.toolTip.SetToolTip(this.cbNPCIDQuestStarter, "Select the NPC creature id who will be the vendor for this quest.");
+            this.cbNPCIDQuestStarter.ValueMember = "NPC ID";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(21, 21);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 20);
+            this.label39.TabIndex = 11;
+            this.label39.Text = "NPC ID";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(21, 104);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(85, 20);
+            this.label40.TabIndex = 14;
+            this.label40.Text = "QUEST ID";
+            // 
+            // tbQuestIDQuestStarter
+            // 
+            this.tbQuestIDQuestStarter.Location = new System.Drawing.Point(25, 127);
+            this.tbQuestIDQuestStarter.Name = "tbQuestIDQuestStarter";
+            this.tbQuestIDQuestStarter.Size = new System.Drawing.Size(284, 26);
+            this.tbQuestIDQuestStarter.TabIndex = 15;
+            this.toolTip.SetToolTip(this.tbQuestIDQuestStarter, "Input the Quest ID this NPC should be the ques starter for.");
+            // 
+            // btnClearQueryQuestStarter
+            // 
+            this.btnClearQueryQuestStarter.Location = new System.Drawing.Point(25, 881);
+            this.btnClearQueryQuestStarter.Name = "btnClearQueryQuestStarter";
+            this.btnClearQueryQuestStarter.Size = new System.Drawing.Size(348, 85);
+            this.btnClearQueryQuestStarter.TabIndex = 28;
+            this.btnClearQueryQuestStarter.Text = "Clear the Query";
+            this.toolTip.SetToolTip(this.btnClearQueryQuestStarter, "Clear the Query");
+            this.btnClearQueryQuestStarter.UseVisualStyleBackColor = true;
+            // 
+            // btnGenerateQueryQuestStarter
+            // 
+            this.btnGenerateQueryQuestStarter.Location = new System.Drawing.Point(943, 881);
+            this.btnGenerateQueryQuestStarter.Name = "btnGenerateQueryQuestStarter";
+            this.btnGenerateQueryQuestStarter.Size = new System.Drawing.Size(348, 85);
+            this.btnGenerateQueryQuestStarter.TabIndex = 27;
+            this.btnGenerateQueryQuestStarter.Text = "Generate SQL Query";
+            this.toolTip.SetToolTip(this.btnGenerateQueryQuestStarter, "Generate the SQL query file.");
+            this.btnGenerateQueryQuestStarter.UseVisualStyleBackColor = true;
+            this.btnGenerateQueryQuestStarter.Click += new System.EventHandler(this.btnGenerateQueryQuestStarter_Click);
+            // 
+            // cbSelectAcoreQueryStarter
+            // 
+            this.cbSelectAcoreQueryStarter.AutoSize = true;
+            this.cbSelectAcoreQueryStarter.Location = new System.Drawing.Point(523, 912);
+            this.cbSelectAcoreQueryStarter.Name = "cbSelectAcoreQueryStarter";
+            this.cbSelectAcoreQueryStarter.Size = new System.Drawing.Size(247, 24);
+            this.cbSelectAcoreQueryStarter.TabIndex = 26;
+            this.cbSelectAcoreQueryStarter.Text = "Select \'acore_world\' database";
+            this.toolTip.SetToolTip(this.cbSelectAcoreQueryStarter, "Check this if you want to create a SQL query that will select the database (meani" +
+        "ng you won\'t need to be in the proper DB to import it). Experimental.");
+            this.cbSelectAcoreQueryStarter.UseVisualStyleBackColor = true;
+            // 
+            // tbQueryQuestStarter
+            // 
+            this.tbQueryQuestStarter.Location = new System.Drawing.Point(25, 413);
+            this.tbQueryQuestStarter.Multiline = true;
+            this.tbQueryQuestStarter.Name = "tbQueryQuestStarter";
+            this.tbQueryQuestStarter.ReadOnly = true;
+            this.tbQueryQuestStarter.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.tbQueryQuestStarter.Size = new System.Drawing.Size(1266, 448);
+            this.tbQueryQuestStarter.TabIndex = 25;
+            this.tbQueryQuestStarter.WordWrap = false;
+            // 
+            // btnAddNPCtoQueryStarter
+            // 
+            this.btnAddNPCtoQueryStarter.Location = new System.Drawing.Point(25, 310);
+            this.btnAddNPCtoQueryStarter.Name = "btnAddNPCtoQueryStarter";
+            this.btnAddNPCtoQueryStarter.Size = new System.Drawing.Size(1275, 45);
+            this.btnAddNPCtoQueryStarter.TabIndex = 24;
+            this.btnAddNPCtoQueryStarter.Text = "Add Quest Starter to the Query";
+            this.btnAddNPCtoQueryStarter.UseVisualStyleBackColor = true;
+            this.btnAddNPCtoQueryStarter.Click += new System.EventHandler(this.btnAddNPCtoQueryStarter_Click);
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1356,6 +1480,8 @@ namespace ArtaCore_Query_Creator
             ((System.ComponentModel.ISupportInitialize)(this.dgCreatureTemplate)).EndInit();
             this.tbQuestTemplate.ResumeLayout(false);
             this.tbQuestTemplate.PerformLayout();
+            this.tbCreatureQuestStarter.ResumeLayout(false);
+            this.tbCreatureQuestStarter.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1477,6 +1603,16 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox tbQuestID;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label labelNPCIDQuestStarter;
+        private System.Windows.Forms.ComboBox cbNPCIDQuestStarter;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Button btnClearQueryQuestStarter;
+        private System.Windows.Forms.Button btnGenerateQueryQuestStarter;
+        private System.Windows.Forms.CheckBox cbSelectAcoreQueryStarter;
+        private System.Windows.Forms.TextBox tbQueryQuestStarter;
+        private System.Windows.Forms.Button btnAddNPCtoQueryStarter;
+        private System.Windows.Forms.TextBox tbQuestIDQuestStarter;
+        private System.Windows.Forms.Label label40;
     }
 }
 

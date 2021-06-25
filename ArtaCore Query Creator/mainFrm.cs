@@ -259,5 +259,15 @@ namespace ArtaCore_Query_Creator
         {
             tbQueryQuestTemplate.Text = "";
         }
+
+        private void btnAddNPCtoQueryStarter_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.AddtoSQLQueryQuestStarter(tbQueryQuestStarter, labelNPCIDQuestStarter.Text, tbQuestIDQuestStarter.Text);
+        }
+
+        private void btnGenerateQueryQuestStarter_Click(object sender, EventArgs e)
+        {
+            SQLGenerator.SaveSQLQueryQuestStarter(sqlSaveDialog, tbQueryQuestStarter, cbSelectAcoreQueryStarter.Checked);
+        }
     }
 }

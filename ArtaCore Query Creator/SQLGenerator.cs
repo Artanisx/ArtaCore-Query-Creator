@@ -20,6 +20,9 @@ namespace ArtaCore_Query_Creator
         const string QUESTTEMPLATE_OPENINGLINE = "INSERT INTO `quest_template` (`ID`, `QuestType`, `QuestLevel`, `MinLevel`, `QuestSortID`, `QuestInfoID`, `SuggestedGroupNum`, `RequiredFactionId1`, `RequiredFactionId2`, `RequiredFactionValue1`, `RequiredFactionValue2`, `RewardNextQuest`, `RewardXPDifficulty`, `RewardMoney`, `RewardBonusMoney`, `RewardDisplaySpell`, `RewardSpell`, `RewardHonor`, `RewardKillHonor`, `StartItem`, `Flags`, `RequiredPlayerKills`, `RewardItem1`, `RewardAmount1`, `RewardItem2`, `RewardAmount2`, `RewardItem3`, `RewardAmount3`, `RewardItem4`, `RewardAmount4`, `ItemDrop1`, `ItemDropQuantity1`, `ItemDrop2`, `ItemDropQuantity2`, `ItemDrop3`, `ItemDropQuantity3`, `ItemDrop4`, `ItemDropQuantity4`, `RewardChoiceItemID1`, `RewardChoiceItemQuantity1`, `RewardChoiceItemID2`, `RewardChoiceItemQuantity2`, `RewardChoiceItemID3`, `RewardChoiceItemQuantity3`, `RewardChoiceItemID4`, `RewardChoiceItemQuantity4`, `RewardChoiceItemID5`, `RewardChoiceItemQuantity5`, `RewardChoiceItemID6`, `RewardChoiceItemQuantity6`, `POIContinent`, `POIx`, `POIy`, `POIPriority`, `RewardTitle`, `RewardTalents`, `RewardArenaPoints`, `RewardFactionID1`, `RewardFactionValue1`, `RewardFactionOverride1`, `RewardFactionID2`, `RewardFactionValue2`, `RewardFactionOverride2`, `RewardFactionID3`, `RewardFactionValue3`, `RewardFactionOverride3`, `RewardFactionID4`, `RewardFactionValue4`, `RewardFactionOverride4`, `RewardFactionID5`, `RewardFactionValue5`, `RewardFactionOverride5`, `TimeAllowed`, `AllowableRaces`, `LogTitle`, `LogDescription`, `QuestDescription`, `AreaDescription`, `QuestCompletionLog`, `RequiredNpcOrGo1`, `RequiredNpcOrGo2`, `RequiredNpcOrGo3`, `RequiredNpcOrGo4`, `RequiredNpcOrGoCount1`, `RequiredNpcOrGoCount2`, `RequiredNpcOrGoCount3`, `RequiredNpcOrGoCount4`, `RequiredItemId1`, `RequiredItemId2`, `RequiredItemId3`, `RequiredItemId4`, `RequiredItemId5`, `RequiredItemId6`, `RequiredItemCount1`, `RequiredItemCount2`, `RequiredItemCount3`, `RequiredItemCount4`, `RequiredItemCount5`, `RequiredItemCount6`, `Unknown0`, `ObjectiveText1`, `ObjectiveText2`, `ObjectiveText3`, `ObjectiveText4`, `VerifiedBuild`) VALUES (";
         const string QUESTTEMPLATE_CLOSINGLINE = ", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, NULL, NULL, NULL, NULL, 12340);";
 
+        const string QUESTSTARTER_OPENINGLINE = "INSERT INTO `creature_queststarter` (`id`, `quest`) VALUES (";
+        const string QUESTSTARTER_CLOSINGLINE = ");";
+
         public static void PreviewSQLQuery(TextBox previewTextBox, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID, bool selectedDatabase)
         {
             string result;
@@ -227,6 +230,86 @@ namespace ArtaCore_Query_Creator
             queryBox.AppendText(result);
 
             //MessageBox.Show("NPC added to the Query!");
+        }
+
+        public static void AddtoSQLQueryQuestStarter(TextBox queryBox, string npcID, string questID)
+        {
+            string result;
+
+            // Check if we have all correct data
+            if (int.TryParse(npcID, out int npcIDnum) == false)
+            {
+                MessageBox.Show("Entered NPC ID is not valid: " + npcID);
+                return;
+            }
+
+            if (int.TryParse(questID, out int questIDNum) == false)
+            {
+                MessageBox.Show("Entered Quest ID is not valid: " + questID);
+                return;
+            }           
+
+            if (queryBox == null)
+            {
+                MessageBox.Show("The passed Text Box for the SQL is not valid.");
+                return;
+            }
+
+            result = "";
+
+            result = QUESTSTARTER_OPENINGLINE;
+
+            result += npcID + ", ";
+
+            result += questID;
+
+            result += QUESTSTARTER_CLOSINGLINE + Environment.NewLine;
+
+            queryBox.AppendText(result);
+
+            //MessageBox.Show("NPC added to the Query!");
+        }
+
+        public static void SaveSQLQueryQuestStarter(SaveFileDialog sqlSaveFileDialog, TextBox query, bool selectedDatabase)
+        {
+            string result;
+
+            if (string.IsNullOrEmpty(query.Text) || query.Text.Length <= 10)
+            {
+                MessageBox.Show("The query is empty or invalid!");
+                return;
+            }
+
+
+            if (sqlSaveFileDialog == null)
+            {
+                MessageBox.Show("The passed Save Dialog is not valid.");
+                return;
+            }
+
+            result = "";
+
+            if (selectedDatabase == true)
+                result += NPCVENDOR_OPENINGSTATEMENT + Environment.NewLine;
+
+            result += query.Text;
+
+            sqlSaveFileDialog.FileName = "Quest_Starter";
+
+            // Invoke the save dialog
+            sqlSaveFileDialog.ShowDialog();
+
+            // Write the sql file
+            try
+            {
+                File.WriteAllText(sqlSaveFileDialog.FileName, result);
+
+                MessageBox.Show("SQL creation completed. Written in file: " + sqlSaveFileDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL creation failed. Error: " + ex.Message);
+            }
         }
 
         public static void SaveSQLQueryQuestTemplate(SaveFileDialog sqlSaveFileDialog, TextBox query, bool selectedDatabase)
