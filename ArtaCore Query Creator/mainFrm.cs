@@ -248,11 +248,53 @@ namespace ArtaCore_Query_Creator
                                                     tbQuestTarget.Text, tbQuestDescription.Text, tbQuestCompletionLog.Text, tbRequiredNPCID1.Text, tbRequiredAmountNPC1.Text,
                                                     tbRequiredNPCID2.Text, tbRequiredAmountNPC2.Text, tbRequiredNPCID3.Text, tbRequiredAmountNPC3.Text, tbRequiredNPCID4.Text,
                                                     tbRequiredAmountNPC4.Text);
+
+            if (cbAutoGenerateStarterEnder.Checked)
+            {
+                // We need to create the QuestStarter and Ender for this quest as well.
+
+                SQLGenerator.AddtoSQLQueryQuestStarter(tbQueryQuestStarter, labelNPCID_QuestTemplate.Text, tbQuestID.Text);                                
+                SQLGenerator.AddtoSQLQueryQuestEnder(tbQueryBoxQuestEnder, labelNPCID_QuestTemplate.Text, tbQuestID.Text);
+
+
+                //MessageBox.Show("Relevant queries have been added for this quest in the CREATURE_QUESTSTARTER and CREATURE_QUESTENDER pages. Make sure to generate the SQL file for those, going in their respective tabs.", "Quest Starter and Quest Ender queries added", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+            }
+
         }
 
         private void btnGenerateQuestTemplateQuery_Click(object sender, EventArgs e)
         {
-            SQLGenerator.SaveSQLQueryQuestTemplate(sqlSaveDialog, tbQueryQuestTemplate, cbSelectAcoreQuestTemplate.Checked);
+            if (cbAutoGenerateStarterEnder.Checked == false)
+            {
+                // Simply generate the SQL Query for QUest Tempalte only
+                SQLGenerator.SaveSQLQueryQuestTemplate(sqlSaveDialog, tbQueryQuestTemplate, cbSelectAcoreQuestTemplate.Checked);
+            }
+            else
+            {
+                // In theory we have queries ready for Quest Starter and QUest ENder too!
+
+                // First gnerate tghe QuestTeamplte query
+                SQLGenerator.SaveSQLQueryQuestTemplate(sqlSaveDialog, tbQueryQuestTemplate, cbSelectAcoreQuestTemplate.Checked);
+
+                if (string.IsNullOrEmpty(tbQueryQuestStarter.Text) == false)
+                {
+                    // QuestStarter query can be created!
+                    SQLGenerator.SaveSQLQueryQuestStarter(sqlSaveDialog, tbQueryQuestStarter, cbSelectAcoreQueryStarter.Checked);
+
+                    if (string.IsNullOrEmpty(tbQueryBoxQuestEnder.Text) == false)
+                    {
+                        // QuestEnder query can be created
+                        SQLGenerator.SaveSQLQueryQuestEnder(sqlSaveDialog, tbQueryBoxQuestEnder, cbSelectAcoreQUestEnder.Checked);
+                    }
+                    else
+                    {
+                        MessageBox.Show("You have selected 'Automatically generate the QuestStarter and QuestEnder queries as well.', but it looks like the QuestEnder query has not been created. Did you check the box AFTER adding the Quest?", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                    MessageBox.Show("You have selected 'Automatically generate the QuestStarter and QuestEnder queries as well.', but it looks like the QuestStarter query has not been created. Did you check the box AFTER adding the Quest?", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         private void btnClearQuestTemplateQuery_Click(object sender, EventArgs e)
@@ -283,6 +325,11 @@ namespace ArtaCore_Query_Creator
         private void btnAddQuestEnder_Click(object sender, EventArgs e)
         {
             SQLGenerator.AddtoSQLQueryQuestEnder(tbQueryBoxQuestEnder, labelNPCIDEnder.Text, tbQuestIDEnder.Text);
+        }
+
+        private void aboutArtaCoreQueryCreatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ArtaCore Query Creator is a small utility made with the purpose of making database changes, like creating quests, npcs and vendors as painless as possible, automatically generating SQL queries which can be safely imported into the acore_world database of an AzerothCore server.\n\nThis program has been written by Fabrizio Tobia.", "ArtaCore Query Creator", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

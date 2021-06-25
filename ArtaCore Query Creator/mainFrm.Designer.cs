@@ -77,15 +77,50 @@ namespace ArtaCore_Query_Creator
             this.nPCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nPCNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbQuestTemplate = new System.Windows.Forms.TabPage();
-            this.tbCreatureQuestStarter = new System.Windows.Forms.TabPage();
-            this.tbCreatureQuestEnder = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nPCVendorsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.NPCVendorsTableAdapter();
-            this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.sqlSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.tbRequiredAmountNPC4 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.tbRequiredNPCID4 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.tbRequiredAmountNPC3 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.tbRequiredNPCID3 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.tbRequiredAmountNPC2 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.tbRequiredNPCID2 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.tbRequiredAmountNPC1 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.tbRequiredNPCID1 = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tbQuestCompletionLog = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tbQuestDescription = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.tbQuestTarget = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.tbQuestLogTitle = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tbQuestRewardAmount4 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tbQuestRewardID4 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tbQuestRewardAmount3 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.tbQuestRewardID3 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tbQuestRewardAmount2 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbQuestRewardID2 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.tbQuestRewardAmount1 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tbQuestRewardID1 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.labelQuestType = new System.Windows.Forms.Label();
+            this.cbQuestType = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tbQuestRewardMoney = new System.Windows.Forms.TextBox();
             this.btnClearQuestTemplateQuery = new System.Windows.Forms.Button();
             this.btnGenerateQuestTemplateQuery = new System.Windows.Forms.Button();
             this.cbSelectAcoreQuestTemplate = new System.Windows.Forms.CheckBox();
@@ -99,60 +134,18 @@ namespace ArtaCore_Query_Creator
             this.label16 = new System.Windows.Forms.Label();
             this.tbQuestID = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.tbQuestRewardMoney = new System.Windows.Forms.TextBox();
-            this.labelQuestType = new System.Windows.Forms.Label();
-            this.cbQuestType = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.tbQuestRewardID1 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tbQuestRewardAmount1 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.tbQuestRewardAmount2 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tbQuestRewardID2 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.tbQuestRewardAmount3 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.tbQuestRewardID3 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.tbQuestRewardAmount4 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.tbQuestRewardID4 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.tbQuestLogTitle = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.tbQuestTarget = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.tbQuestDescription = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.tbQuestCompletionLog = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.tbRequiredAmountNPC1 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.tbRequiredNPCID1 = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.tbRequiredAmountNPC2 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.tbRequiredNPCID2 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.tbRequiredAmountNPC3 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.tbRequiredNPCID3 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.tbRequiredAmountNPC4 = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.tbRequiredNPCID4 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.labelNPCIDQuestStarter = new System.Windows.Forms.Label();
-            this.cbNPCIDQuestStarter = new System.Windows.Forms.ComboBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.tbQuestIDQuestStarter = new System.Windows.Forms.TextBox();
+            this.tbCreatureQuestStarter = new System.Windows.Forms.TabPage();
             this.btnClearQueryQuestStarter = new System.Windows.Forms.Button();
             this.btnGenerateQueryQuestStarter = new System.Windows.Forms.Button();
             this.cbSelectAcoreQueryStarter = new System.Windows.Forms.CheckBox();
             this.tbQueryQuestStarter = new System.Windows.Forms.TextBox();
             this.btnAddNPCtoQueryStarter = new System.Windows.Forms.Button();
+            this.tbQuestIDQuestStarter = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.labelNPCIDQuestStarter = new System.Windows.Forms.Label();
+            this.cbNPCIDQuestStarter = new System.Windows.Forms.ComboBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.tbCreatureQuestEnder = new System.Windows.Forms.TabPage();
             this.btnClearQUeryQUestEnder = new System.Windows.Forms.Button();
             this.btnGenerateQueryQuestEnder = new System.Windows.Forms.Button();
             this.cbSelectAcoreQUestEnder = new System.Windows.Forms.CheckBox();
@@ -163,6 +156,19 @@ namespace ArtaCore_Query_Creator
             this.labelNPCIDEnder = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label42 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutArtaCoreQueryCreatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nPCVendorsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.NPCVendorsTableAdapter();
+            this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.sqlSaveDialog = new System.Windows.Forms.SaveFileDialog();
+            this.labelNPCID_QuestTemplate = new System.Windows.Forms.Label();
+            this.cbNPCIDEQuestTemplate = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.cbAutoGenerateStarterEnder = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -188,7 +194,7 @@ namespace ArtaCore_Query_Creator
             this.tabControl1.Location = new System.Drawing.Point(0, 33);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1344, 1027);
+            this.tabControl1.Size = new System.Drawing.Size(1344, 1032);
             this.tabControl1.TabIndex = 0;
             // 
             // tpNPCVendor
@@ -674,6 +680,10 @@ namespace ArtaCore_Query_Creator
             // 
             // tbQuestTemplate
             // 
+            this.tbQuestTemplate.Controls.Add(this.cbAutoGenerateStarterEnder);
+            this.tbQuestTemplate.Controls.Add(this.labelNPCID_QuestTemplate);
+            this.tbQuestTemplate.Controls.Add(this.cbNPCIDEQuestTemplate);
+            this.tbQuestTemplate.Controls.Add(this.label43);
             this.tbQuestTemplate.Controls.Add(this.tbRequiredAmountNPC4);
             this.tbQuestTemplate.Controls.Add(this.label37);
             this.tbQuestTemplate.Controls.Add(this.tbRequiredNPCID4);
@@ -733,105 +743,433 @@ namespace ArtaCore_Query_Creator
             this.tbQuestTemplate.Controls.Add(this.label17);
             this.tbQuestTemplate.Location = new System.Drawing.Point(4, 29);
             this.tbQuestTemplate.Name = "tbQuestTemplate";
-            this.tbQuestTemplate.Size = new System.Drawing.Size(1336, 994);
+            this.tbQuestTemplate.Size = new System.Drawing.Size(1336, 999);
             this.tbQuestTemplate.TabIndex = 2;
             this.tbQuestTemplate.Text = "QUEST_TEMPLATE";
             this.tbQuestTemplate.UseVisualStyleBackColor = true;
             // 
-            // tbCreatureQuestStarter
+            // tbRequiredAmountNPC4
             // 
-            this.tbCreatureQuestStarter.Controls.Add(this.btnClearQueryQuestStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.btnGenerateQueryQuestStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.cbSelectAcoreQueryStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.tbQueryQuestStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.btnAddNPCtoQueryStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.tbQuestIDQuestStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.label40);
-            this.tbCreatureQuestStarter.Controls.Add(this.labelNPCIDQuestStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.cbNPCIDQuestStarter);
-            this.tbCreatureQuestStarter.Controls.Add(this.label39);
-            this.tbCreatureQuestStarter.Location = new System.Drawing.Point(4, 29);
-            this.tbCreatureQuestStarter.Name = "tbCreatureQuestStarter";
-            this.tbCreatureQuestStarter.Size = new System.Drawing.Size(1336, 994);
-            this.tbCreatureQuestStarter.TabIndex = 3;
-            this.tbCreatureQuestStarter.Text = "CREATURE_QUESTSTARTER";
-            this.tbCreatureQuestStarter.UseVisualStyleBackColor = true;
+            this.tbRequiredAmountNPC4.Location = new System.Drawing.Point(1172, 389);
+            this.tbRequiredAmountNPC4.Name = "tbRequiredAmountNPC4";
+            this.tbRequiredAmountNPC4.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC4.TabIndex = 85;
+            this.tbRequiredAmountNPC4.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC4, "Input the number of items to be rewarded.");
             // 
-            // tbCreatureQuestEnder
+            // label37
             // 
-            this.tbCreatureQuestEnder.Controls.Add(this.btnClearQUeryQUestEnder);
-            this.tbCreatureQuestEnder.Controls.Add(this.btnGenerateQueryQuestEnder);
-            this.tbCreatureQuestEnder.Controls.Add(this.cbSelectAcoreQUestEnder);
-            this.tbCreatureQuestEnder.Controls.Add(this.tbQueryBoxQuestEnder);
-            this.tbCreatureQuestEnder.Controls.Add(this.btnAddQuestEnder);
-            this.tbCreatureQuestEnder.Controls.Add(this.tbQuestIDEnder);
-            this.tbCreatureQuestEnder.Controls.Add(this.label18);
-            this.tbCreatureQuestEnder.Controls.Add(this.labelNPCIDEnder);
-            this.tbCreatureQuestEnder.Controls.Add(this.comboBox1);
-            this.tbCreatureQuestEnder.Controls.Add(this.label42);
-            this.tbCreatureQuestEnder.Location = new System.Drawing.Point(4, 29);
-            this.tbCreatureQuestEnder.Name = "tbCreatureQuestEnder";
-            this.tbCreatureQuestEnder.Size = new System.Drawing.Size(1336, 994);
-            this.tbCreatureQuestEnder.TabIndex = 4;
-            this.tbCreatureQuestEnder.Text = "CREATURE_QUEST_ENDER";
-            this.tbCreatureQuestEnder.UseVisualStyleBackColor = true;
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(1168, 366);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(163, 20);
+            this.label37.TabIndex = 84;
+            this.label37.Text = "Number of NPC 4 Kills";
+            this.toolTip.SetToolTip(this.label37, "The number of NPC to be killed");
             // 
-            // menuStrip1
+            // tbRequiredNPCID4
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operationsToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1344, 33);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.tbRequiredNPCID4.Location = new System.Drawing.Point(1012, 389);
+            this.tbRequiredNPCID4.Name = "tbRequiredNPCID4";
+            this.tbRequiredNPCID4.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID4.TabIndex = 83;
+            this.tbRequiredNPCID4.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID4, "Input the NPC ID that needs to be killed.");
             // 
-            // operationsToolStripMenuItem
+            // label38
             // 
-            this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pasteToolStripMenuItem});
-            this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
-            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
-            this.operationsToolStripMenuItem.Text = "&Operations";
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(1008, 366);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(164, 20);
+            this.label38.TabIndex = 82;
+            this.label38.Text = "Required NPC to Kill 4";
             // 
-            // pasteToolStripMenuItem
+            // tbRequiredAmountNPC3
             // 
-            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
-            this.pasteToolStripMenuItem.Text = "Paste";
-            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            this.tbRequiredAmountNPC3.Location = new System.Drawing.Point(848, 389);
+            this.tbRequiredAmountNPC3.Name = "tbRequiredAmountNPC3";
+            this.tbRequiredAmountNPC3.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC3.TabIndex = 81;
+            this.tbRequiredAmountNPC3.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC3, "Input the number of items to be rewarded.");
             // 
-            // nPCVendorsTableAdapter
+            // label33
             // 
-            this.nPCVendorsTableAdapter.ClearBeforeFill = true;
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(844, 366);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(163, 20);
+            this.label33.TabIndex = 80;
+            this.label33.Text = "Number of NPC 3 Kills";
+            this.toolTip.SetToolTip(this.label33, "The number of NPC to be killed");
             // 
-            // itemExtendedCostsTableAdapter
+            // tbRequiredNPCID3
             // 
-            this.itemExtendedCostsTableAdapter.ClearBeforeFill = true;
+            this.tbRequiredNPCID3.Location = new System.Drawing.Point(688, 389);
+            this.tbRequiredNPCID3.Name = "tbRequiredNPCID3";
+            this.tbRequiredNPCID3.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID3.TabIndex = 79;
+            this.tbRequiredNPCID3.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID3, "Input the NPC ID that needs to be killed.");
             // 
-            // toolTip
+            // label36
             // 
-            this.toolTip.AutoPopDelay = 15000;
-            this.toolTip.InitialDelay = 500;
-            this.toolTip.ReshowDelay = 100;
-            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip.ToolTipTitle = "UI Help";
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(684, 366);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(164, 20);
+            this.label36.TabIndex = 78;
+            this.label36.Text = "Required NPC to Kill 3";
             // 
-            // sqlSaveDialog
+            // tbRequiredAmountNPC2
             // 
-            this.sqlSaveDialog.DefaultExt = "sql";
-            this.sqlSaveDialog.FileName = "NPCVendor_Items";
-            this.sqlSaveDialog.Filter = "SQL Query|*.sql";
-            this.sqlSaveDialog.Title = "Save the SQL Query";
+            this.tbRequiredAmountNPC2.Location = new System.Drawing.Point(522, 389);
+            this.tbRequiredAmountNPC2.Name = "tbRequiredAmountNPC2";
+            this.tbRequiredAmountNPC2.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC2.TabIndex = 77;
+            this.tbRequiredAmountNPC2.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC2, "Input the number of items to be rewarded.");
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(518, 366);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(163, 20);
+            this.label31.TabIndex = 76;
+            this.label31.Text = "Number of NPC 2 Kills";
+            this.toolTip.SetToolTip(this.label31, "The number of NPC to be killed");
+            // 
+            // tbRequiredNPCID2
+            // 
+            this.tbRequiredNPCID2.Location = new System.Drawing.Point(362, 389);
+            this.tbRequiredNPCID2.Name = "tbRequiredNPCID2";
+            this.tbRequiredNPCID2.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID2.TabIndex = 75;
+            this.tbRequiredNPCID2.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID2, "Input the NPC ID that needs to be killed.");
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(358, 366);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(164, 20);
+            this.label32.TabIndex = 74;
+            this.label32.Text = "Required NPC to Kill 2";
+            // 
+            // tbRequiredAmountNPC1
+            // 
+            this.tbRequiredAmountNPC1.Location = new System.Drawing.Point(186, 389);
+            this.tbRequiredAmountNPC1.Name = "tbRequiredAmountNPC1";
+            this.tbRequiredAmountNPC1.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredAmountNPC1.TabIndex = 73;
+            this.tbRequiredAmountNPC1.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredAmountNPC1, "Input the number of items to be rewarded.");
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(182, 366);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(163, 20);
+            this.label34.TabIndex = 72;
+            this.label34.Text = "Number of NPC 1 Kills";
+            this.toolTip.SetToolTip(this.label34, "The number of NPC to be killed");
+            // 
+            // tbRequiredNPCID1
+            // 
+            this.tbRequiredNPCID1.Location = new System.Drawing.Point(26, 389);
+            this.tbRequiredNPCID1.Name = "tbRequiredNPCID1";
+            this.tbRequiredNPCID1.Size = new System.Drawing.Size(133, 26);
+            this.tbRequiredNPCID1.TabIndex = 71;
+            this.tbRequiredNPCID1.Text = "0";
+            this.toolTip.SetToolTip(this.tbRequiredNPCID1, "Input the NPC ID that needs to be killed.");
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(22, 366);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(164, 20);
+            this.label35.TabIndex = 70;
+            this.label35.Text = "Required NPC to Kill 1";
+            // 
+            // tbQuestCompletionLog
+            // 
+            this.tbQuestCompletionLog.Location = new System.Drawing.Point(676, 252);
+            this.tbQuestCompletionLog.Name = "tbQuestCompletionLog";
+            this.tbQuestCompletionLog.Size = new System.Drawing.Size(629, 26);
+            this.tbQuestCompletionLog.TabIndex = 69;
+            this.toolTip.SetToolTip(this.tbQuestCompletionLog, "The message in the quest log that should appear once the quest is complete. For e" +
+        "xample \"Return to Darth Sidious in Stormwind\".");
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(672, 229);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(167, 20);
+            this.label30.TabIndex = 68;
+            this.label30.Text = "Quest Completion Log";
+            this.toolTip.SetToolTip(this.label30, "The message in the quest log that should appear once the quest is complete. For e" +
+        "xample \"Return to Darth Sidious in Stormwind\".");
+            // 
+            // tbQuestDescription
+            // 
+            this.tbQuestDescription.Location = new System.Drawing.Point(26, 252);
+            this.tbQuestDescription.Multiline = true;
+            this.tbQuestDescription.Name = "tbQuestDescription";
+            this.tbQuestDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbQuestDescription.Size = new System.Drawing.Size(629, 93);
+            this.tbQuestDescription.TabIndex = 67;
+            this.toolTip.SetToolTip(this.tbQuestDescription, "Input the quest full description.");
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(22, 229);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(136, 20);
+            this.label29.TabIndex = 66;
+            this.label29.Text = "Quest Description";
+            this.toolTip.SetToolTip(this.label29, "The full quest text.");
+            // 
+            // tbQuestTarget
+            // 
+            this.tbQuestTarget.Location = new System.Drawing.Point(676, 192);
+            this.tbQuestTarget.Name = "tbQuestTarget";
+            this.tbQuestTarget.Size = new System.Drawing.Size(629, 26);
+            this.tbQuestTarget.TabIndex = 65;
+            this.toolTip.SetToolTip(this.tbQuestTarget, "The target of the quest. For example \"Kill the final boss of Molten Core\"");
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(672, 169);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(102, 20);
+            this.label28.TabIndex = 64;
+            this.label28.Text = "Quest Target";
+            this.toolTip.SetToolTip(this.label28, "The target of the quest. For example \"Kill the final boss of Molten Core\"");
+            // 
+            // tbQuestLogTitle
+            // 
+            this.tbQuestLogTitle.Location = new System.Drawing.Point(26, 192);
+            this.tbQuestLogTitle.Name = "tbQuestLogTitle";
+            this.tbQuestLogTitle.Size = new System.Drawing.Size(629, 26);
+            this.tbQuestLogTitle.TabIndex = 63;
+            this.toolTip.SetToolTip(this.tbQuestLogTitle, "Input the quest title. For example \"Conquer Molten Core\"");
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(22, 169);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(65, 20);
+            this.label27.TabIndex = 62;
+            this.label27.Text = "Log title";
+            this.toolTip.SetToolTip(this.label27, "Input the quest title. For example \"Conquer Molten Core\"");
+            // 
+            // tbQuestRewardAmount4
+            // 
+            this.tbQuestRewardAmount4.Location = new System.Drawing.Point(1053, 118);
+            this.tbQuestRewardAmount4.Name = "tbQuestRewardAmount4";
+            this.tbQuestRewardAmount4.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount4.TabIndex = 61;
+            this.tbQuestRewardAmount4.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount4, "Input the number of items to be rewarded.");
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(1049, 95);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(137, 20);
+            this.label25.TabIndex = 60;
+            this.label25.Text = "Reward Amount 4";
+            this.toolTip.SetToolTip(this.label25, "The Quet level (xp and gold are determined by this and player level)");
+            // 
+            // tbQuestRewardID4
+            // 
+            this.tbQuestRewardID4.Location = new System.Drawing.Point(906, 118);
+            this.tbQuestRewardID4.Name = "tbQuestRewardID4";
+            this.tbQuestRewardID4.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID4.TabIndex = 59;
+            this.tbQuestRewardID4.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID4, "Input the Item ID as reward for this quest.");
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(902, 95);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(134, 20);
+            this.label26.TabIndex = 58;
+            this.label26.Text = "Reward Item ID 4";
+            this.toolTip.SetToolTip(this.label26, "The quest ID. Advised to start from 30000.");
+            // 
+            // tbQuestRewardAmount3
+            // 
+            this.tbQuestRewardAmount3.Location = new System.Drawing.Point(763, 118);
+            this.tbQuestRewardAmount3.Name = "tbQuestRewardAmount3";
+            this.tbQuestRewardAmount3.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount3.TabIndex = 57;
+            this.tbQuestRewardAmount3.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount3, "Input the number of items to be rewarded.");
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(759, 95);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(137, 20);
+            this.label23.TabIndex = 56;
+            this.label23.Text = "Reward Amount 3";
+            this.toolTip.SetToolTip(this.label23, "The Quet level (xp and gold are determined by this and player level)");
+            // 
+            // tbQuestRewardID3
+            // 
+            this.tbQuestRewardID3.Location = new System.Drawing.Point(616, 118);
+            this.tbQuestRewardID3.Name = "tbQuestRewardID3";
+            this.tbQuestRewardID3.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID3.TabIndex = 55;
+            this.tbQuestRewardID3.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID3, "Input the Item ID as reward for this quest.");
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(612, 95);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(134, 20);
+            this.label24.TabIndex = 54;
+            this.label24.Text = "Reward Item ID 3";
+            this.toolTip.SetToolTip(this.label24, "The quest ID. Advised to start from 30000.");
+            // 
+            // tbQuestRewardAmount2
+            // 
+            this.tbQuestRewardAmount2.Location = new System.Drawing.Point(473, 118);
+            this.tbQuestRewardAmount2.Name = "tbQuestRewardAmount2";
+            this.tbQuestRewardAmount2.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount2.TabIndex = 53;
+            this.tbQuestRewardAmount2.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount2, "Input the number of items to be rewarded.");
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(469, 95);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(137, 20);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "Reward Amount 2";
+            this.toolTip.SetToolTip(this.label13, "The Quet level (xp and gold are determined by this and player level)");
+            // 
+            // tbQuestRewardID2
+            // 
+            this.tbQuestRewardID2.Location = new System.Drawing.Point(326, 118);
+            this.tbQuestRewardID2.Name = "tbQuestRewardID2";
+            this.tbQuestRewardID2.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID2.TabIndex = 51;
+            this.tbQuestRewardID2.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID2, "Input the Item ID as reward for this quest.");
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(322, 95);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(134, 20);
+            this.label22.TabIndex = 50;
+            this.label22.Text = "Reward Item ID 2";
+            this.toolTip.SetToolTip(this.label22, "The quest ID. Advised to start from 30000.");
+            // 
+            // tbQuestRewardAmount1
+            // 
+            this.tbQuestRewardAmount1.Location = new System.Drawing.Point(173, 118);
+            this.tbQuestRewardAmount1.Name = "tbQuestRewardAmount1";
+            this.tbQuestRewardAmount1.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardAmount1.TabIndex = 49;
+            this.tbQuestRewardAmount1.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardAmount1, "Input the number of items to be rewarded.");
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(169, 95);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(137, 20);
+            this.label21.TabIndex = 48;
+            this.label21.Text = "Reward Amount 1";
+            this.toolTip.SetToolTip(this.label21, "The Quet level (xp and gold are determined by this and player level)");
+            // 
+            // tbQuestRewardID1
+            // 
+            this.tbQuestRewardID1.Location = new System.Drawing.Point(26, 118);
+            this.tbQuestRewardID1.Name = "tbQuestRewardID1";
+            this.tbQuestRewardID1.Size = new System.Drawing.Size(133, 26);
+            this.tbQuestRewardID1.TabIndex = 47;
+            this.tbQuestRewardID1.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardID1, "Input the Item ID as reward for this quest.");
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(22, 95);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(134, 20);
+            this.label20.TabIndex = 46;
+            this.label20.Text = "Reward Item ID 1";
+            this.toolTip.SetToolTip(this.label20, "The quest ID. Advised to start from 30000.");
+            // 
+            // labelQuestType
+            // 
+            this.labelQuestType.AutoSize = true;
+            this.labelQuestType.Location = new System.Drawing.Point(902, 48);
+            this.labelQuestType.Name = "labelQuestType";
+            this.labelQuestType.Size = new System.Drawing.Size(45, 20);
+            this.labelQuestType.TabIndex = 45;
+            this.labelQuestType.Text = "4096";
+            // 
+            // cbQuestType
+            // 
+            this.cbQuestType.FormattingEnabled = true;
+            this.cbQuestType.Items.AddRange(new object[] {
+            "Daily",
+            "Normal"});
+            this.cbQuestType.Location = new System.Drawing.Point(763, 43);
+            this.cbQuestType.Name = "cbQuestType";
+            this.cbQuestType.Size = new System.Drawing.Size(133, 28);
+            this.cbQuestType.TabIndex = 44;
+            this.cbQuestType.Text = "Daily";
+            this.toolTip.SetToolTip(this.cbQuestType, "Select the type of Quest (Daily or Normal)");
+            this.cbQuestType.SelectedIndexChanged += new System.EventHandler(this.cbQuestType_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(759, 20);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(90, 20);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "Quest Type";
+            // 
+            // tbQuestRewardMoney
+            // 
+            this.tbQuestRewardMoney.Location = new System.Drawing.Point(473, 45);
+            this.tbQuestRewardMoney.Name = "tbQuestRewardMoney";
+            this.tbQuestRewardMoney.Size = new System.Drawing.Size(273, 26);
+            this.tbQuestRewardMoney.TabIndex = 40;
+            this.tbQuestRewardMoney.Text = "0";
+            this.toolTip.SetToolTip(this.tbQuestRewardMoney, "The money reward (expressed in copper).");
             // 
             // btnClearQuestTemplateQuery
             // 
             this.btnClearQuestTemplateQuery.Location = new System.Drawing.Point(21, 894);
             this.btnClearQuestTemplateQuery.Name = "btnClearQuestTemplateQuery";
-            this.btnClearQuestTemplateQuery.Size = new System.Drawing.Size(348, 85);
+            this.btnClearQuestTemplateQuery.Size = new System.Drawing.Size(348, 92);
             this.btnClearQuestTemplateQuery.TabIndex = 38;
             this.btnClearQuestTemplateQuery.Text = "Clear the Query";
             this.toolTip.SetToolTip(this.btnClearQuestTemplateQuery, "Clear the Query");
@@ -842,7 +1180,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.btnGenerateQuestTemplateQuery.Location = new System.Drawing.Point(957, 894);
             this.btnGenerateQuestTemplateQuery.Name = "btnGenerateQuestTemplateQuery";
-            this.btnGenerateQuestTemplateQuery.Size = new System.Drawing.Size(348, 85);
+            this.btnGenerateQuestTemplateQuery.Size = new System.Drawing.Size(348, 92);
             this.btnGenerateQuestTemplateQuery.TabIndex = 37;
             this.btnGenerateQuestTemplateQuery.Text = "Generate SQL Query";
             this.toolTip.SetToolTip(this.btnGenerateQuestTemplateQuery, "Generate the SQL query file.");
@@ -852,7 +1190,7 @@ namespace ArtaCore_Query_Creator
             // cbSelectAcoreQuestTemplate
             // 
             this.cbSelectAcoreQuestTemplate.AutoSize = true;
-            this.cbSelectAcoreQuestTemplate.Location = new System.Drawing.Point(522, 925);
+            this.cbSelectAcoreQuestTemplate.Location = new System.Drawing.Point(522, 894);
             this.cbSelectAcoreQuestTemplate.Name = "cbSelectAcoreQuestTemplate";
             this.cbSelectAcoreQuestTemplate.Size = new System.Drawing.Size(247, 24);
             this.cbSelectAcoreQuestTemplate.TabIndex = 36;
@@ -888,7 +1226,9 @@ namespace ArtaCore_Query_Creator
             this.btnAddQuestToQuery.Size = new System.Drawing.Size(1279, 45);
             this.btnAddQuestToQuery.TabIndex = 33;
             this.btnAddQuestToQuery.Text = "Add QUEST to the Query";
-            this.toolTip.SetToolTip(this.btnAddQuestToQuery, "Add the quest to the Query");
+            this.toolTip.SetToolTip(this.btnAddQuestToQuery, "Add the quest to the Query. If you want to assign them to the NPC in the upper ri" +
+        "ght MAKE SURE you have already selected the \"Automatically generate...\" check bo" +
+        "x.");
             this.btnAddQuestToQuery.UseVisualStyleBackColor = true;
             this.btnAddQuestToQuery.Click += new System.EventHandler(this.btnAddQuestToQuery_Click);
             // 
@@ -955,475 +1295,28 @@ namespace ArtaCore_Query_Creator
             this.label17.Text = "Quest ID";
             this.toolTip.SetToolTip(this.label17, "The quest ID. Advised to start from 30000.");
             // 
-            // tbQuestRewardMoney
-            // 
-            this.tbQuestRewardMoney.Location = new System.Drawing.Point(473, 45);
-            this.tbQuestRewardMoney.Name = "tbQuestRewardMoney";
-            this.tbQuestRewardMoney.Size = new System.Drawing.Size(273, 26);
-            this.tbQuestRewardMoney.TabIndex = 40;
-            this.tbQuestRewardMoney.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardMoney, "The money reward (expressed in copper).");
-            // 
-            // labelQuestType
-            // 
-            this.labelQuestType.AutoSize = true;
-            this.labelQuestType.Location = new System.Drawing.Point(902, 48);
-            this.labelQuestType.Name = "labelQuestType";
-            this.labelQuestType.Size = new System.Drawing.Size(45, 20);
-            this.labelQuestType.TabIndex = 45;
-            this.labelQuestType.Text = "4096";
-            // 
-            // cbQuestType
-            // 
-            this.cbQuestType.FormattingEnabled = true;
-            this.cbQuestType.Items.AddRange(new object[] {
-            "Daily",
-            "Normal"});
-            this.cbQuestType.Location = new System.Drawing.Point(763, 43);
-            this.cbQuestType.Name = "cbQuestType";
-            this.cbQuestType.Size = new System.Drawing.Size(133, 28);
-            this.cbQuestType.TabIndex = 44;
-            this.cbQuestType.Text = "Daily";
-            this.toolTip.SetToolTip(this.cbQuestType, "Select the type of Quest (Daily or Normal)");
-            this.cbQuestType.SelectedIndexChanged += new System.EventHandler(this.cbQuestType_SelectedIndexChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(759, 20);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(90, 20);
-            this.label19.TabIndex = 43;
-            this.label19.Text = "Quest Type";
-            // 
-            // tbQuestRewardID1
-            // 
-            this.tbQuestRewardID1.Location = new System.Drawing.Point(26, 118);
-            this.tbQuestRewardID1.Name = "tbQuestRewardID1";
-            this.tbQuestRewardID1.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardID1.TabIndex = 47;
-            this.tbQuestRewardID1.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardID1, "Input the Item ID as reward for this quest.");
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(22, 95);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(134, 20);
-            this.label20.TabIndex = 46;
-            this.label20.Text = "Reward Item ID 1";
-            this.toolTip.SetToolTip(this.label20, "The quest ID. Advised to start from 30000.");
-            // 
-            // tbQuestRewardAmount1
-            // 
-            this.tbQuestRewardAmount1.Location = new System.Drawing.Point(173, 118);
-            this.tbQuestRewardAmount1.Name = "tbQuestRewardAmount1";
-            this.tbQuestRewardAmount1.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardAmount1.TabIndex = 49;
-            this.tbQuestRewardAmount1.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardAmount1, "Input the number of items to be rewarded.");
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(169, 95);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(137, 20);
-            this.label21.TabIndex = 48;
-            this.label21.Text = "Reward Amount 1";
-            this.toolTip.SetToolTip(this.label21, "The Quet level (xp and gold are determined by this and player level)");
-            // 
-            // tbQuestRewardAmount2
-            // 
-            this.tbQuestRewardAmount2.Location = new System.Drawing.Point(473, 118);
-            this.tbQuestRewardAmount2.Name = "tbQuestRewardAmount2";
-            this.tbQuestRewardAmount2.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardAmount2.TabIndex = 53;
-            this.tbQuestRewardAmount2.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardAmount2, "Input the number of items to be rewarded.");
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(469, 95);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(137, 20);
-            this.label13.TabIndex = 52;
-            this.label13.Text = "Reward Amount 2";
-            this.toolTip.SetToolTip(this.label13, "The Quet level (xp and gold are determined by this and player level)");
-            // 
-            // tbQuestRewardID2
-            // 
-            this.tbQuestRewardID2.Location = new System.Drawing.Point(326, 118);
-            this.tbQuestRewardID2.Name = "tbQuestRewardID2";
-            this.tbQuestRewardID2.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardID2.TabIndex = 51;
-            this.tbQuestRewardID2.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardID2, "Input the Item ID as reward for this quest.");
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(322, 95);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(134, 20);
-            this.label22.TabIndex = 50;
-            this.label22.Text = "Reward Item ID 2";
-            this.toolTip.SetToolTip(this.label22, "The quest ID. Advised to start from 30000.");
-            // 
-            // tbQuestRewardAmount3
-            // 
-            this.tbQuestRewardAmount3.Location = new System.Drawing.Point(763, 118);
-            this.tbQuestRewardAmount3.Name = "tbQuestRewardAmount3";
-            this.tbQuestRewardAmount3.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardAmount3.TabIndex = 57;
-            this.tbQuestRewardAmount3.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardAmount3, "Input the number of items to be rewarded.");
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(759, 95);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(137, 20);
-            this.label23.TabIndex = 56;
-            this.label23.Text = "Reward Amount 3";
-            this.toolTip.SetToolTip(this.label23, "The Quet level (xp and gold are determined by this and player level)");
-            // 
-            // tbQuestRewardID3
-            // 
-            this.tbQuestRewardID3.Location = new System.Drawing.Point(616, 118);
-            this.tbQuestRewardID3.Name = "tbQuestRewardID3";
-            this.tbQuestRewardID3.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardID3.TabIndex = 55;
-            this.tbQuestRewardID3.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardID3, "Input the Item ID as reward for this quest.");
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(612, 95);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(134, 20);
-            this.label24.TabIndex = 54;
-            this.label24.Text = "Reward Item ID 3";
-            this.toolTip.SetToolTip(this.label24, "The quest ID. Advised to start from 30000.");
-            // 
-            // tbQuestRewardAmount4
-            // 
-            this.tbQuestRewardAmount4.Location = new System.Drawing.Point(1053, 118);
-            this.tbQuestRewardAmount4.Name = "tbQuestRewardAmount4";
-            this.tbQuestRewardAmount4.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardAmount4.TabIndex = 61;
-            this.tbQuestRewardAmount4.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardAmount4, "Input the number of items to be rewarded.");
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(1049, 95);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(137, 20);
-            this.label25.TabIndex = 60;
-            this.label25.Text = "Reward Amount 4";
-            this.toolTip.SetToolTip(this.label25, "The Quet level (xp and gold are determined by this and player level)");
-            // 
-            // tbQuestRewardID4
-            // 
-            this.tbQuestRewardID4.Location = new System.Drawing.Point(906, 118);
-            this.tbQuestRewardID4.Name = "tbQuestRewardID4";
-            this.tbQuestRewardID4.Size = new System.Drawing.Size(133, 26);
-            this.tbQuestRewardID4.TabIndex = 59;
-            this.tbQuestRewardID4.Text = "0";
-            this.toolTip.SetToolTip(this.tbQuestRewardID4, "Input the Item ID as reward for this quest.");
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(902, 95);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(134, 20);
-            this.label26.TabIndex = 58;
-            this.label26.Text = "Reward Item ID 4";
-            this.toolTip.SetToolTip(this.label26, "The quest ID. Advised to start from 30000.");
-            // 
-            // tbQuestLogTitle
-            // 
-            this.tbQuestLogTitle.Location = new System.Drawing.Point(26, 192);
-            this.tbQuestLogTitle.Name = "tbQuestLogTitle";
-            this.tbQuestLogTitle.Size = new System.Drawing.Size(629, 26);
-            this.tbQuestLogTitle.TabIndex = 63;
-            this.toolTip.SetToolTip(this.tbQuestLogTitle, "Input the quest title. For example \"Conquer Molten Core\"");
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(22, 169);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(65, 20);
-            this.label27.TabIndex = 62;
-            this.label27.Text = "Log title";
-            this.toolTip.SetToolTip(this.label27, "Input the quest title. For example \"Conquer Molten Core\"");
-            // 
-            // tbQuestTarget
-            // 
-            this.tbQuestTarget.Location = new System.Drawing.Point(676, 192);
-            this.tbQuestTarget.Name = "tbQuestTarget";
-            this.tbQuestTarget.Size = new System.Drawing.Size(629, 26);
-            this.tbQuestTarget.TabIndex = 65;
-            this.toolTip.SetToolTip(this.tbQuestTarget, "The target of the quest. For example \"Kill the final boss of Molten Core\"");
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(672, 169);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(102, 20);
-            this.label28.TabIndex = 64;
-            this.label28.Text = "Quest Target";
-            this.toolTip.SetToolTip(this.label28, "The target of the quest. For example \"Kill the final boss of Molten Core\"");
-            // 
-            // tbQuestDescription
-            // 
-            this.tbQuestDescription.Location = new System.Drawing.Point(26, 252);
-            this.tbQuestDescription.Multiline = true;
-            this.tbQuestDescription.Name = "tbQuestDescription";
-            this.tbQuestDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbQuestDescription.Size = new System.Drawing.Size(629, 93);
-            this.tbQuestDescription.TabIndex = 67;
-            this.toolTip.SetToolTip(this.tbQuestDescription, "Input the quest full description.");
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(22, 229);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(136, 20);
-            this.label29.TabIndex = 66;
-            this.label29.Text = "Quest Description";
-            this.toolTip.SetToolTip(this.label29, "The full quest text.");
-            // 
-            // tbQuestCompletionLog
-            // 
-            this.tbQuestCompletionLog.Location = new System.Drawing.Point(676, 252);
-            this.tbQuestCompletionLog.Name = "tbQuestCompletionLog";
-            this.tbQuestCompletionLog.Size = new System.Drawing.Size(629, 26);
-            this.tbQuestCompletionLog.TabIndex = 69;
-            this.toolTip.SetToolTip(this.tbQuestCompletionLog, "The message in the quest log that should appear once the quest is complete. For e" +
-        "xample \"Return to Darth Sidious in Stormwind\".");
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(672, 229);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(167, 20);
-            this.label30.TabIndex = 68;
-            this.label30.Text = "Quest Completion Log";
-            this.toolTip.SetToolTip(this.label30, "The message in the quest log that should appear once the quest is complete. For e" +
-        "xample \"Return to Darth Sidious in Stormwind\".");
-            // 
-            // tbRequiredAmountNPC1
-            // 
-            this.tbRequiredAmountNPC1.Location = new System.Drawing.Point(186, 389);
-            this.tbRequiredAmountNPC1.Name = "tbRequiredAmountNPC1";
-            this.tbRequiredAmountNPC1.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredAmountNPC1.TabIndex = 73;
-            this.tbRequiredAmountNPC1.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredAmountNPC1, "Input the number of items to be rewarded.");
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(182, 366);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(163, 20);
-            this.label34.TabIndex = 72;
-            this.label34.Text = "Number of NPC 1 Kills";
-            this.toolTip.SetToolTip(this.label34, "The number of NPC to be killed");
-            // 
-            // tbRequiredNPCID1
-            // 
-            this.tbRequiredNPCID1.Location = new System.Drawing.Point(26, 389);
-            this.tbRequiredNPCID1.Name = "tbRequiredNPCID1";
-            this.tbRequiredNPCID1.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredNPCID1.TabIndex = 71;
-            this.tbRequiredNPCID1.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredNPCID1, "Input the NPC ID that needs to be killed.");
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(22, 366);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(164, 20);
-            this.label35.TabIndex = 70;
-            this.label35.Text = "Required NPC to Kill 1";
-            // 
-            // tbRequiredAmountNPC2
-            // 
-            this.tbRequiredAmountNPC2.Location = new System.Drawing.Point(522, 389);
-            this.tbRequiredAmountNPC2.Name = "tbRequiredAmountNPC2";
-            this.tbRequiredAmountNPC2.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredAmountNPC2.TabIndex = 77;
-            this.tbRequiredAmountNPC2.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredAmountNPC2, "Input the number of items to be rewarded.");
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(518, 366);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(163, 20);
-            this.label31.TabIndex = 76;
-            this.label31.Text = "Number of NPC 2 Kills";
-            this.toolTip.SetToolTip(this.label31, "The number of NPC to be killed");
-            // 
-            // tbRequiredNPCID2
-            // 
-            this.tbRequiredNPCID2.Location = new System.Drawing.Point(362, 389);
-            this.tbRequiredNPCID2.Name = "tbRequiredNPCID2";
-            this.tbRequiredNPCID2.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredNPCID2.TabIndex = 75;
-            this.tbRequiredNPCID2.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredNPCID2, "Input the NPC ID that needs to be killed.");
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(358, 366);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(164, 20);
-            this.label32.TabIndex = 74;
-            this.label32.Text = "Required NPC to Kill 2";
-            // 
-            // tbRequiredAmountNPC3
-            // 
-            this.tbRequiredAmountNPC3.Location = new System.Drawing.Point(848, 389);
-            this.tbRequiredAmountNPC3.Name = "tbRequiredAmountNPC3";
-            this.tbRequiredAmountNPC3.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredAmountNPC3.TabIndex = 81;
-            this.tbRequiredAmountNPC3.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredAmountNPC3, "Input the number of items to be rewarded.");
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(844, 366);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(163, 20);
-            this.label33.TabIndex = 80;
-            this.label33.Text = "Number of NPC 3 Kills";
-            this.toolTip.SetToolTip(this.label33, "The number of NPC to be killed");
-            // 
-            // tbRequiredNPCID3
-            // 
-            this.tbRequiredNPCID3.Location = new System.Drawing.Point(688, 389);
-            this.tbRequiredNPCID3.Name = "tbRequiredNPCID3";
-            this.tbRequiredNPCID3.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredNPCID3.TabIndex = 79;
-            this.tbRequiredNPCID3.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredNPCID3, "Input the NPC ID that needs to be killed.");
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(684, 366);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(164, 20);
-            this.label36.TabIndex = 78;
-            this.label36.Text = "Required NPC to Kill 3";
-            // 
-            // tbRequiredAmountNPC4
-            // 
-            this.tbRequiredAmountNPC4.Location = new System.Drawing.Point(1172, 389);
-            this.tbRequiredAmountNPC4.Name = "tbRequiredAmountNPC4";
-            this.tbRequiredAmountNPC4.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredAmountNPC4.TabIndex = 85;
-            this.tbRequiredAmountNPC4.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredAmountNPC4, "Input the number of items to be rewarded.");
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(1168, 366);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(163, 20);
-            this.label37.TabIndex = 84;
-            this.label37.Text = "Number of NPC 4 Kills";
-            this.toolTip.SetToolTip(this.label37, "The number of NPC to be killed");
-            // 
-            // tbRequiredNPCID4
-            // 
-            this.tbRequiredNPCID4.Location = new System.Drawing.Point(1012, 389);
-            this.tbRequiredNPCID4.Name = "tbRequiredNPCID4";
-            this.tbRequiredNPCID4.Size = new System.Drawing.Size(133, 26);
-            this.tbRequiredNPCID4.TabIndex = 83;
-            this.tbRequiredNPCID4.Text = "0";
-            this.toolTip.SetToolTip(this.tbRequiredNPCID4, "Input the NPC ID that needs to be killed.");
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(1008, 366);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(164, 20);
-            this.label38.TabIndex = 82;
-            this.label38.Text = "Required NPC to Kill 4";
-            // 
-            // labelNPCIDQuestStarter
-            // 
-            this.labelNPCIDQuestStarter.AutoSize = true;
-            this.labelNPCIDQuestStarter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.labelNPCIDQuestStarter.Location = new System.Drawing.Point(322, 47);
-            this.labelNPCIDQuestStarter.Name = "labelNPCIDQuestStarter";
-            this.labelNPCIDQuestStarter.Size = new System.Drawing.Size(63, 20);
-            this.labelNPCIDQuestStarter.TabIndex = 13;
-            this.labelNPCIDQuestStarter.Text = "000000";
-            // 
-            // cbNPCIDQuestStarter
-            // 
-            this.cbNPCIDQuestStarter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC Name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.cbNPCIDQuestStarter.DataSource = this.nPCVendorsBindingSource;
-            this.cbNPCIDQuestStarter.DisplayMember = "NPC Name";
-            this.cbNPCIDQuestStarter.FormattingEnabled = true;
-            this.cbNPCIDQuestStarter.Location = new System.Drawing.Point(25, 44);
-            this.cbNPCIDQuestStarter.Name = "cbNPCIDQuestStarter";
-            this.cbNPCIDQuestStarter.Size = new System.Drawing.Size(291, 28);
-            this.cbNPCIDQuestStarter.TabIndex = 12;
-            this.toolTip.SetToolTip(this.cbNPCIDQuestStarter, "Select the NPC creature id who will be the vendor for this quest.");
-            this.cbNPCIDQuestStarter.ValueMember = "NPC ID";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(21, 21);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(62, 20);
-            this.label39.TabIndex = 11;
-            this.label39.Text = "NPC ID";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(21, 104);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(85, 20);
-            this.label40.TabIndex = 14;
-            this.label40.Text = "QUEST ID";
-            // 
-            // tbQuestIDQuestStarter
-            // 
-            this.tbQuestIDQuestStarter.Location = new System.Drawing.Point(25, 127);
-            this.tbQuestIDQuestStarter.Name = "tbQuestIDQuestStarter";
-            this.tbQuestIDQuestStarter.Size = new System.Drawing.Size(284, 26);
-            this.tbQuestIDQuestStarter.TabIndex = 15;
-            this.toolTip.SetToolTip(this.tbQuestIDQuestStarter, "Input the Quest ID this NPC should be the ques starter for.");
+            // tbCreatureQuestStarter
+            // 
+            this.tbCreatureQuestStarter.Controls.Add(this.btnClearQueryQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.btnGenerateQueryQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.cbSelectAcoreQueryStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.tbQueryQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.btnAddNPCtoQueryStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.tbQuestIDQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.label40);
+            this.tbCreatureQuestStarter.Controls.Add(this.labelNPCIDQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.cbNPCIDQuestStarter);
+            this.tbCreatureQuestStarter.Controls.Add(this.label39);
+            this.tbCreatureQuestStarter.Location = new System.Drawing.Point(4, 29);
+            this.tbCreatureQuestStarter.Name = "tbCreatureQuestStarter";
+            this.tbCreatureQuestStarter.Size = new System.Drawing.Size(1336, 994);
+            this.tbCreatureQuestStarter.TabIndex = 3;
+            this.tbCreatureQuestStarter.Text = "CREATURE_QUESTSTARTER";
+            this.tbCreatureQuestStarter.UseVisualStyleBackColor = true;
             // 
             // btnClearQueryQuestStarter
             // 
-            this.btnClearQueryQuestStarter.Location = new System.Drawing.Point(25, 881);
+            this.btnClearQueryQuestStarter.Location = new System.Drawing.Point(33, 885);
             this.btnClearQueryQuestStarter.Name = "btnClearQueryQuestStarter";
             this.btnClearQueryQuestStarter.Size = new System.Drawing.Size(348, 85);
             this.btnClearQueryQuestStarter.TabIndex = 28;
@@ -1434,7 +1327,7 @@ namespace ArtaCore_Query_Creator
             // 
             // btnGenerateQueryQuestStarter
             // 
-            this.btnGenerateQueryQuestStarter.Location = new System.Drawing.Point(943, 881);
+            this.btnGenerateQueryQuestStarter.Location = new System.Drawing.Point(951, 885);
             this.btnGenerateQueryQuestStarter.Name = "btnGenerateQueryQuestStarter";
             this.btnGenerateQueryQuestStarter.Size = new System.Drawing.Size(348, 85);
             this.btnGenerateQueryQuestStarter.TabIndex = 27;
@@ -1446,7 +1339,7 @@ namespace ArtaCore_Query_Creator
             // cbSelectAcoreQueryStarter
             // 
             this.cbSelectAcoreQueryStarter.AutoSize = true;
-            this.cbSelectAcoreQueryStarter.Location = new System.Drawing.Point(523, 912);
+            this.cbSelectAcoreQueryStarter.Location = new System.Drawing.Point(531, 916);
             this.cbSelectAcoreQueryStarter.Name = "cbSelectAcoreQueryStarter";
             this.cbSelectAcoreQueryStarter.Size = new System.Drawing.Size(247, 24);
             this.cbSelectAcoreQueryStarter.TabIndex = 26;
@@ -1457,7 +1350,7 @@ namespace ArtaCore_Query_Creator
             // 
             // tbQueryQuestStarter
             // 
-            this.tbQueryQuestStarter.Location = new System.Drawing.Point(25, 413);
+            this.tbQueryQuestStarter.Location = new System.Drawing.Point(33, 417);
             this.tbQueryQuestStarter.Multiline = true;
             this.tbQueryQuestStarter.Name = "tbQueryQuestStarter";
             this.tbQueryQuestStarter.ReadOnly = true;
@@ -1468,7 +1361,7 @@ namespace ArtaCore_Query_Creator
             // 
             // btnAddNPCtoQueryStarter
             // 
-            this.btnAddNPCtoQueryStarter.Location = new System.Drawing.Point(25, 310);
+            this.btnAddNPCtoQueryStarter.Location = new System.Drawing.Point(33, 314);
             this.btnAddNPCtoQueryStarter.Name = "btnAddNPCtoQueryStarter";
             this.btnAddNPCtoQueryStarter.Size = new System.Drawing.Size(1275, 45);
             this.btnAddNPCtoQueryStarter.TabIndex = 24;
@@ -1476,9 +1369,77 @@ namespace ArtaCore_Query_Creator
             this.btnAddNPCtoQueryStarter.UseVisualStyleBackColor = true;
             this.btnAddNPCtoQueryStarter.Click += new System.EventHandler(this.btnAddNPCtoQueryStarter_Click);
             // 
+            // tbQuestIDQuestStarter
+            // 
+            this.tbQuestIDQuestStarter.Location = new System.Drawing.Point(33, 131);
+            this.tbQuestIDQuestStarter.Name = "tbQuestIDQuestStarter";
+            this.tbQuestIDQuestStarter.Size = new System.Drawing.Size(284, 26);
+            this.tbQuestIDQuestStarter.TabIndex = 15;
+            this.toolTip.SetToolTip(this.tbQuestIDQuestStarter, "Input the Quest ID this NPC should be the ques starter for.");
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(29, 108);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(85, 20);
+            this.label40.TabIndex = 14;
+            this.label40.Text = "QUEST ID";
+            // 
+            // labelNPCIDQuestStarter
+            // 
+            this.labelNPCIDQuestStarter.AutoSize = true;
+            this.labelNPCIDQuestStarter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.labelNPCIDQuestStarter.Location = new System.Drawing.Point(330, 51);
+            this.labelNPCIDQuestStarter.Name = "labelNPCIDQuestStarter";
+            this.labelNPCIDQuestStarter.Size = new System.Drawing.Size(63, 20);
+            this.labelNPCIDQuestStarter.TabIndex = 13;
+            this.labelNPCIDQuestStarter.Text = "000000";
+            // 
+            // cbNPCIDQuestStarter
+            // 
+            this.cbNPCIDQuestStarter.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC Name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.cbNPCIDQuestStarter.DataSource = this.nPCVendorsBindingSource;
+            this.cbNPCIDQuestStarter.DisplayMember = "NPC Name";
+            this.cbNPCIDQuestStarter.FormattingEnabled = true;
+            this.cbNPCIDQuestStarter.Location = new System.Drawing.Point(33, 48);
+            this.cbNPCIDQuestStarter.Name = "cbNPCIDQuestStarter";
+            this.cbNPCIDQuestStarter.Size = new System.Drawing.Size(291, 28);
+            this.cbNPCIDQuestStarter.TabIndex = 12;
+            this.toolTip.SetToolTip(this.cbNPCIDQuestStarter, "Select the NPC creature id who will be the vendor for this quest.");
+            this.cbNPCIDQuestStarter.ValueMember = "NPC ID";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(29, 25);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 20);
+            this.label39.TabIndex = 11;
+            this.label39.Text = "NPC ID";
+            // 
+            // tbCreatureQuestEnder
+            // 
+            this.tbCreatureQuestEnder.Controls.Add(this.btnClearQUeryQUestEnder);
+            this.tbCreatureQuestEnder.Controls.Add(this.btnGenerateQueryQuestEnder);
+            this.tbCreatureQuestEnder.Controls.Add(this.cbSelectAcoreQUestEnder);
+            this.tbCreatureQuestEnder.Controls.Add(this.tbQueryBoxQuestEnder);
+            this.tbCreatureQuestEnder.Controls.Add(this.btnAddQuestEnder);
+            this.tbCreatureQuestEnder.Controls.Add(this.tbQuestIDEnder);
+            this.tbCreatureQuestEnder.Controls.Add(this.label18);
+            this.tbCreatureQuestEnder.Controls.Add(this.labelNPCIDEnder);
+            this.tbCreatureQuestEnder.Controls.Add(this.comboBox1);
+            this.tbCreatureQuestEnder.Controls.Add(this.label42);
+            this.tbCreatureQuestEnder.Location = new System.Drawing.Point(4, 29);
+            this.tbCreatureQuestEnder.Name = "tbCreatureQuestEnder";
+            this.tbCreatureQuestEnder.Size = new System.Drawing.Size(1336, 994);
+            this.tbCreatureQuestEnder.TabIndex = 4;
+            this.tbCreatureQuestEnder.Text = "CREATURE_QUEST_ENDER";
+            this.tbCreatureQuestEnder.UseVisualStyleBackColor = true;
+            // 
             // btnClearQUeryQUestEnder
             // 
-            this.btnClearQUeryQUestEnder.Location = new System.Drawing.Point(22, 883);
+            this.btnClearQUeryQUestEnder.Location = new System.Drawing.Point(33, 885);
             this.btnClearQUeryQUestEnder.Name = "btnClearQUeryQUestEnder";
             this.btnClearQUeryQUestEnder.Size = new System.Drawing.Size(348, 85);
             this.btnClearQUeryQUestEnder.TabIndex = 38;
@@ -1488,7 +1449,7 @@ namespace ArtaCore_Query_Creator
             // 
             // btnGenerateQueryQuestEnder
             // 
-            this.btnGenerateQueryQuestEnder.Location = new System.Drawing.Point(940, 883);
+            this.btnGenerateQueryQuestEnder.Location = new System.Drawing.Point(951, 885);
             this.btnGenerateQueryQuestEnder.Name = "btnGenerateQueryQuestEnder";
             this.btnGenerateQueryQuestEnder.Size = new System.Drawing.Size(348, 85);
             this.btnGenerateQueryQuestEnder.TabIndex = 37;
@@ -1500,7 +1461,7 @@ namespace ArtaCore_Query_Creator
             // cbSelectAcoreQUestEnder
             // 
             this.cbSelectAcoreQUestEnder.AutoSize = true;
-            this.cbSelectAcoreQUestEnder.Location = new System.Drawing.Point(520, 914);
+            this.cbSelectAcoreQUestEnder.Location = new System.Drawing.Point(531, 916);
             this.cbSelectAcoreQUestEnder.Name = "cbSelectAcoreQUestEnder";
             this.cbSelectAcoreQUestEnder.Size = new System.Drawing.Size(247, 24);
             this.cbSelectAcoreQUestEnder.TabIndex = 36;
@@ -1511,7 +1472,7 @@ namespace ArtaCore_Query_Creator
             // 
             // tbQueryBoxQuestEnder
             // 
-            this.tbQueryBoxQuestEnder.Location = new System.Drawing.Point(22, 415);
+            this.tbQueryBoxQuestEnder.Location = new System.Drawing.Point(33, 417);
             this.tbQueryBoxQuestEnder.Multiline = true;
             this.tbQueryBoxQuestEnder.Name = "tbQueryBoxQuestEnder";
             this.tbQueryBoxQuestEnder.ReadOnly = true;
@@ -1522,7 +1483,7 @@ namespace ArtaCore_Query_Creator
             // 
             // btnAddQuestEnder
             // 
-            this.btnAddQuestEnder.Location = new System.Drawing.Point(22, 312);
+            this.btnAddQuestEnder.Location = new System.Drawing.Point(33, 314);
             this.btnAddQuestEnder.Name = "btnAddQuestEnder";
             this.btnAddQuestEnder.Size = new System.Drawing.Size(1275, 45);
             this.btnAddQuestEnder.TabIndex = 34;
@@ -1532,7 +1493,7 @@ namespace ArtaCore_Query_Creator
             // 
             // tbQuestIDEnder
             // 
-            this.tbQuestIDEnder.Location = new System.Drawing.Point(22, 129);
+            this.tbQuestIDEnder.Location = new System.Drawing.Point(33, 131);
             this.tbQuestIDEnder.Name = "tbQuestIDEnder";
             this.tbQuestIDEnder.Size = new System.Drawing.Size(284, 26);
             this.tbQuestIDEnder.TabIndex = 33;
@@ -1541,7 +1502,7 @@ namespace ArtaCore_Query_Creator
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(18, 106);
+            this.label18.Location = new System.Drawing.Point(29, 108);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(85, 20);
             this.label18.TabIndex = 32;
@@ -1551,7 +1512,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.labelNPCIDEnder.AutoSize = true;
             this.labelNPCIDEnder.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.labelNPCIDEnder.Location = new System.Drawing.Point(319, 49);
+            this.labelNPCIDEnder.Location = new System.Drawing.Point(330, 51);
             this.labelNPCIDEnder.Name = "labelNPCIDEnder";
             this.labelNPCIDEnder.Size = new System.Drawing.Size(63, 20);
             this.labelNPCIDEnder.TabIndex = 31;
@@ -1563,7 +1524,7 @@ namespace ArtaCore_Query_Creator
             this.comboBox1.DataSource = this.nPCVendorsBindingSource;
             this.comboBox1.DisplayMember = "NPC Name";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(22, 46);
+            this.comboBox1.Location = new System.Drawing.Point(33, 48);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(291, 28);
             this.comboBox1.TabIndex = 30;
@@ -1573,17 +1534,129 @@ namespace ArtaCore_Query_Creator
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(18, 23);
+            this.label42.Location = new System.Drawing.Point(29, 25);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(62, 20);
             this.label42.TabIndex = 29;
             this.label42.Text = "NPC ID";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.operationsToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1344, 33);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // operationsToolStripMenuItem
+            // 
+            this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pasteToolStripMenuItem});
+            this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
+            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(116, 29);
+            this.operationsToolStripMenuItem.Text = "&Operations";
+            this.operationsToolStripMenuItem.Visible = false;
+            // 
+            // pasteToolStripMenuItem
+            // 
+            this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
+            this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pasteToolStripMenuItem.Text = "Paste";
+            this.pasteToolStripMenuItem.Visible = false;
+            this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutArtaCoreQueryCreatorToolStripMenuItem});
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(78, 29);
+            this.aboutToolStripMenuItem.Text = "&About";
+            // 
+            // aboutArtaCoreQueryCreatorToolStripMenuItem
+            // 
+            this.aboutArtaCoreQueryCreatorToolStripMenuItem.Name = "aboutArtaCoreQueryCreatorToolStripMenuItem";
+            this.aboutArtaCoreQueryCreatorToolStripMenuItem.Size = new System.Drawing.Size(355, 34);
+            this.aboutArtaCoreQueryCreatorToolStripMenuItem.Text = "About ArtaCore Query Creator";
+            this.aboutArtaCoreQueryCreatorToolStripMenuItem.Click += new System.EventHandler(this.aboutArtaCoreQueryCreatorToolStripMenuItem_Click);
+            // 
+            // nPCVendorsTableAdapter
+            // 
+            this.nPCVendorsTableAdapter.ClearBeforeFill = true;
+            // 
+            // itemExtendedCostsTableAdapter
+            // 
+            this.itemExtendedCostsTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutoPopDelay = 15000;
+            this.toolTip.InitialDelay = 500;
+            this.toolTip.ReshowDelay = 100;
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip.ToolTipTitle = "UI Help";
+            // 
+            // sqlSaveDialog
+            // 
+            this.sqlSaveDialog.DefaultExt = "sql";
+            this.sqlSaveDialog.FileName = "NPCVendor_Items";
+            this.sqlSaveDialog.Filter = "SQL Query|*.sql";
+            this.sqlSaveDialog.Title = "Save the SQL Query";
+            // 
+            // labelNPCID_QuestTemplate
+            // 
+            this.labelNPCID_QuestTemplate.AutoSize = true;
+            this.labelNPCID_QuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.labelNPCID_QuestTemplate.Location = new System.Drawing.Point(1254, 48);
+            this.labelNPCID_QuestTemplate.Name = "labelNPCID_QuestTemplate";
+            this.labelNPCID_QuestTemplate.Size = new System.Drawing.Size(63, 20);
+            this.labelNPCID_QuestTemplate.TabIndex = 88;
+            this.labelNPCID_QuestTemplate.Text = "000000";
+            // 
+            // cbNPCIDEQuestTemplate
+            // 
+            this.cbNPCIDEQuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC Name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.cbNPCIDEQuestTemplate.DataSource = this.nPCVendorsBindingSource;
+            this.cbNPCIDEQuestTemplate.DisplayMember = "NPC Name";
+            this.cbNPCIDEQuestTemplate.FormattingEnabled = true;
+            this.cbNPCIDEQuestTemplate.Location = new System.Drawing.Point(957, 45);
+            this.cbNPCIDEQuestTemplate.Name = "cbNPCIDEQuestTemplate";
+            this.cbNPCIDEQuestTemplate.Size = new System.Drawing.Size(291, 28);
+            this.cbNPCIDEQuestTemplate.TabIndex = 87;
+            this.toolTip.SetToolTip(this.cbNPCIDEQuestTemplate, resources.GetString("cbNPCIDEQuestTemplate.ToolTip"));
+            this.cbNPCIDEQuestTemplate.ValueMember = "NPC ID";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(953, 22);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(62, 20);
+            this.label43.TabIndex = 86;
+            this.label43.Text = "NPC ID";
+            // 
+            // cbAutoGenerateStarterEnder
+            // 
+            this.cbAutoGenerateStarterEnder.AutoSize = true;
+            this.cbAutoGenerateStarterEnder.Location = new System.Drawing.Point(395, 955);
+            this.cbAutoGenerateStarterEnder.Name = "cbAutoGenerateStarterEnder";
+            this.cbAutoGenerateStarterEnder.Size = new System.Drawing.Size(552, 24);
+            this.cbAutoGenerateStarterEnder.TabIndex = 89;
+            this.cbAutoGenerateStarterEnder.Text = "Automatically generate the QuestStarter and QuestEnder queries as well.";
+            this.toolTip.SetToolTip(this.cbAutoGenerateStarterEnder, resources.GetString("cbAutoGenerateStarterEnder.ToolTip"));
+            this.cbAutoGenerateStarterEnder.UseVisualStyleBackColor = true;
+            // 
             // mainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 1060);
+            this.ClientSize = new System.Drawing.Size(1344, 1065);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -1750,6 +1823,12 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.Label labelNPCIDEnder;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutArtaCoreQueryCreatorToolStripMenuItem;
+        private System.Windows.Forms.CheckBox cbAutoGenerateStarterEnder;
+        private System.Windows.Forms.Label labelNPCID_QuestTemplate;
+        private System.Windows.Forms.ComboBox cbNPCIDEQuestTemplate;
+        private System.Windows.Forms.Label label43;
     }
 }
 
