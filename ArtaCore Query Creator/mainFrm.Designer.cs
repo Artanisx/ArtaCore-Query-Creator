@@ -1309,7 +1309,7 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureQuestStarter.Controls.Add(this.label39);
             this.tbCreatureQuestStarter.Location = new System.Drawing.Point(4, 29);
             this.tbCreatureQuestStarter.Name = "tbCreatureQuestStarter";
-            this.tbCreatureQuestStarter.Size = new System.Drawing.Size(1336, 994);
+            this.tbCreatureQuestStarter.Size = new System.Drawing.Size(1336, 999);
             this.tbCreatureQuestStarter.TabIndex = 3;
             this.tbCreatureQuestStarter.Text = "CREATURE_QUESTSTARTER";
             this.tbCreatureQuestStarter.UseVisualStyleBackColor = true;
@@ -1432,7 +1432,7 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureQuestEnder.Controls.Add(this.label42);
             this.tbCreatureQuestEnder.Location = new System.Drawing.Point(4, 29);
             this.tbCreatureQuestEnder.Name = "tbCreatureQuestEnder";
-            this.tbCreatureQuestEnder.Size = new System.Drawing.Size(1336, 994);
+            this.tbCreatureQuestEnder.Size = new System.Drawing.Size(1336, 999);
             this.tbCreatureQuestEnder.TabIndex = 4;
             this.tbCreatureQuestEnder.Text = "CREATURE_QUEST_ENDER";
             this.tbCreatureQuestEnder.UseVisualStyleBackColor = true;
@@ -1613,6 +1613,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.labelNPCID_QuestTemplate.AutoSize = true;
             this.labelNPCID_QuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.labelNPCID_QuestTemplate.ForeColor = System.Drawing.SystemColors.Highlight;
             this.labelNPCID_QuestTemplate.Location = new System.Drawing.Point(1254, 48);
             this.labelNPCID_QuestTemplate.Name = "labelNPCID_QuestTemplate";
             this.labelNPCID_QuestTemplate.Size = new System.Drawing.Size(63, 20);
@@ -1624,6 +1625,7 @@ namespace ArtaCore_Query_Creator
             this.cbNPCIDEQuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC Name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.cbNPCIDEQuestTemplate.DataSource = this.nPCVendorsBindingSource;
             this.cbNPCIDEQuestTemplate.DisplayMember = "NPC Name";
+            this.cbNPCIDEQuestTemplate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.cbNPCIDEQuestTemplate.FormattingEnabled = true;
             this.cbNPCIDEQuestTemplate.Location = new System.Drawing.Point(957, 45);
             this.cbNPCIDEQuestTemplate.Name = "cbNPCIDEQuestTemplate";
@@ -1635,6 +1637,7 @@ namespace ArtaCore_Query_Creator
             // label43
             // 
             this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label43.Location = new System.Drawing.Point(953, 22);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(62, 20);
@@ -1644,6 +1647,7 @@ namespace ArtaCore_Query_Creator
             // cbAutoGenerateStarterEnder
             // 
             this.cbAutoGenerateStarterEnder.AutoSize = true;
+            this.cbAutoGenerateStarterEnder.ForeColor = System.Drawing.SystemColors.Highlight;
             this.cbAutoGenerateStarterEnder.Location = new System.Drawing.Point(395, 955);
             this.cbAutoGenerateStarterEnder.Name = "cbAutoGenerateStarterEnder";
             this.cbAutoGenerateStarterEnder.Size = new System.Drawing.Size(552, 24);
@@ -1660,6 +1664,7 @@ namespace ArtaCore_Query_Creator
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "mainFrm";
