@@ -120,33 +120,24 @@
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>345, 65</value>
   </metadata>
-  <data name="label4.ToolTip" xml:space="preserve">
-    <value>Using this table you can add / remove / update or simply view the NPC names and related ID that is used in other tabs.
-It is not what's currently present in the game database, of course, just a way to input/edit this info inside the software.
-Only using the SQL Creator in this tab (below this table) that you can create SQL Queries for adding NPCs to the ArtaCore database. 
-Take care of adding Names+IDs in this internal database so they match what you have imported in the ArtaCore server.</value>
-  </data>
   <data name="cbEnableItemNameFetching.ToolTip" xml:space="preserve">
     <value>Check this to fetch the item names from the IDs pasted in the Item IDs list form woltk.db.com. If an item is not found it will be shown an error message and the item itself will be marked in red. This takes time!</value>
   </data>
   <metadata name="itemExtendedCostsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>2328, 17</value>
   </metadata>
-  <metadata name="itemExtendedCostsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>2328, 17</value>
-  </metadata>
-  <metadata name="databaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1578, 17</value>
-  </metadata>
   <metadata name="databaseDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1578, 17</value>
   </metadata>
   <metadata name="nPCVendorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1777, 17</value>
   </metadata>
-  <metadata name="nPCVendorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1777, 17</value>
-  </metadata>
+  <data name="label4.ToolTip" xml:space="preserve">
+    <value>Using this table you can add / remove / update or simply view the NPC names and related ID that is used in other tabs.
+It is not what's currently present in the game database, of course, just a way to input/edit this info inside the software.
+Only using the SQL Creator in this tab (below this table) that you can create SQL Queries for adding NPCs to the ArtaCore database. 
+Take care of adding Names+IDs in this internal database so they match what you have imported in the ArtaCore server.</value>
+  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1422, 17</value>
   </metadata>
