@@ -191,6 +191,18 @@ namespace ArtaCore_Query_Creator
                 return;
             }
 
+            // remove new lines in the questlogtitle
+            questLogtitle = questLogtitle.Replace(Environment.NewLine, "");
+
+            // remove new lines in the questTarget
+            questTarget = questTarget.Replace(Environment.NewLine, "");
+
+            // remove new lines in the questCompletionlog
+            questCompletionlog = questCompletionlog.Replace(Environment.NewLine, "");
+
+            // replaces newlines in the questDescription with the correct characters  "$b$b"
+            questDescription = questDescription.Replace(Environment.NewLine, "$b$b");
+
             if (queryBox == null)
             {
                 MessageBox.Show("The passed Text Box for the SQL  is not valid.");
