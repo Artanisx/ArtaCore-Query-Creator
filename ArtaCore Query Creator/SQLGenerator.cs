@@ -26,6 +26,11 @@ namespace ArtaCore_Query_Creator
         const string QUESTENDER_OPENINGLINE = "INSERT INTO `creature_questender` (`id`, `quest`) VALUES (";
         const string QUESTENDER_CLOSINGLINE = ");";
 
+        const string CREATURETEMPLATE_REALOPENING_LINE = "INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `detection_range`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `BaseVariance`, `RangeVariance`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `ExperienceModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `spell_school_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES (";
+        const string CREATURETEMPLATE_REALCLOSING_LINE = ", 1, 1.14286, 18, 1, 0, 0, 1, 1500, 2000, 1, 1, 1, 512, 2048, 0, 0, 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, '', 0, 3, 1, 1.1, 1, 1, 1, 0, 0, 1, 0, 0, 2, '', 12340);";
+
+        static string completeQueryString = "";
+
         public static void PreviewSQLQuery(TextBox previewTextBox, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID, bool selectedDatabase)
         {
             string result;
@@ -118,6 +123,79 @@ namespace ArtaCore_Query_Creator
             queryBox.AppendText(result);
 
             //MessageBox.Show("NPC added to the Query!");
+        }
+
+        public static void AddtoSQLQueryCreatureTemplateNEW(string npcID, string npcName, string npcSubname, string npcKind)
+        {
+            // THIS METHOD CREATES A VALID CREATURETEMPLATE USING THE NEW FORMAT
+
+            string result;
+
+            // Check if we have all correct data
+            if (int.TryParse(npcID, out int npcVendorID) == false)
+            {
+                MessageBox.Show("Entered NPC Vendor ID is not valid: " + npcID);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(npcName) || string.IsNullOrEmpty(npcSubname) || string.IsNullOrEmpty(npcKind))
+            {
+                MessageBox.Show("The NPC name or NPC Subname or NPC Kind is not valid.");
+                return;
+            }
+
+            result = "";
+
+            result = CREATURETEMPLATE_REALOPENING_LINE;
+
+            result += npcID + ", 0, 0, 0, 0, 0, 4416, 0, 0, 0, ";
+
+            result += "'" + npcName + "', ";
+
+            result += "'" + npcSubname + "', NULL, 0, 35, 35, 0, 12, ";
+
+            result += npcKind;
+
+            result += CREATURETEMPLATE_REALCLOSING_LINE + Environment.NewLine;
+
+            completeQueryString += result;
+        }
+
+
+        public static void AddtoSQLQueryCreatureTemplateNEW(TextBox queryBox, string npcID, string npcName, string npcSubname, string npcKind)
+        {
+            // THIS METHOD CREATES A VALID CREATURETEMPLATE USING THE NEW FORMAT
+
+            string result;
+
+            // Check if we have all correct data
+            if (int.TryParse(npcID, out int npcVendorID) == false)
+            {
+                MessageBox.Show("Entered NPC Vendor ID is not valid: " + npcID);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(npcName) || string.IsNullOrEmpty(npcSubname) || string.IsNullOrEmpty(npcKind))
+            {
+                MessageBox.Show("The NPC name or NPC Subname or NPC Kind is not valid.");
+                return;
+            }
+
+            result = "";
+
+            result = CREATURETEMPLATE_REALOPENING_LINE;
+
+            result += npcID + ", 0, 0, 0, 0, 0, 4416, 0, 0, 0, ";
+
+            result += "'" + npcName + "', ";
+
+            result += "'" + npcSubname + "', NULL, 0, 35, 35, 0, 12, ";
+
+            result += npcKind;
+
+            result += CREATURETEMPLATE_REALCLOSING_LINE + Environment.NewLine;
+
+            queryBox.AppendText(result);
         }
 
         public static void AddtoSQLQueryQuestTemplate(TextBox queryBox, string questID, string questLevel, string questMinLevel, string questRewardMoney, string questType, string rewardItem1, string rewardAmount1,
@@ -491,6 +569,48 @@ namespace ArtaCore_Query_Creator
             }
         }
 
+        public static void SaveSQLQueryCreatureTemplate(SaveFileDialog sqlSaveFileDialog, string query, bool selectedDatabase)
+        {
+            string result;
+
+            if (string.IsNullOrEmpty(query) || query.Length <= 10)
+            {
+                MessageBox.Show("The query is empty or invalid!");
+                return;
+            }
+
+
+            if (sqlSaveFileDialog == null)
+            {
+                MessageBox.Show("The passed Save Dialog is not valid.");
+                return;
+            }
+
+            result = "";
+
+            if (selectedDatabase == true)
+                result += NPCVENDOR_OPENINGSTATEMENT + Environment.NewLine;
+
+            result += query;
+
+            sqlSaveFileDialog.FileName = "Creature_Template";
+
+            // Invoke the save dialog
+            sqlSaveFileDialog.ShowDialog();
+
+            // Write the sql file
+            try
+            {
+                File.WriteAllText(sqlSaveFileDialog.FileName, result);
+
+                MessageBox.Show("SQL creation completed. Written in file: " + sqlSaveFileDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL creation failed. Error: " + ex.Message);
+            }
+        }
+
         public static void SaveSQLQuery(SaveFileDialog sqlSaveFileDialog, ListBox itemIDsListBox, string nPCVendorID, string itemExtendedCostID, bool selectedDatabase)
         {
             string result;
@@ -554,6 +674,112 @@ namespace ArtaCore_Query_Creator
             {
                 MessageBox.Show("SQL creation failed. Error: " + ex.Message);
             }        
+        }
+
+        public static string OpenSQLQuery(OpenFileDialog sqlOpenFileDialog)
+        {
+            string oldQuery = "";
+
+            //MessageBox.Show("Select the SQL file you need to convert in the new format.");
+            sqlOpenFileDialog.ShowDialog();
+
+            try
+            {
+                oldQuery = File.ReadAllText(sqlOpenFileDialog.FileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL opening failed. Error: " + ex.Message);
+            }
+
+            return oldQuery;
+        }
+
+        public static string ConvertSQLQueryCreatureTemplate(string oldQuery)
+        {
+            string result = oldQuery;
+
+            /**
+            * This will:            
+            * 2) Check if the file needs conversion at all
+            * 3) Copy and replace la parte che genera la tabela fino a "VALUES (" con il nuovo formato che è:
+            *    INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `detection_range`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `BaseVariance`, `RangeVariance`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `ExperienceModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `spell_school_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES (
+              4) Estrarre il valore NPCID "VALUES(XXXXXXXXXX)" dal file old
+              5) Estrarre il nome "VALUES (700000, 0, 0, 0, 0, 0, 4416, 0, 0, 0, 'XXXXXXX', " dal file old
+              6) Estrarre il subname  "VALUES (700000, 0, 0, 0, 0, 0, 4416, 0, 0, 0, '', 'XXXXXXXXXXX', " dal file old
+              7) Estrarre il numero 130 (quest giver), 128 npoc vendor  "VALUES (700000, 0, 0, 0, 0, 0, 4416, 0, 0, 0, 'Yoh Asakura', 'Vanilla Dungeon Quests', NULL, 0, 66, 66, 0, 12, XXXXXXXXX, " dal file old
+
+            * */
+
+            // Check if this query needs conversion
+            bool containsSearchResult = result.Contains(CREATURETEMPLATE_REALOPENING_LINE);
+
+            if (containsSearchResult)
+            {
+                MessageBox.Show("The selected SQL file is already in the correct new format. Conversion aborted.");
+                return "";
+            }
+
+            // If we reach here, the sql needs conversion.
+
+            // Convert the table definition
+            result = result.Replace(CREATURETEMPLATE_OPENING_LINE, CREATURETEMPLATE_REALOPENING_LINE);
+
+            // Extract each single entry in the SQL            
+            char delimiter = ';';
+            string[] entries = result.Split(delimiter);            
+
+            foreach (string entry in entries)
+            {
+                // If an entry contains "" it's to ignored
+                if (entry == "USE `acore_world`")
+                    continue;
+                else
+                {
+                    // Extract the NPC ID               
+                    string pointOfStart = CREATURETEMPLATE_REALOPENING_LINE;
+                    int pointOfStartLen = pointOfStart.Length + 2;                    
+                    int NPCIDlength = 6; // 700000
+
+                    if (entry.Length <= NPCIDlength)
+                        continue;
+                    
+                    string npcID = entry.Substring(pointOfStartLen, NPCIDlength);
+
+                    // Extract the NAME and SUBNAME
+                    char del = '\'';
+                    string[] extraction = entry.Split(del);
+
+                    string npcNAME = extraction[1];
+                    string npcSUBNAME = extraction[3];
+
+                    // Extract the NPCType
+                    del = '(';
+                    extraction = null;
+                    extraction = entry.Split(del);
+                    string numbers = extraction[2];
+
+                    del = ',';
+                    extraction = null;
+                    extraction = numbers.Split(del);
+
+                    string npcType = extraction[18];
+
+                    int.TryParse(npcType, out int npcTypeNum);
+
+                    npcType = npcTypeNum.ToString();
+
+                    //MessageBox.Show("NPC ID: " + npcID);
+                    //MessageBox.Show("NPC NAME: " + npcNAME);
+                    //MessageBox.Show("NPC SUBNAME: " + npcSUBNAME);                    
+                    //MessageBox.Show("NPC Type: " + npcType);
+
+
+                    AddtoSQLQueryCreatureTemplateNEW(npcID, npcNAME, npcSUBNAME, npcType);
+                }
+            }
+
+            return completeQueryString;            
         }
     }
 }

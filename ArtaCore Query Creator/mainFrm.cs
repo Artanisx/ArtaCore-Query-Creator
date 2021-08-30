@@ -160,7 +160,10 @@ namespace ArtaCore_Query_Creator
 
         private void bntAddNPC_Click(object sender, EventArgs e)
         {
-            SQLGenerator.AddtoSQLQueryCreatureTemplate(txtSQLPreviewCreatureTemplate, txtNPCIDCreatureTemplate.Text, txtNPCNAMECreatureTemplate.Text, txtNPCSUBNAMECreatureTemplate.Text, labelNPCType.Text);
+            if (!cboxNewFormat.Checked)
+                SQLGenerator.AddtoSQLQueryCreatureTemplate(txtSQLPreviewCreatureTemplate, txtNPCIDCreatureTemplate.Text, txtNPCNAMECreatureTemplate.Text, txtNPCSUBNAMECreatureTemplate.Text, labelNPCType.Text);
+            else
+                SQLGenerator.AddtoSQLQueryCreatureTemplateNEW(txtSQLPreviewCreatureTemplate, txtNPCIDCreatureTemplate.Text, txtNPCNAMECreatureTemplate.Text, txtNPCSUBNAMECreatureTemplate.Text, labelNPCType.Text);
         }
 
         private void btnAddQueryCreaturesToInternalDB_Click(object sender, EventArgs e)
@@ -330,6 +333,31 @@ namespace ArtaCore_Query_Creator
         private void aboutArtaCoreQueryCreatorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("ArtaCore Query Creator is a small utility made with the purpose of making database changes, like creating quests, npcs and vendors as painless as possible, automatically generating SQL queries which can be safely imported into the acore_world database of an AzerothCore server.\n\nThis program has been written by Fabrizio Tobia.", "ArtaCore Query Creator", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void convertCreatureTemplateSQLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // This will:
+
+            /**
+             * This will:
+             * 1) Open a file browser to select a SQL to convert
+             * 2) Check if the file needs conversion at all
+             * 3) Copy and replace la parte che genera la tabela fino a "VALUES (" con il nuovo formato che è:
+             *    INSERT INTO `creature_template` (`entry`, `difficulty_entry_1`, `difficulty_entry_2`, `difficulty_entry_3`, `KillCredit1`, `KillCredit2`, `modelid1`, `modelid2`, `modelid3`, `modelid4`, `name`, `subname`, `IconName`, `gossip_menu_id`, `minlevel`, `maxlevel`, `exp`, `faction`, `npcflag`, `speed_walk`, `speed_run`, `detection_range`, `scale`, `rank`, `dmgschool`, `DamageModifier`, `BaseAttackTime`, `RangeAttackTime`, `BaseVariance`, `RangeVariance`, `unit_class`, `unit_flags`, `unit_flags2`, `dynamicflags`, `family`, `trainer_type`, `trainer_spell`, `trainer_class`, `trainer_race`, `type`, `type_flags`, `lootid`, `pickpocketloot`, `skinloot`, `PetSpellDataId`, `VehicleId`, `mingold`, `maxgold`, `AIName`, `MovementType`, `InhabitType`, `HoverHeight`, `HealthModifier`, `ManaModifier`, `ArmorModifier`, `ExperienceModifier`, `RacialLeader`, `movementId`, `RegenHealth`, `mechanic_immune_mask`, `spell_school_immune_mask`, `flags_extra`, `ScriptName`, `VerifiedBuild`) VALUES (
+               4) Estrarre il valore NPCID "VALUES(XXXXXXXXXX)" dal file old
+               5) Estrarre il nome "VALUES (700000, 0, 0, 0, 0, 0, 4416, 0, 0, 0, 'XXXXXXX', " dal file old
+               6) Estrarre il subname  "VALUES (700000, 0, 0, 0, 0, 0, 4416, 0, 0, 0, '', 'XXXXXXXXXXX', " dal file old
+               7) Estrarre il numero 130 (quest giver), 128 npoc vendor  "VALUES (700000, 0, 0, 0, 0, 0, 4416, 0, 0, 0, 'Yoh Asakura', 'Vanilla Dungeon Quests', NULL, 0, 66, 66, 0, 12, XXXXXXXXX, " dal file old
+
+             * */
+            string oldQuery = "";
+
+            oldQuery = SQLGenerator.OpenSQLQuery(sqlOpenFileDialog);
+
+            string fullQuery = SQLGenerator.ConvertSQLQueryCreatureTemplate(oldQuery);
+            
+            SQLGenerator.SaveSQLQueryCreatureTemplate(sqlSaveDialog, fullQuery, true);
         }
     }
 }

@@ -77,6 +77,10 @@ namespace ArtaCore_Query_Creator
             this.nPCIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nPCNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbQuestTemplate = new System.Windows.Forms.TabPage();
+            this.cbAutoGenerateStarterEnder = new System.Windows.Forms.CheckBox();
+            this.labelNPCID_QuestTemplate = new System.Windows.Forms.Label();
+            this.cbNPCIDEQuestTemplate = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.tbRequiredAmountNPC4 = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.tbRequiredNPCID4 = new System.Windows.Forms.TextBox();
@@ -157,6 +161,8 @@ namespace ArtaCore_Query_Creator
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label42 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertCreatureTemplateSQLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,10 +171,8 @@ namespace ArtaCore_Query_Creator
             this.itemExtendedCostsTableAdapter = new ArtaCore_Query_Creator.databaseDataSetTableAdapters.ItemExtendedCostsTableAdapter();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.sqlSaveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.labelNPCID_QuestTemplate = new System.Windows.Forms.Label();
-            this.cbNPCIDEQuestTemplate = new System.Windows.Forms.ComboBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.cbAutoGenerateStarterEnder = new System.Windows.Forms.CheckBox();
+            this.sqlOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.cboxNewFormat = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tpNPCVendor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemExtendedCostsBindingSource)).BeginInit();
@@ -218,7 +222,7 @@ namespace ArtaCore_Query_Creator
             this.tpNPCVendor.Location = new System.Drawing.Point(4, 29);
             this.tpNPCVendor.Name = "tpNPCVendor";
             this.tpNPCVendor.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNPCVendor.Size = new System.Drawing.Size(1336, 994);
+            this.tpNPCVendor.Size = new System.Drawing.Size(1336, 999);
             this.tpNPCVendor.TabIndex = 0;
             this.tpNPCVendor.Text = "NPC_VENDOR";
             this.toolTip.SetToolTip(this.tpNPCVendor, "Open the SQL Query Creator for NPC_VENDOR table (Item inventories for NPC vendors" +
@@ -420,6 +424,7 @@ namespace ArtaCore_Query_Creator
             // 
             // tbCreatureTemplate
             // 
+            this.tbCreatureTemplate.Controls.Add(this.cboxNewFormat);
             this.tbCreatureTemplate.Controls.Add(this.btnAddQueryCreaturesToInternalDB);
             this.tbCreatureTemplate.Controls.Add(this.btnClearQueryCreatureTemplate);
             this.tbCreatureTemplate.Controls.Add(this.pictureBox1);
@@ -443,7 +448,7 @@ namespace ArtaCore_Query_Creator
             this.tbCreatureTemplate.Location = new System.Drawing.Point(4, 29);
             this.tbCreatureTemplate.Name = "tbCreatureTemplate";
             this.tbCreatureTemplate.Padding = new System.Windows.Forms.Padding(3);
-            this.tbCreatureTemplate.Size = new System.Drawing.Size(1336, 994);
+            this.tbCreatureTemplate.Size = new System.Drawing.Size(1336, 999);
             this.tbCreatureTemplate.TabIndex = 1;
             this.tbCreatureTemplate.Text = "CREATURE_TEMPLATE";
             this.tbCreatureTemplate.UseVisualStyleBackColor = true;
@@ -747,6 +752,53 @@ namespace ArtaCore_Query_Creator
             this.tbQuestTemplate.TabIndex = 2;
             this.tbQuestTemplate.Text = "QUEST_TEMPLATE";
             this.tbQuestTemplate.UseVisualStyleBackColor = true;
+            // 
+            // cbAutoGenerateStarterEnder
+            // 
+            this.cbAutoGenerateStarterEnder.AutoSize = true;
+            this.cbAutoGenerateStarterEnder.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.cbAutoGenerateStarterEnder.Location = new System.Drawing.Point(395, 955);
+            this.cbAutoGenerateStarterEnder.Name = "cbAutoGenerateStarterEnder";
+            this.cbAutoGenerateStarterEnder.Size = new System.Drawing.Size(552, 24);
+            this.cbAutoGenerateStarterEnder.TabIndex = 89;
+            this.cbAutoGenerateStarterEnder.Text = "Automatically generate the QuestStarter and QuestEnder queries as well.";
+            this.toolTip.SetToolTip(this.cbAutoGenerateStarterEnder, resources.GetString("cbAutoGenerateStarterEnder.ToolTip"));
+            this.cbAutoGenerateStarterEnder.UseVisualStyleBackColor = true;
+            // 
+            // labelNPCID_QuestTemplate
+            // 
+            this.labelNPCID_QuestTemplate.AutoSize = true;
+            this.labelNPCID_QuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.labelNPCID_QuestTemplate.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.labelNPCID_QuestTemplate.Location = new System.Drawing.Point(1254, 48);
+            this.labelNPCID_QuestTemplate.Name = "labelNPCID_QuestTemplate";
+            this.labelNPCID_QuestTemplate.Size = new System.Drawing.Size(63, 20);
+            this.labelNPCID_QuestTemplate.TabIndex = 88;
+            this.labelNPCID_QuestTemplate.Text = "000000";
+            // 
+            // cbNPCIDEQuestTemplate
+            // 
+            this.cbNPCIDEQuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC Name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.cbNPCIDEQuestTemplate.DataSource = this.nPCVendorsBindingSource;
+            this.cbNPCIDEQuestTemplate.DisplayMember = "NPC Name";
+            this.cbNPCIDEQuestTemplate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.cbNPCIDEQuestTemplate.FormattingEnabled = true;
+            this.cbNPCIDEQuestTemplate.Location = new System.Drawing.Point(957, 45);
+            this.cbNPCIDEQuestTemplate.Name = "cbNPCIDEQuestTemplate";
+            this.cbNPCIDEQuestTemplate.Size = new System.Drawing.Size(291, 28);
+            this.cbNPCIDEQuestTemplate.TabIndex = 87;
+            this.toolTip.SetToolTip(this.cbNPCIDEQuestTemplate, resources.GetString("cbNPCIDEQuestTemplate.ToolTip"));
+            this.cbNPCIDEQuestTemplate.ValueMember = "NPC ID";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label43.Location = new System.Drawing.Point(953, 22);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(62, 20);
+            this.label43.TabIndex = 86;
+            this.label43.Text = "NPC ID";
             // 
             // tbRequiredAmountNPC4
             // 
@@ -1545,6 +1597,7 @@ namespace ArtaCore_Query_Creator
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
             this.operationsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -1552,6 +1605,21 @@ namespace ArtaCore_Query_Creator
             this.menuStrip1.Size = new System.Drawing.Size(1344, 33);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.convertCreatureTemplateSQLToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // convertCreatureTemplateSQLToolStripMenuItem
+            // 
+            this.convertCreatureTemplateSQLToolStripMenuItem.Name = "convertCreatureTemplateSQLToolStripMenuItem";
+            this.convertCreatureTemplateSQLToolStripMenuItem.Size = new System.Drawing.Size(355, 34);
+            this.convertCreatureTemplateSQLToolStripMenuItem.Text = "&Convert CreatureTemplate SQL";
+            this.convertCreatureTemplateSQLToolStripMenuItem.Click += new System.EventHandler(this.convertCreatureTemplateSQLToolStripMenuItem_Click);
             // 
             // operationsToolStripMenuItem
             // 
@@ -1566,7 +1634,7 @@ namespace ArtaCore_Query_Creator
             // 
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(217, 34);
             this.pasteToolStripMenuItem.Text = "Paste";
             this.pasteToolStripMenuItem.Visible = false;
             this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
@@ -1609,52 +1677,23 @@ namespace ArtaCore_Query_Creator
             this.sqlSaveDialog.Filter = "SQL Query|*.sql";
             this.sqlSaveDialog.Title = "Save the SQL Query";
             // 
-            // labelNPCID_QuestTemplate
+            // sqlOpenFileDialog
             // 
-            this.labelNPCID_QuestTemplate.AutoSize = true;
-            this.labelNPCID_QuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC ID", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.labelNPCID_QuestTemplate.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.labelNPCID_QuestTemplate.Location = new System.Drawing.Point(1254, 48);
-            this.labelNPCID_QuestTemplate.Name = "labelNPCID_QuestTemplate";
-            this.labelNPCID_QuestTemplate.Size = new System.Drawing.Size(63, 20);
-            this.labelNPCID_QuestTemplate.TabIndex = 88;
-            this.labelNPCID_QuestTemplate.Text = "000000";
+            this.sqlOpenFileDialog.DefaultExt = "sql";
+            this.sqlOpenFileDialog.Filter = "SQL Query|*.sql";
+            this.sqlOpenFileDialog.Title = "Open the SQL file to Convert";
             // 
-            // cbNPCIDEQuestTemplate
+            // cboxNewFormat
             // 
-            this.cbNPCIDEQuestTemplate.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nPCVendorsBindingSource, "NPC Name", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.cbNPCIDEQuestTemplate.DataSource = this.nPCVendorsBindingSource;
-            this.cbNPCIDEQuestTemplate.DisplayMember = "NPC Name";
-            this.cbNPCIDEQuestTemplate.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.cbNPCIDEQuestTemplate.FormattingEnabled = true;
-            this.cbNPCIDEQuestTemplate.Location = new System.Drawing.Point(957, 45);
-            this.cbNPCIDEQuestTemplate.Name = "cbNPCIDEQuestTemplate";
-            this.cbNPCIDEQuestTemplate.Size = new System.Drawing.Size(291, 28);
-            this.cbNPCIDEQuestTemplate.TabIndex = 87;
-            this.toolTip.SetToolTip(this.cbNPCIDEQuestTemplate, resources.GetString("cbNPCIDEQuestTemplate.ToolTip"));
-            this.cbNPCIDEQuestTemplate.ValueMember = "NPC ID";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label43.Location = new System.Drawing.Point(953, 22);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(62, 20);
-            this.label43.TabIndex = 86;
-            this.label43.Text = "NPC ID";
-            // 
-            // cbAutoGenerateStarterEnder
-            // 
-            this.cbAutoGenerateStarterEnder.AutoSize = true;
-            this.cbAutoGenerateStarterEnder.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.cbAutoGenerateStarterEnder.Location = new System.Drawing.Point(395, 955);
-            this.cbAutoGenerateStarterEnder.Name = "cbAutoGenerateStarterEnder";
-            this.cbAutoGenerateStarterEnder.Size = new System.Drawing.Size(552, 24);
-            this.cbAutoGenerateStarterEnder.TabIndex = 89;
-            this.cbAutoGenerateStarterEnder.Text = "Automatically generate the QuestStarter and QuestEnder queries as well.";
-            this.toolTip.SetToolTip(this.cbAutoGenerateStarterEnder, resources.GetString("cbAutoGenerateStarterEnder.ToolTip"));
-            this.cbAutoGenerateStarterEnder.UseVisualStyleBackColor = true;
+            this.cboxNewFormat.AutoSize = true;
+            this.cboxNewFormat.Checked = true;
+            this.cboxNewFormat.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cboxNewFormat.Location = new System.Drawing.Point(985, 311);
+            this.cboxNewFormat.Name = "cboxNewFormat";
+            this.cboxNewFormat.Size = new System.Drawing.Size(290, 24);
+            this.cboxNewFormat.TabIndex = 24;
+            this.cboxNewFormat.Text = "Use New Creature Template Format";
+            this.cboxNewFormat.UseVisualStyleBackColor = true;
             // 
             // mainFrm
             // 
@@ -1834,6 +1873,10 @@ namespace ArtaCore_Query_Creator
         private System.Windows.Forms.Label labelNPCID_QuestTemplate;
         private System.Windows.Forms.ComboBox cbNPCIDEQuestTemplate;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem convertCreatureTemplateSQLToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog sqlOpenFileDialog;
+        private System.Windows.Forms.CheckBox cboxNewFormat;
     }
 }
 
